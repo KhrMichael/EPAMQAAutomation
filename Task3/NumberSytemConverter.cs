@@ -19,7 +19,13 @@ namespace Task3
             }
 
             StringBuilder convertedNumber = new StringBuilder();
+            string sign = "";
+            if(decimalNumber < 0)
+            {
+                sign = "-";
+            }
             int remainder;
+            decimalNumber = Math.Abs(decimalNumber);
             while (decimalNumber >= numberSysBase)
             {
                 remainder = decimalNumber % numberSysBase;
@@ -27,6 +33,7 @@ namespace Task3
                 convertedNumber.Append(ConvertNumberToDigit(remainder));
             }
             convertedNumber.Append(ConvertNumberToDigit(decimalNumber));
+            convertedNumber.Append(sign);
 
             return new string(convertedNumber.ToString().Reverse().ToArray());
         }
