@@ -24,8 +24,8 @@ namespace Task3
             {
                 sign = "-";
             }
-            int remainder;
             decimalNumber = Math.Abs(decimalNumber);
+            int remainder;
             while (decimalNumber >= numberSysBase)
             {
                 remainder = decimalNumber % numberSysBase;
