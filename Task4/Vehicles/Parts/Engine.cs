@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Task4.Cars.Parts
+namespace Task4.Vehicles.Parts
 {
-    public class Engine : CarPart
+    public class Engine : VehiclePart
     {
         public Engine(double capasity, double displacement, string type, string serialNumber)
         {

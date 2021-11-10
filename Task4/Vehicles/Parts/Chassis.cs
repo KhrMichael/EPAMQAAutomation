@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Task4.Cars.Parts
+namespace Task4.Vehicles.Parts
 {
-    public class Chassis : CarPart
+    public class Chassis : VehiclePart
     {
         public Chassis(int wheelNumber, string number, double permissbleLoad)
         {

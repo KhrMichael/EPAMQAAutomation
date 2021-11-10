@@ -1,6 +1,6 @@
-﻿using Task4.Cars.Parts;
+﻿using Task4.Vehicles.Parts;
 
-namespace Task4.Cars.Types
+namespace Task4.Vehicles.Types
 {
     public abstract class Vehicle
     {
