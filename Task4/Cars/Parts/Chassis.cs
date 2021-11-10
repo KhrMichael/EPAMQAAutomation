@@ -1,17 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task4.Cars.Parts
 {
-    public class Chassis
+    public class Chassis : CarPart
     {
-        public int WheelNumber { get; set; }
-        public string Number { get; set; }
-        public double PermissbleLoad { get; set; }
+        public Chassis(int wheelNumber, string number, double permissbleLoad)
+        {
+            WheelNumber = wheelNumber;
+            Number = number;
+            PermissbleLoad = permissbleLoad;
+        }
+        public int WheelNumber { get; private set; }
+        public string Number { get; private set; }
+        public double PermissbleLoad { get; private set; }
 
-
+        public override string GetInfo()
+        {
+            return String.Format("Chassis:\n\tNumber of wheels: {0}\n\tNumber: {1}\n\tPermissable load: {2}", WheelNumber, Number, PermissbleLoad);
+        }
     }
 }

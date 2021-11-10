@@ -1,16 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task4.Cars.Parts
 {
     public class Engine : CarPart
     {
-        public double Capasity { get; set; }
-        public double Displacement { get; set; }
-        public string Type { get; set; }
-        public string SerialNumber { get; set; }
+        public Engine(double capasity, double displacement, string type, string serialNumber)
+        {
+            Capasity = capasity;
+            Displacement = displacement;
+            Type = type;
+            SerialNumber = serialNumber;
+        }
+        public double Capasity { get; private set; }
+        public double Displacement { get; private set; }
+        public string Type { get; private set; }
+        public string SerialNumber { get; private set; }
+
+        public override string GetInfo()
+        {
+            return String.Format("Engine:\n\tCapasity: {0}\n\tDisplacement: {1}\n\tType: {2}\n\tSerial number: {3}", Capasity, Displacement, Type, SerialNumber);
+        }
     }
 }

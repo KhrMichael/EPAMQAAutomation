@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Task4.Cars.Parts
+﻿namespace Task4.Cars.Parts
 {
-    public class CarPart
+    public abstract class CarPart
     {
-        
+        public abstract string GetInfo();
     }
 }
