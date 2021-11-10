@@ -1,4 +1,5 @@
-﻿using Task4.Vehicles.Parts;
+﻿using System;
+using Task4.Vehicles.Parts;
 
 namespace Task4.Vehicles.Types
 {
@@ -7,5 +8,10 @@ namespace Task4.Vehicles.Types
         public override Engine Engine { get; protected set; }
         public override Chassis Chassis { get; protected set; }
         public override Transmission Transmission { get; protected set; }
+
+        public override string GetInfo()
+        {
+            return "Car:\n" + Engine.GetInfo() + Chassis.GetInfo() + Transmission.GetInfo();
+        }
     }
 }

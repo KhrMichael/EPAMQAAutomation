@@ -7,5 +7,9 @@ namespace Task4.Vehicles.Types
         public override Engine Engine { get; protected set; }
         public override Chassis Chassis { get; protected set; }
         public override Transmission Transmission { get; protected set; }
+        public override string GetInfo()
+        {
+            return "Bus:\n" + Engine.GetInfo() + Chassis.GetInfo() + Transmission.GetInfo();
+        }
     }
 }
