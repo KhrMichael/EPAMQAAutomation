@@ -6,6 +6,8 @@ namespace Task3
 {
     public class NumberSytemConverter
     {
+        private int maxNumberSystemBase = 20;
+        private int minNumberSystemBase = 20;
         /// <summary>
         /// Converts a decimal number into a new number system.
         /// </summary>
@@ -13,7 +15,7 @@ namespace Task3
         /// <param name="numberSysBase">Base of the number system to convert(2 - 20)</param>
         public string Convert(int decimalNumber, int numberSysBase)
         {
-            if (numberSysBase > 20 || numberSysBase < 2)
+            if (numberSysBase > maxNumberSystemBase || numberSysBase < minNumberSystemBase)
             {
                 return null;
             }
@@ -43,7 +45,7 @@ namespace Task3
             char digit;
             if (number > 9)
             {
-                digit = (char)(65 + number - 10);
+                digit = (char)(65 + number - 10); //ASCII - 65(A)
             }
             else
             {
