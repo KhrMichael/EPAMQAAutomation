@@ -6,7 +6,7 @@ namespace Task1
     public class ClassWithSolution
     {
         /// <summary>
-        /// Searches for the longest unique sequence of chars and return the length of this sequence
+        /// Searches for the longest unique sequence of symbols and return the length of this sequence
         /// </summary>
         /// <param name="initialSequence">Intitial char sequence</param>
         /// <returns></returns>
