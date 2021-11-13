@@ -7,12 +7,13 @@ namespace Task3
     public class NumberSytemConverter
     {
         private int maxNumberSystemBase = 20;
-        private int minNumberSystemBase = 20;
+        private int minNumberSystemBase = 2;
         /// <summary>
         /// Converts a decimal number into a new number system.
         /// </summary>
         /// <param name="decimalNumber">Number in decimal number system</param>
         /// <param name="numberSysBase">Base of the number system to convert(2 - 20)</param>
+        /// <returns>Number in a new number system</returns>
         public string Convert(int decimalNumber, int numberSysBase)
         {
             if (numberSysBase > maxNumberSystemBase || numberSysBase < minNumberSystemBase)
@@ -28,28 +29,31 @@ namespace Task3
             }
             decimalNumber = Math.Abs(decimalNumber);
             int remainder;
+            char digit;
             while (decimalNumber >= numberSysBase)
             {
                 remainder = decimalNumber % numberSysBase;
                 decimalNumber /= numberSysBase;
-                convertedNumber.Append(ConvertNumberToDigit(remainder));
+                digit = ConvertNumberToDigit(remainder);
+                convertedNumber.Append(digit);
             }
-            convertedNumber.Append(ConvertNumberToDigit(decimalNumber));
+            digit = ConvertNumberToDigit(decimalNumber);
+            convertedNumber.Append(digit);
             convertedNumber.Append(sign);
 
             return new string(convertedNumber.ToString().Reverse().ToArray());
         }
 
-        private char ConvertNumberToDigit(int number)
+        private char ConvertNumberToDigit(int decimalNumber)
         {
             char digit;
-            if (number > 9)
+            if (decimalNumber > 9)
             {
-                digit = (char)(65 + number - 10); //ASCII - 65(A)
+                digit = (char)(65 + decimalNumber - 10); //ASCII - 65(A)
             }
             else
             {
-                Char.TryParse(number.ToString(), out digit);
+                Char.TryParse(decimalNumber.ToString(), out digit);
             }
             return digit;
         }
