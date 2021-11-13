@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Task1
+{
+    public class TextAdditionalFeatures
+    {
+        /// <summary>
+        /// Searches for the longest unique substring and return the length of this substring
+        /// </summary>
+        /// <param name="sourceString">Intitial char sequence</param>
+        /// <returns>Length of the longest substring/returns>
+        public int FindMaxUniqueSubstringLength(ReadOnlySpan<char> sourceString)
+        {
+            int maxUniqSubstringLength = 0;
+            int currentUniqSequenceLength = 0;
+            for (int i = 0; maxUniqSubstringLength < sourceString.Length - i; i++)
+                // if result greater than the substring length that will be given to GetMaxUniqueSequanceLength method
+                // then iteration process finish
+            {
+                currentUniqSequenceLength = GetMaxUniqueSubstringLength(sourceString[i..sourceString.Length]);
+                if (currentUniqSequenceLength > maxUniqSubstringLength)
+                {
+                    maxUniqSubstringLength = currentUniqSequenceLength;
+                }
+            }
+            return maxUniqSubstringLength;
+        }
+        private int GetMaxUniqueSubstringLength(ReadOnlySpan<char> sourceString)
+        {
+            HashSet<char> uniqSubstring = new HashSet<char>();
+            int maxUniqSubstringLength = 0;
+            foreach (var ch in sourceString)
+            {
+                if (uniqSubstring.Contains(ch))
+                    uniqSubstring.Clear();
+
+                uniqSubstring.Add(ch);
+
+                if (uniqSubstring.Count > maxUniqSubstringLength)
+                    maxUniqSubstringLength++;
+            }
+            return maxUniqSubstringLength;
+        }
+    }
+}

@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            ClassWithSolution classWithSolution = new ClassWithSolution();
+            TextAdditionalFeatures classWithSolution = new TextAdditionalFeatures();
             foreach (var arg in args)
             {
                 System.Console.WriteLine(classWithSolution.FindMaxUniqueSubstringLength(arg));

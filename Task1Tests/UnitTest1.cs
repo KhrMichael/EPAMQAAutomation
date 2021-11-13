@@ -33,7 +33,7 @@ namespace Task1Tests
             //    "wq0tzvxlg,abscd"
             //};
 
-            ClassWithSolution solution = new ClassWithSolution();
+            TextAdditionalFeatures solution = new TextAdditionalFeatures();
             for (int index = 0; index < testElemNumber; index++)
             {
                 testResults[index] = solution.FindMaxUniqueSubstringLength(initialStrings[index]);
