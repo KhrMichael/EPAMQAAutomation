@@ -1,5 +1,5 @@
 ﻿using System;
-using Task4.Vehicles.Parts;
+using Task4.Vehicles.PartTypes;
 
 namespace Task4
 {

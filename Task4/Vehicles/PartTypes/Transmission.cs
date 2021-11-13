@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Task4.Vehicles.Parts
+namespace Task4.Vehicles.PartTypes
 {
-    public class Transmission : VehiclePart
+    public abstract class Transmission : VehiclePart
     {
         public Transmission(string type, int transmissionsNumber, string manufacturer)
         {

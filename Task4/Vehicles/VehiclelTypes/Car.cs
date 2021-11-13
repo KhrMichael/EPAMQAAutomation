@@ -1,9 +1,9 @@
 ﻿using System;
-using Task4.Vehicles.Parts;
+using Task4.Vehicles.PartTypes;
 
-namespace Task4.Vehicles.Types
+namespace Task4.Vehicles.VehicleTypes
 {
-    public class Car : Vehicle
+    public abstract class Car : Vehicle
     {
         public override Engine Engine { get; protected set; }
         public override Chassis Chassis { get; protected set; }

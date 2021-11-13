@@ -1,15 +1,15 @@
-﻿using Task4.Vehicles.Parts;
+﻿using Task4.Vehicles.PartTypes;
 
-namespace Task4.Vehicles.Types
+namespace Task4.Vehicles.VehicleTypes
 {
-    public class Bus : Vehicle
+    public abstract class Scooter : Vehicle
     {
         public override Engine Engine { get; protected set; }
         public override Chassis Chassis { get; protected set; }
         public override Transmission Transmission { get; protected set; }
         public override string GetInfo()
         {
-            return "Bus:\n" + Engine.GetInfo() + Chassis.GetInfo() + Transmission.GetInfo();
+            return "Scooter:\n" + Engine.GetInfo() + Chassis.GetInfo() + Transmission.GetInfo();
         }
     }
 }
