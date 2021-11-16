@@ -30,15 +30,13 @@ namespace Task3
             decimalNumber = Math.Abs(decimalNumber);
             int remainder;
             char digit;
-            while (decimalNumber >= numberSysBase)
+            while (decimalNumber != 0)
             {
                 remainder = decimalNumber % numberSysBase;
                 decimalNumber /= numberSysBase;
                 digit = ConvertNumberToDigit(remainder);
                 convertedNumber.Append(digit);
             }
-            digit = ConvertNumberToDigit(decimalNumber);
-            convertedNumber.Append(digit);
             convertedNumber.Append(sign);
 
             return new string(convertedNumber.ToString().Reverse().ToArray());
