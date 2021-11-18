@@ -4,10 +4,10 @@
     {
         static void Main(string[] args)
         {
-            TextAdditionalFeatures classWithSolution = new TextAdditionalFeatures();
+            TextAnalyzer textAnalyzer = new TextAnalyzer();
             foreach (var arg in args)
             {
-                System.Console.WriteLine(classWithSolution.FindMaxUniqueSubstringLength(arg));
+                System.Console.WriteLine(textAnalyzer.FindMaxUniqueSubstringLength(arg));
             }
         }
     }
