@@ -9,7 +9,7 @@ namespace Task3
         private int maxNumberSystemBase = 20;
         private int minNumberSystemBase = 2;
         /// <summary>
-        /// Converts a decimal number into a new number system.
+        /// Converts a decimal number to a number in the new number system.
         /// </summary>
         /// <param name="decimalNumber">Number in decimal number system</param>
         /// <param name="numberSysBase">Base of the number system to convert(2 - 20)</param>

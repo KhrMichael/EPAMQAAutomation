@@ -6,7 +6,7 @@ namespace Task3
     {
         static void Main(string[] args)
         {
-            if (args.Length > 0)
+            if (args.Length >= 2)
             {
                 NumberSytemConverter numberSytemConverter = new();
                 int.TryParse(args[0], out int decimalNumber);
