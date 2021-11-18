@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Task1
 {
-    public class TextAdditionalFeatures
+    public class TextAnalyzer
     {
         /// <summary>
         /// Searches for the longest unique substring and return the length of this substring
@@ -14,11 +14,11 @@ namespace Task1
         {
             int maxUniqSubstringLength = 0;
             int currentUniqSequenceLength = 0;
-            for (int i = 0; maxUniqSubstringLength < sourceString.Length - i; i++)
+            for (int startSubstIndex = 0; maxUniqSubstringLength < sourceString.Length - startSubstIndex; startSubstIndex++)
                 // if result greater than the substring length that will be given to GetMaxUniqueSequanceLength method
                 // then iteration process finish
             {
-                currentUniqSequenceLength = GetMaxUniqueSubstringLength(sourceString[i..sourceString.Length]);
+                currentUniqSequenceLength = GetMaxUniqueSubstringLength(sourceString.Slice(startSubstIndex, sourceString.Length - startSubstIndex));
                 if (currentUniqSequenceLength > maxUniqSubstringLength)
                 {
                     maxUniqSubstringLength = currentUniqSequenceLength;
