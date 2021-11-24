@@ -3,7 +3,7 @@ using Task4.Vehicles.PartTypes;
 
 namespace Task4.Vehicles.VehicleTypes
 {
-    public abstract class Car : Vehicle
+    public class Car : Vehicle
     {
         public override Engine Engine { get; protected set; }
         public override Chassis Chassis { get; protected set; }

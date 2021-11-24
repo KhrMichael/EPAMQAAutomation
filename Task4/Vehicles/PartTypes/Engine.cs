@@ -2,7 +2,7 @@
 
 namespace Task4.Vehicles.PartTypes
 {
-    public abstract class Engine : VehiclePart
+    public class Engine : VehiclePart
     {
         public Engine(double capasity, double displacement, string type, string serialNumber)
         {

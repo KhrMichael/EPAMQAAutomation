@@ -2,7 +2,7 @@
 
 namespace Task4.Vehicles.PartTypes
 {
-    public abstract class Chassis : VehiclePart
+    public class Chassis : VehiclePart
     {
         public Chassis(int wheelNumber, string number, double permissbleLoad)
         {

@@ -2,7 +2,7 @@
 
 namespace Task4.Vehicles.PartTypes
 {
-    public abstract class Transmission : VehiclePart
+    public class Transmission : VehiclePart
     {
         public Transmission(string type, int transmissionsNumber, string manufacturer)
         {

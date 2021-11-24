@@ -2,7 +2,7 @@
 
 namespace Task4.Vehicles.VehicleTypes
 {
-    public abstract class Truck : Vehicle
+    public class Truck : Vehicle
     {
         public override Engine Engine { get; protected set; }
         public override Chassis Chassis { get; protected set; }
