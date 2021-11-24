@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Task4.Vehicles.PartTypes
+namespace Task4.Vehicles.Parts
 {
     public class Engine : VehiclePart
     {
