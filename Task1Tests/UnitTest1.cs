@@ -33,10 +33,10 @@ namespace Task1Tests
             //    "wq0tzvxlg,abscd"
             //};
 
-            TextAnalyzer solution = new TextAnalyzer();
+            TextAnalyzer textAnalyzer = new TextAnalyzer();
             for (int index = 0; index < testElemNumber; index++)
             {
-                testResults[index] = solution.FindMaxUniqueSubstringLength(initialStrings[index]);
+                testResults[index] = textAnalyzer.FindMaxUniqueSubstringLength(initialStrings[index]);
             }
             CollectionAssert.AreEqual(testResults, expectedResults);
         }

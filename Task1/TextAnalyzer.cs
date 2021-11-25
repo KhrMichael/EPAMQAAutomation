@@ -15,7 +15,7 @@ namespace Task1
             int maxUniqSubstringLength = 0;
             int currentUniqSequenceLength;
             for (int startSubstIndex = 0; maxUniqSubstringLength < sourceString.Length - startSubstIndex; startSubstIndex++)
-                // if result greater than the substring length that will be given to GetMaxUniqueSequanceLength method
+                // if maxUniqSubstringLength greater than the substring length that will be given to GetMaxUniqueSequanceLength method
                 // then iteration process finish
             {
                 currentUniqSequenceLength = GetMaxUniqueSubstringLength(sourceString.Slice(startSubstIndex, sourceString.Length - startSubstIndex));
