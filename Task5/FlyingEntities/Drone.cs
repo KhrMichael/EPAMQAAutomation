@@ -42,8 +42,8 @@ namespace Task5.FlyingEntities
         public double GetFlyTime(Coordinate destinationCoordinate)
         {
             double distanceAB = Coordinate.GetDistanceBetweenAB(CurrentPosition, destinationCoordinate);
-            double time = ((int)(distanceAB * 60)) / 10 / 60.0;
-            time += distanceAB / speed;
+            double time = distanceAB / speed;
+            time += (int)time * 60 / 10;
             return time;
         }
     }
