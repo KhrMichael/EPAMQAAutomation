@@ -4,14 +4,19 @@ namespace Task4.Vehicles.Vehicles
 {
     public class Bus : Vehicle
     {
+        public Bus(Engine engine, Chassis chassis, Transmission transmission, string color = "yellow", bool isDoubleDeckerBus = false) : base(engine, chassis, transmission)
+        {
+            Color = color;
+            IsDoubleDeckerBus = isDoubleDeckerBus;
+        }
         public override Engine Engine { get; set; }
         public override Chassis Chassis { get; set; }
         public override Transmission Transmission { get; set; }
         public string Color { get; set; }
         public bool IsDoubleDeckerBus { get; set; }
-        public override string GetInfo()
+        protected override string GetInfo()
         {
-            return "Bus:\n" + Engine.GetInfo() + Chassis.GetInfo() + Transmission.GetInfo();
+            return "Bus:\n" + Engine.ToString() + Chassis.ToString() + Transmission.ToString() + "\nColor: " + Color + "\nIs double decker bus: " + IsDoubleDeckerBus;
         }
     }
 }

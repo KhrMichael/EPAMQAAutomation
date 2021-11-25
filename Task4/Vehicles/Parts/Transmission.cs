@@ -14,7 +14,7 @@ namespace Task4.Vehicles.Parts
         public int TransmissionsNumber { get; private set; }
         public string Manufacturer { get; private set; }
 
-        public override string GetInfo()
+        protected override string GetInfo()
         {
             return String.Format("Transmission:\n\tType: {0}\n\tNumber of gears: {1}\n\tManufacturer: {2}", Type, TransmissionsNumber, Manufacturer);
         }

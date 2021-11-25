@@ -16,7 +16,7 @@ namespace Task4.Vehicles.Parts
         public string Type { get; private set; }
         public string SerialNumber { get; private set; }
 
-        public override string GetInfo()
+        protected override string GetInfo()
         {
             return String.Format("Engine:\n\tCapasity: {0}\n\tDisplacement: {1}\n\tType: {2}\n\tSerial number: {3}", Capasity, Displacement, Type, SerialNumber);
         }

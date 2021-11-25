@@ -19,10 +19,14 @@ namespace Task4.Vehicles.Vehicles
                 seatsNumber = value;
             }
         }
-
-        public override string GetInfo()
+        public Car(Engine engine, Chassis chassis, Transmission transmission, int seatsNumber = 5) :base(engine, chassis, transmission)
         {
-            return "Car:\n" + Engine.GetInfo() + Chassis.GetInfo() + Transmission.GetInfo();
+            SeatsNumber = seatsNumber;
+        }
+
+        protected override string GetInfo()
+        {
+            return "Car:\n" + Engine.ToString() + Chassis.ToString() + Transmission.ToString() + "\nNumber of seats: " + SeatsNumber;
         }
     }
 }

@@ -8,9 +8,13 @@ namespace Task4.Vehicles.Vehicles
         public override Chassis Chassis { get; set; }
         public override Transmission Transmission { get; set; }
         public bool IsNaked { get; set; }
-        public override string GetInfo()
+        public Scooter(Engine engine, Chassis chassis, Transmission transmission, bool isNaked = false) : base(engine, chassis, transmission)
         {
-            return "Scooter:\n" + Engine.GetInfo() + Chassis.GetInfo() + Transmission.GetInfo();
+            IsNaked = isNaked;
+        }
+        protected override string GetInfo()
+        {
+            return "Scooter:\n" + Engine.ToString() + Chassis.ToString() + Transmission.ToString() + "\nIs naked: " + IsNaked;
         }
     }
 }

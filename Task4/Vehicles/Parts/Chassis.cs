@@ -14,7 +14,7 @@ namespace Task4.Vehicles.Parts
         public string Number { get; private set; }
         public double PermissbleLoad { get; private set; }
 
-        public override string GetInfo()
+        protected override string GetInfo()
         {
             return String.Format("Chassis:\n\tNumber of wheels: {0}\n\tNumber: {1}\n\tPermissable load: {2}", WheelNumber, Number, PermissbleLoad);
         }

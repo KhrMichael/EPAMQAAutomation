@@ -2,6 +2,10 @@
 {
     public abstract class VehiclePart
     {
-        public abstract string GetInfo();
+        protected abstract string GetInfo();
+        public override string ToString()
+        {
+            return GetInfo();
+        }
     }
 }

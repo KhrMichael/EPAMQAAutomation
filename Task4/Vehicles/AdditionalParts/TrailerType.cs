@@ -1,7 +1,8 @@
 ﻿namespace Task4.Vehicles.AdditionalParts
 {
-    public enum TrailerTypes
+    public enum TrailerType
     {
+        None,
         Trailer,
         ClosedTrailer,
         RefrigeratedTrailer,
