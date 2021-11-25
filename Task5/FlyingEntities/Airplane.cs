@@ -12,6 +12,7 @@ namespace Task5.FlyingEntities
         public Airplane()
         {
             startSpeed = 200;
+            CurrentPosition = new();
         }
         public void FlyTo(Coordinate coordinate)
         {

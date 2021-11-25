@@ -8,6 +8,9 @@ namespace Task5.FlyingEntities
         /// Unit of mesure - km per hour
         /// </summary>
         private double speed;
+        /// <summary>
+        /// </summary>
+        /// <exception cref="ArgumentException">Speed must be greater then zero and lower then 40 km/hour.</exception>
         public double Speed 
         {
             get => speed;
@@ -22,7 +25,13 @@ namespace Task5.FlyingEntities
         public Drone(double speed)
         {
             Speed = speed;
+            CurrentPosition = new();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        ///<exception cref="ArgumentException">Drone can't fly more then 1000km away.</exception>
+        /// <param name="destinationCoordinate"></param>
         public void FlyTo(Coordinate destinationCoordinate)
         {
             if (Coordinate.GetDistanceBetweenAB(CurrentPosition, destinationCoordinate) > 1000)
