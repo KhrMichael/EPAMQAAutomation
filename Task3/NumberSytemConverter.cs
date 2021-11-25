@@ -28,13 +28,11 @@ namespace Task3
                 sign = "-";
             }
             decimalNumber = Math.Abs(decimalNumber);
-            int remainder;
-            char digit;
             while (decimalNumber != 0)
             {
-                remainder = decimalNumber % numberSysBase;
+                int remainder = decimalNumber % numberSysBase;
                 decimalNumber /= numberSysBase;
-                digit = ConvertNumberToDigit(remainder);
+                char digit = ConvertNumberToDigit(remainder);
                 convertedNumber.Append(digit);
             }
             convertedNumber.Append(sign);
@@ -47,7 +45,7 @@ namespace Task3
             char digit;
             if (decimalNumber > 9)
             {
-                digit = (char)(65 + decimalNumber - 10); //ASCII - 65(A)
+                digit = (char)(55 + decimalNumber); //ASCII - 65(A)
             }
             else
             {
