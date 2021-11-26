@@ -13,12 +13,14 @@ namespace Task3
         /// </summary>
         /// <param name="decimalNumber">Number in decimal number system</param>
         /// <param name="numberSysBase">Base of the number system to convert(2 - 20)</param>
+        /// <param name="numberInNewSysBase">Converted number</param>
         /// <returns>Number in a new number system</returns>
-        public string Convert(int decimalNumber, int numberSysBase)
+        public void TryConvert(int decimalNumber, int numberSysBase, out string numberInNewSysBase)
         {
+            numberInNewSysBase = null;
             if (numberSysBase > maxNumberSystemBase || numberSysBase < minNumberSystemBase)
             {
-                return null;
+                return;
             }
 
             StringBuilder convertedNumber = new StringBuilder();
@@ -26,8 +28,8 @@ namespace Task3
             if(decimalNumber < 0)
             {
                 sign = "-";
+                decimalNumber = Math.Abs(decimalNumber);
             }
-            decimalNumber = Math.Abs(decimalNumber);
             while (decimalNumber != 0)
             {
                 int remainder = decimalNumber % numberSysBase;
@@ -37,7 +39,7 @@ namespace Task3
             }
             convertedNumber.Append(sign);
 
-            return new string(convertedNumber.ToString().Reverse().ToArray());
+            numberInNewSysBase = new string(convertedNumber.ToString().Reverse().ToArray());
         }
 
         private char ConvertNumberToDigit(int decimalNumber)

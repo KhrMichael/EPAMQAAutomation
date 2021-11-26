@@ -11,7 +11,8 @@ namespace Task3
                 NumberSytemConverter numberSytemConverter = new();
                 int.TryParse(args[0], out int decimalNumber);
                 int.TryParse(args[1], out int numberSysBase);
-                Console.WriteLine(numberSytemConverter.Convert(decimalNumber, numberSysBase));
+                numberSytemConverter.TryConvert(decimalNumber, numberSysBase, out string number);
+                Console.WriteLine(number);
             }
         }
     }
