@@ -24,7 +24,8 @@ namespace Task3Tests
             {
                 foreach (var numberSysBase in numberSysBases)
                 {
-                    testResults.Add(numberSystemConverter.Convert(decimalNumber, numberSysBase));
+                    numberSystemConverter.TryConvert(decimalNumber, numberSysBase, out string number);
+                    testResults.Add(number);
                 }
             }
 
