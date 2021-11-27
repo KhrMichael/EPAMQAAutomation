@@ -11,6 +11,12 @@ namespace Task5.FlyingEntities
         public uint Y { get; set; }
         public uint Z { get; set; }
 
+        /// <summary>
+        /// Returns the distnace between point A and point B.
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <returns></returns>
         public static double GetDistanceBetweenAB(Coordinate A, Coordinate B)
         {
             return Math.Sqrt(

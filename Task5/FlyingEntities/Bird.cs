@@ -9,10 +9,10 @@ namespace Task5.FlyingEntities
         /// </summary>
         private double speed;
         public Coordinate CurrentPosition { get; set; }
-        public Bird()
+        public Bird(Coordinate currentPosition = new())
         {
-            speed = new Random().NextDouble() * 20;
-            CurrentPosition = new();
+            speed = new Random().NextDouble() * 20;//random speed in range from 0 to 20 km/hour
+            CurrentPosition = currentPosition;
         }
         public void FlyTo(Coordinate destinationCoordinate)
         {
@@ -21,8 +21,8 @@ namespace Task5.FlyingEntities
 
         public double GetFlyTime(Coordinate destinationCoordinate)
         {
-            double distanceAB = Coordinate.GetDistanceBetweenAB(CurrentPosition, destinationCoordinate);
-            return distanceAB / speed;
+            double flightDistance = Coordinate.GetDistanceBetweenAB(CurrentPosition, destinationCoordinate);
+            return flightDistance / speed;
         }
     }
 }

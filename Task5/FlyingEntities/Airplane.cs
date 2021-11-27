@@ -9,10 +9,10 @@ namespace Task5.FlyingEntities
         /// </summary>
         private double startSpeed;
         public Coordinate CurrentPosition { get; set; }
-        public Airplane()
+        public Airplane(Coordinate currentPosition = new())
         {
-            startSpeed = 200;
-            CurrentPosition = new();
+            startSpeed = 200;//start speed of airplane is 200 km/hour
+            CurrentPosition = currentPosition;
         }
         public void FlyTo(Coordinate coordinate)
         {
@@ -23,18 +23,18 @@ namespace Task5.FlyingEntities
         {
             double time = 0;
             double currentSpeed = startSpeed;
-            double distanceAB = Coordinate.GetDistanceBetweenAB(CurrentPosition, destinationCoordinate);
-            while (distanceAB > 0)
+            double flightDistance = Coordinate.GetDistanceBetweenAB(CurrentPosition, destinationCoordinate);
+            while (flightDistance > 0) // airplane increase its own speed by 10 km/hour every 10 km of flight 
             {
-                if (distanceAB > 10)
+                if (flightDistance > 10)
                 {
                     time += 10 / currentSpeed;
                 }
                 else
                 {
-                    time += distanceAB / currentSpeed;
+                    time += flightDistance / currentSpeed;
                 }
-                distanceAB -= 10;
+                flightDistance -= 10;
                 currentSpeed += 10;
             }
             return time;
