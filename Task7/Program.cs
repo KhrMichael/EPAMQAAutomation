@@ -20,9 +20,24 @@ namespace Task7
         /// </summary>
         /// <param name="vehicles">Collection to fill.</param>
         /// <param name="length">Length of collection.</param>
-        static void FillVehicleCollection(out List<Vehicle> vehicles)
+        static void TryFillVehicleCollection(out List<Vehicle> vehicles)
         {
             vehicles = new List<Vehicle>();
+            try
+            {
+                vehicles.Add(new Truck(GenerateEngine("Electrical"), GenerateChassis(), GenerateTransmission("Manual"), TrailerType.RefrigeratedTrailer));
+                vehicles.Add(new Truck(GenerateEngine("Electrical"), GenerateChassis(), GenerateTransmission("Auto")));
+                vehicles.Add(new Car(GenerateEngine("Electrical"), GenerateChassis(), GenerateTransmission("Manual"), 6));
+                vehicles.Add(new Car(GenerateEngine("Electrical"), GenerateChassis(), GenerateTransmission("Auto")));
+                vehicles.Add(new Car(GenerateEngine("Electrical"), GenerateChassis(), GenerateTransmission("Auto"), 9));
+                vehicles.Add(new Car(GenerateEngine("Electrical"), GenerateChassis(), GenerateTransmission("Auto"), 6));
+                vehicles.Add(new Bus(GenerateEngine("Thermal"), GenerateChassis(), GenerateTransmission("Manual"), "red"));
+                vehicles.Add(new Scooter(GenerateEngine("Electrical"), GenerateChassis(), GenerateTransmission("Manual"), true));
+            }
+            catch
+            {
+
+            }
         }
 
         /// <summary>
