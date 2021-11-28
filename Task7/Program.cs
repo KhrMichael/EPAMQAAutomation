@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using Task4.Vehicles.Vehicles;
 using Task4.Vehicles.Parts;
 using Task4.Vehicles.AdditionalParts;
+using System.Linq;
+using System.Xml.Linq;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace Task7
 {
@@ -10,8 +14,13 @@ namespace Task7
     {
         static void Main(string[] args)
         {
-            List<Vehicle> vehicles = new List<Vehicle>();
-            vehicles.Add(new Truck(GenerateEngine("Electrical"), GenerateChassis(), GenerateTransmission("Manual")));
+            List<Vehicle> vehicles;
+            TryFillVehicleCollection(out vehicles);
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Vehicle>));
+            using(FileStream fs = new FileStream("vehicles.xml", FileMode.OpenOrCreate))
+            {
+                xmlSerializer.Serialize(fs, vehicles);
+            }
         }
 
 
