@@ -39,9 +39,9 @@ namespace Task7
         }
 
         /// <summary>
-        /// Generates new chassis.
+        /// Generates new Chassis.
         /// </summary>
-        /// <returns>New chassis.</returns>
+        /// <returns>New Chassis.</returns>
         static Chassis GenerateChassis()
         {
             Random rnd = new Random();
@@ -49,6 +49,17 @@ namespace Task7
             string number = (rnd.NextDouble() * rnd.Next()).ToString();
             double permissibleLoad = wheelNumber * 250.25;
             return new Chassis(wheelNumber, number, permissibleLoad);
+        }
+        /// <summary>
+        /// Generates new Transmission.
+        /// </summary>
+        /// <param name="type">Transmission type.</param>
+        /// <param name="manufacturer">Transmission manufacturer.</param>
+        /// <returns>New Transmission.</returns>
+        static Transmission GenerateTransmission(string type, string manufacturer = "Transmission INC")
+        {
+            int transmissionNumber = new Random().Next() % 6 + 1; //transmission number from 1 to 6
+            return new Transmission(type, transmissionNumber, manufacturer);
         }
     }
 }
