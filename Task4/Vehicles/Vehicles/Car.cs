@@ -19,7 +19,7 @@ namespace Task4.Vehicles.Vehicles
                 seatsNumber = value;
             }
         }
-        public Car(Engine engine, Chassis chassis, Transmission transmission, int seatsNumber = 5) :base(engine, chassis, transmission)
+        public Car(Engine engine, Chassis chassis, Transmission transmission, int seatsNumber = 5) : base(engine, chassis, transmission)
         {
             SeatsNumber = seatsNumber;
         }

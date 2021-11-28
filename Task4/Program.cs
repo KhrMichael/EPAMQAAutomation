@@ -1,7 +1,4 @@
-﻿using System;
-using Task4.Vehicles.Parts;
-
-namespace Task4
+﻿namespace Task4
 {
     class Program
     {
