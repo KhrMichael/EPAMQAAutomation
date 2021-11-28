@@ -1,5 +1,8 @@
 ﻿using System;
-using Task4.Vehicles.Types;
+using System.Collections.Generic;
+using Task4.Vehicles.Vehicles;
+using Task4.Vehicles.Parts;
+using Task4.Vehicles.AdditionalParts;
 
 namespace Task7
 {
@@ -7,6 +10,45 @@ namespace Task7
     {
         static void Main(string[] args)
         {
+            List<Vehicle> vehicles = new List<Vehicle>();
+        }
+
+
+        /// <summary>
+        /// Fills the collection with vehicles.
+        /// </summary>
+        /// <param name="vehicles">Collection to fill.</param>
+        /// <param name="length">Length of collection.</param>
+        static void FillVehicleCollection(out List<Vehicle> vehicles)
+        {
+            vehicles = new List<Vehicle>();
+        }
+
+        /// <summary>
+        /// Generates new engine with given engine type.
+        /// </summary>
+        /// <param name="type">Engine type.</param>
+        /// <returns>New Engine.</returns>
+        static Engine GenerateEngine(string type)
+        {
+            Random rnd = new Random();
+            double capacity = rnd.NextDouble() * 10 + 1;
+            double displacement = rnd.NextDouble() * 1.6;
+            string serialNumber = (rnd.NextDouble() * rnd.Next()).ToString();
+            return new Engine(capacity, displacement, type, serialNumber);
+        }
+
+        /// <summary>
+        /// Generates new chassis.
+        /// </summary>
+        /// <returns>New chassis.</returns>
+        static Chassis GenerateChassis()
+        {
+            Random rnd = new Random();
+            int wheelNumber = (rnd.Next() % 5 + 1) * 2;// wheel number from 2 to 10 
+            string number = (rnd.NextDouble() * rnd.Next()).ToString();
+            double permissibleLoad = wheelNumber * 250.25;
+            return new Chassis(wheelNumber, number, permissibleLoad);
         }
     }
 }
