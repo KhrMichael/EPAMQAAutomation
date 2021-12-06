@@ -21,7 +21,7 @@ namespace Task4.Vehicles.Vehicles
             }
         }
 
-        private Car() :base(null, null, null)
+        private Car() : base(null, null, null)
         { }
         public Car(Engine engine, Chassis chassis, Transmission transmission, int seatsNumber = 5) : base(engine, chassis, transmission)
         {

@@ -12,9 +12,9 @@ namespace Task4.Vehicles.Parts
             Number = number;
             PermissbleLoad = permissbleLoad;
         }
-        public int WheelNumber { get;  set; }
-        public string Number { get;  set; }
-        public double PermissbleLoad { get;  set; }
+        public int WheelNumber { get; set; }
+        public string Number { get; set; }
+        public double PermissbleLoad { get; set; }
 
         protected override string GetInfo()
         {

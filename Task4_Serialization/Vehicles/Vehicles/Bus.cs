@@ -6,7 +6,7 @@ namespace Task4.Vehicles.Vehicles
     [Serializable]
     public class Bus : Vehicle
     {
-        private Bus():base(null, null, null) 
+        private Bus() : base(null, null, null)
         { }
         public Bus(Engine engine, Chassis chassis, Transmission transmission, string color = "yellow", bool isDoubleDeckerBus = false) : base(engine, chassis, transmission)
         {

@@ -11,7 +11,7 @@ namespace Task4.Vehicles.Vehicles
         public override Chassis Chassis { get; set; }
         public override Transmission Transmission { get; set; }
         public TrailerType TrailerType { get; set; }
-        private Truck() : base(null, null, null) 
+        private Truck() : base(null, null, null)
         { }
         public Truck(Engine engine, Chassis chassis, Transmission transmission, TrailerType trailerType = TrailerType.None) : base(engine, chassis, transmission)
         {
