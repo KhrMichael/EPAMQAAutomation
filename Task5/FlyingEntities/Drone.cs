@@ -16,8 +16,8 @@ namespace Task5.FlyingEntities
             get => speed;
             set
             {
-                if (value < 0 && value > 40)//Speed must be greater then zero and lower then 40 km/hour.
-                    throw new ArgumentException("Speed must be greater then zero and lower then 40 km/hour.");
+                if (value < 0 && value >= 40)//Speed must be greater then zero and lower or equal then 40 km/hour.
+                    throw new ArgumentException("Speed must be greater then zero and lower or equal then 40 km/hour.");
                 speed = value;
             }
         }
@@ -40,8 +40,8 @@ namespace Task5.FlyingEntities
         public double GetFlyTime(Coordinate destinationCoordinate)
         {
             double flightDistance = Coordinate.GetDistanceBetweenAB(CurrentPosition, destinationCoordinate);
-            double time = flightDistance / speed;
-            time += (int)time * 60 / 10;// each 10 minutes of flight drone hang in the air
+            double time = flightDistance / speed;// time in hours
+            time += (int)(time * 6);// each 10 minutes of flight drone hang in the air => dron can hang in the air 6(time * 60 / 10) times per hour
             return time;
         }
     }

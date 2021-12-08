@@ -28,7 +28,7 @@ namespace Task5.FlyingEntities
             {
                 if (flightDistance > 10)
                 {
-                    time += 10 / currentSpeed;
+                    time += 10 / currentSpeed;// next 10 km fly with current speed
                 }
                 else
                 {

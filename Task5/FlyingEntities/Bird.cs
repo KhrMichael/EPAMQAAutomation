@@ -8,6 +8,7 @@ namespace Task5.FlyingEntities
         /// Unit of mesure - km per hour
         /// </summary>
         private double speed;
+        public double Speed { get => speed; }
         public Coordinate CurrentPosition { get; set; }
         public Bird(Coordinate currentPosition = new())
         {
@@ -22,7 +23,7 @@ namespace Task5.FlyingEntities
         public double GetFlyTime(Coordinate destinationCoordinate)
         {
             double flightDistance = Coordinate.GetDistanceBetweenAB(CurrentPosition, destinationCoordinate);
-            return flightDistance / speed;
+            return flightDistance / Speed;
         }
     }
 }
