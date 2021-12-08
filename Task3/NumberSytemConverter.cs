@@ -18,16 +18,16 @@ namespace Task3
         {
             if (numberSysBase > maxNumberSystemBase || numberSysBase < minNumberSystemBase)
             {
-                return null;
+                throw new ArgumentException($"New number system base must be greater then {minNumberSystemBase - 1} and lower then {maxNumberSystemBase - 1}");
             }
 
             StringBuilder convertedNumber = new StringBuilder();
-            string sign = "";
+            string sign = string.Empty;
             if(decimalNumber < 0)
             {
                 sign = "-";
+                decimalNumber = Math.Abs(decimalNumber);
             }
-            decimalNumber = Math.Abs(decimalNumber);
             while (decimalNumber != 0)
             {
                 int remainder = decimalNumber % numberSysBase;
