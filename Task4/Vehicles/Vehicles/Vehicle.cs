@@ -14,6 +14,9 @@ namespace Task4.Vehicles.Vehicles
         public abstract Chassis Chassis { get; set; }
         public abstract Transmission Transmission { get; set; }
 
+        /// <summary>
+        /// Provide information about Vehicle in string format.
+        /// </summary>
         protected abstract string GetInfo();
         public override string ToString()
         {
