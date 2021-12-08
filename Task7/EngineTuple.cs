@@ -2,6 +2,9 @@
 
 namespace Task7
 {
+    /// <summary>
+    /// Represent Truck and Bus engine fields.
+    /// </summary>
     [Serializable]
     public class EngineTuple
     {
