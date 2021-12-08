@@ -5,9 +5,9 @@
         static void Main(string[] args)
         {
             TextAnalyzer textAnalyzer = new TextAnalyzer();
-            foreach (var arg in args)
+            if (args != null && args.Length == 1)
             {
-                System.Console.WriteLine(textAnalyzer.FindMaxUniqueSubstringLength(arg));
+                System.Console.WriteLine(textAnalyzer.FindMaxUniqueSubstringLength(args[0]));
             }
         }
     }
