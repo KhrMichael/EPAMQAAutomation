@@ -19,20 +19,12 @@ namespace Task1Tests
             int[] testResults = new int[testElemNumber];
             int[] expectedResults = new int[testElemNumber]
             {
-                8,
-                9,
-                15,
-                12,
-                15
+                8,//    "ansfekol"
+                9,//    "zx.clk390"
+                15,//    "23r0z/astlvn; d"
+                12,//    "sd98hgoia4el"
+                15//    "wq0tzvxlg,abscd"
             };
-            //string[] expectedResults = new string[testElemNumber] {
-            //    "ansfekol",
-            //    "zx.clk390",
-            //    "23r0z/astlvn; d",
-            //    "sd98hgoia4el",
-            //    "wq0tzvxlg,abscd"
-            //};
-
             TextAnalyzer textAnalyzer = new TextAnalyzer();
             for (int index = 0; index < testElemNumber; index++)
             {
