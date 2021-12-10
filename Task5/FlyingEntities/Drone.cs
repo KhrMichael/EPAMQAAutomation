@@ -41,7 +41,7 @@ namespace Task5.FlyingEntities
         {
             double flightDistance = Coordinate.GetDistanceBetweenAB(CurrentPosition, destinationCoordinate);
             double time = flightDistance / speed;// time in hours
-            time += (int)(time * 6);// each 10 minutes of flight drone hang in the air => dron can hang in the air 6(time * 60 / 10) times per hour
+            time += (int)(time * 6)/60;// each 10 minutes of flight drone hang in the air => dron can hang in the air 6(time * 60 / 10) times per hour
             return time;
         }
     }
