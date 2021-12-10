@@ -43,7 +43,7 @@ namespace Task7
             Random rnd = new Random();
             double power = rnd.NextDouble() * 199 + 1;// engine capacity from 1 to 200 horespower
             double displacement = rnd.NextDouble() * 4 + 1;// engine displacement from 1 to 5 litre
-            string serialNumber = (rnd.NextDouble() * rnd.Next()).ToString();
+            string serialNumber = ((int)(rnd.NextDouble() * rnd.Next())).ToString();
             return new Engine(power, displacement, type, serialNumber);
         }
 
