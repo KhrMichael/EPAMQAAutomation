@@ -9,27 +9,19 @@ namespace Task3Tests
     {
 
         [TestMethod]
-        public void TestNumberSystemConverterConvertMethod()
+        [DataRow(234, 2, "11101010")]
+        [DataRow(234, 10, "234")]
+        [DataRow(234, 20, "BE")]
+        [DataRow(345853, 2, "1010100011011111101")]
+        [DataRow(-345853, 10, "-345853")]
+        [DataRow(345853, 20, "234CD")]
+        public void TestNumberSystemConvertation(int decimalNumber, int numberSystemBase, string numberInNewSystemBase)
         {
-            List<int> decimalNumbers = new() { 234, 12, 345853};
-            List<int> numberSysBases = new() { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
-            List<string> expectedOutput = new() { "11101010", "22200", "3222", "1414", "1030", "453", "352", "280", "234", "1A3", "176", "150", "12A", "109", "EA", "DD", "D0", "C6", "BE",
-                "1100", "110", "30", "22", "20", "15", "14", "13", "12", "11", "10", "C", "C", "C", "C", "C", "C", "C", "C",
-                "1010100011011111101", "122120102101", "1110123331", "42031403", "11225101", "2640214", "1243375", "576371", "345853", "216932", "148191", "C1561", "9007B", "6C71D", "546FD", "426C5", "35581", "2C80F", "234CD"
-            };
-            List<string> testResults = new();
+            NumberSystemConverter numberSystemConverter = new NumberSystemConverter();
 
-            NumberSystemConverter numberSystemConverter = new();
-            foreach (var decimalNumber in decimalNumbers)
-            {
-                foreach (var numberSysBase in numberSysBases)
-                {
-                    testResults.Add(numberSystemConverter.Convert(decimalNumber, numberSysBase));
-                }
-            }
+            string convertationResult = numberSystemConverter.Convert(decimalNumber, numberSystemBase);
 
-            CollectionAssert.AreEqual(expectedOutput, testResults);
-
+            Assert.AreEqual(convertationResult, numberInNewSystemBase);
         }
     }
 }
