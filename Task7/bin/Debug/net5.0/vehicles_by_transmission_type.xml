@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<ArrayOfVehicle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Vehicle xsi:type="Truck">
+    <Engine>
+      <Power>87.88287714909896</Power>
+      <Displacement>3.925926070160198</Displacement>
+      <Type>Electrical</Type>
+      <SerialNumber>12845657</SerialNumber>
+    </Engine>
+    <Chassis>
+      <WheelNumber>6</WheelNumber>
+      <Number>321278533,3729266</Number>
+      <PermissbleLoad>1501.5</PermissbleLoad>
+    </Chassis>
+    <Transmission>
+      <Type>Auto</Type>
+      <TransmissionsNumber>4</TransmissionsNumber>
+      <Manufacturer>Transmission INC</Manufacturer>
+    </Transmission>
+    <TrailerType>None</TrailerType>
+  </Vehicle>
+  <Vehicle xsi:type="Car">
+    <Engine>
+      <Power>194.49627805617465</Power>
+      <Displacement>2.527260721441014</Displacement>
+      <Type>Electrical</Type>
+      <SerialNumber>1036192774</SerialNumber>
+    </Engine>
+    <Chassis>
+      <WheelNumber>2</WheelNumber>
+      <Number>291373042,352857</Number>
+      <PermissbleLoad>500.5</PermissbleLoad>
+    </Chassis>
+    <Transmission>
+      <Type>Auto</Type>
+      <TransmissionsNumber>5</TransmissionsNumber>
+      <Manufacturer>Transmission INC</Manufacturer>
+    </Transmission>
+    <SeatsNumber>5</SeatsNumber>
+  </Vehicle>
+  <Vehicle xsi:type="Car">
+    <Engine>
+      <Power>20.368460725233174</Power>
+      <Displacement>1.4693046531031395</Displacement>
+      <Type>Electrical</Type>
+      <SerialNumber>491724371</SerialNumber>
+    </Engine>
+    <Chassis>
+      <WheelNumber>4</WheelNumber>
+      <Number>354265396,537881</Number>
+      <PermissbleLoad>1001</PermissbleLoad>
+    </Chassis>
+    <Transmission>
+      <Type>Auto</Type>
+      <TransmissionsNumber>2</TransmissionsNumber>
+      <Manufacturer>Transmission INC</Manufacturer>
+    </Transmission>
+    <SeatsNumber>9</SeatsNumber>
+  </Vehicle>
+  <Vehicle xsi:type="Car">
+    <Engine>
+      <Power>153.6154960908999</Power>
+      <Displacement>4.9676191285101785</Displacement>
+      <Type>Electrical</Type>
+      <SerialNumber>1296675132</SerialNumber>
+    </Engine>
+    <Chassis>
+      <WheelNumber>4</WheelNumber>
+      <Number>201516434,862629</Number>
+      <PermissbleLoad>1001</PermissbleLoad>
+    </Chassis>
+    <Transmission>
+      <Type>Auto</Type>
+      <TransmissionsNumber>6</TransmissionsNumber>
+      <Manufacturer>Transmission INC</Manufacturer>
+    </Transmission>
+    <SeatsNumber>6</SeatsNumber>
+  </Vehicle>
+  <Vehicle xsi:type="Truck">
+    <Engine>
+      <Power>100.5289565043193</Power>
+      <Displacement>4.464532902214924</Displacement>
+      <Type>Electrical</Type>
+      <SerialNumber>664950542</SerialNumber>
+    </Engine>
+    <Chassis>
+      <WheelNumber>2</WheelNumber>
+      <Number>81461787,07351206</Number>
+      <PermissbleLoad>500.5</PermissbleLoad>
+    </Chassis>
+    <Transmission>
+      <Type>Manual</Type>
+      <TransmissionsNumber>1</TransmissionsNumber>
+      <Manufacturer>Transmission INC</Manufacturer>
+    </Transmission>
+    <TrailerType>RefrigeratedTrailer</TrailerType>
+  </Vehicle>
+  <Vehicle xsi:type="Car">
+    <Engine>
+      <Power>121.46188976683743</Power>
+      <Displacement>2.653664070020273</Displacement>
+      <Type>Electrical</Type>
+      <SerialNumber>902683484</SerialNumber>
+    </Engine>
+    <Chassis>
+      <WheelNumber>4</WheelNumber>
+      <Number>327657040,18685544</Number>
+      <PermissbleLoad>1001</PermissbleLoad>
+    </Chassis>
+    <Transmission>
+      <Type>Manual</Type>
+      <TransmissionsNumber>5</TransmissionsNumber>
+      <Manufacturer>Transmission INC</Manufacturer>
+    </Transmission>
+    <SeatsNumber>6</SeatsNumber>
+  </Vehicle>
+  <Vehicle xsi:type="Bus">
+    <Engine>
+      <Power>34.11608755500805</Power>
+      <Displacement>1.410092069027057</Displacement>
+      <Type>Thermal</Type>
+      <SerialNumber>129061714</SerialNumber>
+    </Engine>
+    <Chassis>
+      <WheelNumber>4</WheelNumber>
+      <Number>278506475,02793324</Number>
+      <PermissbleLoad>1001</PermissbleLoad>
+    </Chassis>
+    <Transmission>
+      <Type>Manual</Type>
+      <TransmissionsNumber>1</TransmissionsNumber>
+      <Manufacturer>Transmission INC</Manufacturer>
+    </Transmission>
+    <Color>red</Color>
+    <IsDoubleDeckerBus>false</IsDoubleDeckerBus>
+  </Vehicle>
+  <Vehicle xsi:type="Scooter">
+    <Engine>
+      <Power>140.8819162095347</Power>
+      <Displacement>3.7206557517501784</Displacement>
+      <Type>Electrical</Type>
+      <SerialNumber>1424187538</SerialNumber>
+    </Engine>
+    <Chassis>
+      <WheelNumber>6</WheelNumber>
+      <Number>319722500,7386358</Number>
+      <PermissbleLoad>1501.5</PermissbleLoad>
+    </Chassis>
+    <Transmission>
+      <Type>Manual</Type>
+      <TransmissionsNumber>5</TransmissionsNumber>
+      <Manufacturer>Transmission INC</Manufacturer>
+    </Transmission>
+    <IsNaked>true</IsNaked>
+  </Vehicle>
+</ArrayOfVehicle>
