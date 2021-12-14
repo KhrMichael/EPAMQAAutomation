@@ -2,71 +2,52 @@
 <ArrayOfVehicle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Vehicle xsi:type="Truck">
     <Engine>
-      <Power>9.888893122267394</Power>
-      <Displacement>3.5395652887129994</Displacement>
+      <Power>25.45509226548257</Power>
+      <Displacement>3.2625711198256218</Displacement>
       <Type>Electrical</Type>
-      <SerialNumber>266378318</SerialNumber>
+      <SerialNumber>45732986</SerialNumber>
     </Engine>
     <Chassis>
-      <WheelNumber>2</WheelNumber>
-      <Number>851926877,2987068</Number>
-      <PermissbleLoad>500.5</PermissbleLoad>
+      <WheelNumber>6</WheelNumber>
+      <Number>48402595,15961964</Number>
+      <PermissbleLoad>1501.5</PermissbleLoad>
+    </Chassis>
+    <Transmission>
+      <Type>Manual</Type>
+      <TransmissionsNumber>1</TransmissionsNumber>
+      <Manufacturer>Transmission INC</Manufacturer>
+    </Transmission>
+    <TrailerType>RefrigeratedTrailer</TrailerType>
+  </Vehicle>
+  <Vehicle xsi:type="Truck">
+    <Engine>
+      <Power>194.2857494648945</Power>
+      <Displacement>4.855626510388975</Displacement>
+      <Type>Electrical</Type>
+      <SerialNumber>336480837</SerialNumber>
+    </Engine>
+    <Chassis>
+      <WheelNumber>6</WheelNumber>
+      <Number>511601790,3201137</Number>
+      <PermissbleLoad>1501.5</PermissbleLoad>
     </Chassis>
     <Transmission>
       <Type>Auto</Type>
-      <TransmissionsNumber>4</TransmissionsNumber>
+      <TransmissionsNumber>6</TransmissionsNumber>
       <Manufacturer>Transmission INC</Manufacturer>
     </Transmission>
     <TrailerType>None</TrailerType>
   </Vehicle>
   <Vehicle xsi:type="Car">
     <Engine>
-      <Power>108.60382167278034</Power>
-      <Displacement>1.5473905375913672</Displacement>
+      <Power>34.723539055196355</Power>
+      <Displacement>4.748502122121165</Displacement>
       <Type>Electrical</Type>
-      <SerialNumber>1956921860</SerialNumber>
-    </Engine>
-    <Chassis>
-      <WheelNumber>4</WheelNumber>
-      <Number>9279223,657158112</Number>
-      <PermissbleLoad>1001</PermissbleLoad>
-    </Chassis>
-    <Transmission>
-      <Type>Manual</Type>
-      <TransmissionsNumber>6</TransmissionsNumber>
-      <Manufacturer>Transmission INC</Manufacturer>
-    </Transmission>
-    <SeatsNumber>6</SeatsNumber>
-  </Vehicle>
-  <Vehicle xsi:type="Car">
-    <Engine>
-      <Power>69.87656701629822</Power>
-      <Displacement>2.7938574858912535</Displacement>
-      <Type>Electrical</Type>
-      <SerialNumber>1028827682</SerialNumber>
-    </Engine>
-    <Chassis>
-      <WheelNumber>2</WheelNumber>
-      <Number>19845584,82505856</Number>
-      <PermissbleLoad>500.5</PermissbleLoad>
-    </Chassis>
-    <Transmission>
-      <Type>Auto</Type>
-      <TransmissionsNumber>3</TransmissionsNumber>
-      <Manufacturer>Transmission INC</Manufacturer>
-    </Transmission>
-    <SeatsNumber>5</SeatsNumber>
-  </Vehicle>
-  <Vehicle xsi:type="Car">
-    <Engine>
-      <Power>67.48753663454556</Power>
-      <Displacement>4.14267942455722</Displacement>
-      <Type>Electrical</Type>
-      <SerialNumber>1329199473</SerialNumber>
+      <SerialNumber>539012621</SerialNumber>
     </Engine>
     <Chassis>
       <WheelNumber>6</WheelNumber>
-      <Number>139563353,58083642</Number>
+      <Number>497350149,50215495</Number>
       <PermissbleLoad>1501.5</PermissbleLoad>
     </Chassis>
     <Transmission>
@@ -74,42 +55,23 @@
       <TransmissionsNumber>5</TransmissionsNumber>
       <Manufacturer>Transmission INC</Manufacturer>
     </Transmission>
-    <SeatsNumber>9</SeatsNumber>
-  </Vehicle>
-  <Vehicle xsi:type="Car">
-    <Engine>
-      <Power>186.11449954570946</Power>
-      <Displacement>4.673391016048096</Displacement>
-      <Type>Electrical</Type>
-      <SerialNumber>807340921</SerialNumber>
-    </Engine>
-    <Chassis>
-      <WheelNumber>6</WheelNumber>
-      <Number>403165111,2328303</Number>
-      <PermissbleLoad>1501.5</PermissbleLoad>
-    </Chassis>
-    <Transmission>
-      <Type>Auto</Type>
-      <TransmissionsNumber>1</TransmissionsNumber>
-      <Manufacturer>Transmission INC</Manufacturer>
-    </Transmission>
-    <SeatsNumber>6</SeatsNumber>
+    <SeatsNumber>5</SeatsNumber>
   </Vehicle>
   <Vehicle xsi:type="Bus">
     <Engine>
-      <Power>39.155644279045816</Power>
-      <Displacement>4.767723793055733</Displacement>
+      <Power>184.730046976232</Power>
+      <Displacement>3.835470901259906</Displacement>
       <Type>Thermal</Type>
-      <SerialNumber>81368632</SerialNumber>
+      <SerialNumber>1612381076</SerialNumber>
     </Engine>
     <Chassis>
-      <WheelNumber>2</WheelNumber>
-      <Number>250347146,1783885</Number>
-      <PermissbleLoad>500.5</PermissbleLoad>
+      <WheelNumber>6</WheelNumber>
+      <Number>283634738,6892412</Number>
+      <PermissbleLoad>1501.5</PermissbleLoad>
     </Chassis>
     <Transmission>
       <Type>Manual</Type>
-      <TransmissionsNumber>6</TransmissionsNumber>
+      <TransmissionsNumber>4</TransmissionsNumber>
       <Manufacturer>Transmission INC</Manufacturer>
     </Transmission>
     <Color>red</Color>
@@ -117,19 +79,19 @@
   </Vehicle>
   <Vehicle xsi:type="Scooter">
     <Engine>
-      <Power>175.57547594261146</Power>
-      <Displacement>2.947421560970797</Displacement>
+      <Power>125.35973935218514</Power>
+      <Displacement>3.6493660093515023</Displacement>
       <Type>Electrical</Type>
-      <SerialNumber>163888121</SerialNumber>
+      <SerialNumber>584471851</SerialNumber>
     </Engine>
     <Chassis>
-      <WheelNumber>6</WheelNumber>
-      <Number>88451046,49061745</Number>
-      <PermissbleLoad>1501.5</PermissbleLoad>
+      <WheelNumber>10</WheelNumber>
+      <Number>85346276,41726358</Number>
+      <PermissbleLoad>2502.5</PermissbleLoad>
     </Chassis>
     <Transmission>
       <Type>Manual</Type>
-      <TransmissionsNumber>6</TransmissionsNumber>
+      <TransmissionsNumber>2</TransmissionsNumber>
       <Manufacturer>Transmission INC</Manufacturer>
     </Transmission>
     <IsNaked>true</IsNaked>

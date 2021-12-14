@@ -11,16 +11,14 @@ namespace Task4.Vehicles.Vehicles
         public override Chassis Chassis { get; set; }
         public override Transmission Transmission { get; set; }
         public TrailerType TrailerType { get; set; }
-        private Truck() : base(null, null, null)
-        { }
+
+        private Truck() : base(null, null, null) { }
+
         public Truck(Engine engine, Chassis chassis, Transmission transmission, TrailerType trailerType = TrailerType.None) : base(engine, chassis, transmission)
         {
             TrailerType = trailerType;
         }
 
-        protected override string GetInfo()
-        {
-            return "Truck:\n" + Engine.ToString() + Chassis.ToString() + Transmission.ToString() + "\nTrailer type: " + this.TrailerType.ToString();
-        }
+        protected override string GetInfo() => string.Format("Truck:\n{0}\n{1}\n{2}\nTrailer type: {3}", Engine, Chassis, Transmission, TrailerType);
     }
 }

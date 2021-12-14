@@ -7,6 +7,7 @@ namespace Task4.Vehicles.Vehicles
     public class Car : Vehicle
     {
         private int seatsNumber;
+
         public override Engine Engine { get; set; }
         public override Chassis Chassis { get; set; }
         public override Transmission Transmission { get; set; }
@@ -16,21 +17,20 @@ namespace Task4.Vehicles.Vehicles
             set
             {
                 if (value <= 0 || value > 9)
+                {
                     throw new ArgumentException("Seats number must be greater then 0 and lower then 10");
+                }
                 seatsNumber = value;
             }
         }
 
-        private Car() : base(null, null, null)
-        { }
+        private Car() : base(null, null, null) { }
+
         public Car(Engine engine, Chassis chassis, Transmission transmission, int seatsNumber = 5) : base(engine, chassis, transmission)
         {
             SeatsNumber = seatsNumber;
         }
 
-        protected override string GetInfo()
-        {
-            return "Car:\n" + Engine.ToString() + Chassis.ToString() + Transmission.ToString() + "\nNumber of seats: " + SeatsNumber;
-        }
+        protected override string GetInfo() => String.Format("Car:\n{0}\n{1}\n{2}\nSeats number: {3}", Engine, Chassis, Transmission, SeatsNumber);
     }
 }
