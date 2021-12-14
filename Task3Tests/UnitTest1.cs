@@ -19,7 +19,7 @@ namespace Task3Tests
             };
             List<string> testResults = new();
 
-            NumberSytemConverter numberSystemConverter = new();
+            NumberSystemConverter numberSystemConverter = new();
             foreach (var decimalNumber in decimalNumbers)
             {
                 foreach (var numberSysBase in numberSysBases)

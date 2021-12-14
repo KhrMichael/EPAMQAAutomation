@@ -8,16 +8,17 @@ namespace Task3
         {
             if (args != null && args.Length == 2)
             {
-                NumberSytemConverter numberSytemConverter = new();
+                NumberSystemConverter numberSytemConverter = new NumberSystemConverter();
+
                 if (int.TryParse(args[0], out int decimalNumber) == true && int.TryParse(args[1], out int numberSysBase) == true)
                 {
                     try
                     {
                         Console.WriteLine(numberSytemConverter.Convert(decimalNumber, numberSysBase));
                     }
-                    catch(ArgumentException e)
+                    catch(ArgumentException numberSystemBaseError)
                     {
-                        Console.WriteLine(e.Message);
+                        Console.WriteLine(numberSystemBaseError.Message);
                     }
                 }
             }

@@ -4,10 +4,11 @@ using System.Text;
 
 namespace Task3
 {
-    public class NumberSytemConverter
+    public class NumberSystemConverter
     {
-        private int maxNumberSystemBase = 20;
-        private int minNumberSystemBase = 2;
+        private const int maxNumberSystemBase = 20;
+        private const int minNumberSystemBase = 2;
+
         /// <summary>
         /// Converts a decimal number to a number in the new number system.
         /// </summary>
@@ -23,11 +24,13 @@ namespace Task3
 
             StringBuilder convertedNumber = new StringBuilder();
             string sign = string.Empty;
+
             if(decimalNumber < 0)
             {
                 sign = "-";
                 decimalNumber = Math.Abs(decimalNumber);
             }
+
             while (decimalNumber != 0)
             {
                 int remainder = decimalNumber % numberSysBase;
@@ -35,6 +38,7 @@ namespace Task3
                 char digit = ConvertNumberToDigit(remainder);
                 convertedNumber.Append(digit);
             }
+
             convertedNumber.Append(sign);
 
             return new string(convertedNumber.ToString().Reverse().ToArray());
@@ -51,6 +55,7 @@ namespace Task3
             {
                 Char.TryParse(decimalNumber.ToString(), out digit);
             }
+
             return digit;
         }
     }
