@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task7", "Task7\Task7.csproj", "{72F7F496-A73F-4D9E-AB67-2D6CD4B21E2E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4", "Task4_Serialization\Task4.csproj", "{970241C5-14ED-4106-8A78-48D5AEF92999}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4", "C:\Users\misha\Desktop\Task4\Task4.csproj", "{DF21381D-03E1-4957-AF34-708FFCA50098}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{72F7F496-A73F-4D9E-AB67-2D6CD4B21E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72F7F496-A73F-4D9E-AB67-2D6CD4B21E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72F7F496-A73F-4D9E-AB67-2D6CD4B21E2E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{970241C5-14ED-4106-8A78-48D5AEF92999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{970241C5-14ED-4106-8A78-48D5AEF92999}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{970241C5-14ED-4106-8A78-48D5AEF92999}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{970241C5-14ED-4106-8A78-48D5AEF92999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF21381D-03E1-4957-AF34-708FFCA50098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF21381D-03E1-4957-AF34-708FFCA50098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF21381D-03E1-4957-AF34-708FFCA50098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF21381D-03E1-4957-AF34-708FFCA50098}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

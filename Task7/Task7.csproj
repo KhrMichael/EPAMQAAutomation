@@ -6,9 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Task4">
-      <HintPath>..\Task4_Serialization\bin\Debug\net5.0\Task4.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="C:\Users\misha\Desktop\Task4\Task4.csproj" />
   </ItemGroup>
 
 </Project>
