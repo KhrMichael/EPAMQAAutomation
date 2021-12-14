@@ -15,6 +15,7 @@ namespace Task1
         {
             int maxUniqSubstringLength = 0;
             int currentUniqSequenceLength;
+
             for (int startSubstIndex = 0; maxUniqSubstringLength < initialString.Length - startSubstIndex; startSubstIndex++)
             // if maxUniqSubstringLength greater than the substring length that will be given to GetMaxUniqueSubstringLength method
             // then iteration process finish
@@ -34,6 +35,7 @@ namespace Task1
         {
             var uniqueSubstring = new HashSet<char>();
             int maxUniqueSubstringLength = 0;
+
             foreach (var symbol in sourceString)
             {
                 if (uniqueSubstring.Contains(symbol))
