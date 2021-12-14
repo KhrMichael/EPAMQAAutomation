@@ -8,23 +8,20 @@ namespace Task7
     [Serializable]
     public class EngineTuple
     {
-        public EngineTuple()
-        {
-
-        }
-
         public string Type { get; set; }
         public string SerialNumber { get; set; }
         public double Power { get; set; }
 
-        public static implicit operator EngineTuple(Tuple<string, string, double> t)
+        public EngineTuple() {}
+
+        public static implicit operator EngineTuple(Tuple<string, string, double> tuple)
         {
-            return new EngineTuple() { Type = t.Item1, SerialNumber = t.Item2, Power = t.Item3 };
+            return new EngineTuple() { Type = tuple.Item1, SerialNumber = tuple.Item2, Power = tuple.Item3 };
         }
 
-        public static implicit operator Tuple<string, string, double>(EngineTuple t)
+        public static implicit operator Tuple<string, string, double>(EngineTuple engineTuple)
         {
-            return Tuple.Create(t.Type, t.SerialNumber, t.Power);
+            return Tuple.Create(engineTuple.Type, engineTuple.SerialNumber, engineTuple.Power);
         }
 
     }

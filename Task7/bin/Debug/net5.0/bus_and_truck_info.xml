@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ArrayOfEngineTuple xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EngineTuple>
+    <Type>Electrical</Type>
+    <SerialNumber>48536161</SerialNumber>
+    <Power>164.88044349145164</Power>
+  </EngineTuple>
+  <EngineTuple>
+    <Type>Electrical</Type>
+    <SerialNumber>266378318</SerialNumber>
+    <Power>9.888893122267394</Power>
+  </EngineTuple>
+  <EngineTuple>
+    <Type>Thermal</Type>
+    <SerialNumber>81368632</SerialNumber>
+    <Power>39.155644279045816</Power>
+  </EngineTuple>
+</ArrayOfEngineTuple>
