@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeventhTask", "Task7\SeventhTask.csproj", "{72F7F496-A73F-4D9E-AB67-2D6CD4B21E2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeventhTask", "SeventhTask\SeventhTask.csproj", "{72F7F496-A73F-4D9E-AB67-2D6CD4B21E2E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FourthTask", "Task4_Serialization\FourthTask.csproj", "{054895E5-C7BE-4536-AD93-003A34452376}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FourthTask", "FourthTask_Serialization\FourthTask.csproj", "{054895E5-C7BE-4536-AD93-003A34452376}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
