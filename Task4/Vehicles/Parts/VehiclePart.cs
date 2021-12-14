@@ -6,6 +6,7 @@
         /// Provide information about Vehicle part in string format.
         /// </summary>
         protected abstract string GetInfo();
+
         public override string ToString()
         {
             return GetInfo();
