@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using Task1;
 
 namespace Task1Tests
@@ -10,14 +11,14 @@ namespace Task1Tests
         public void TestFindMaxUniqueSubstringLength()
         {
             const int testElemNumber = 5;
-            string[] initialStrings = new string[testElemNumber]{
+            List<string> initialStrings = new List<string>(){
                 "absddabssdfansfekol",
                 "zx.clk390xc;;f0935m",
                 "23r0z/astlvn; d",
                 "asd98hgoia4eli",
                 "wq0tzvxlg,abscdbascd" };
-            int[] testResults = new int[testElemNumber];
-            int[] expectedResults = new int[testElemNumber]
+            List<int> testResults = new List<int>();
+            List<int> expectedResults = new List<int>()
             {
                 8,//    "ansfekol"
                 9,//    "zx.clk390"
@@ -26,10 +27,12 @@ namespace Task1Tests
                 15//    "wq0tzvxlg,abscd"
             };
             TextAnalyzer textAnalyzer = new TextAnalyzer();
+
             for (int index = 0; index < testElemNumber; index++)
             {
                 testResults[index] = textAnalyzer.FindMaxUniqueSubstringLength(initialStrings[index]);
             }
+
             CollectionAssert.AreEqual(testResults, expectedResults);
         }
     }

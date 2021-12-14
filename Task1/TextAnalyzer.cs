@@ -5,42 +5,51 @@ namespace Task1
 {
     public class TextAnalyzer
     {
+
         /// <summary>
         /// Searches for the longest substring without repeating characters and return the length of this substring.
         /// </summary>
-        /// <param name="sourceString">Intitial string.</param>
+        /// <param name="initialString">Intitial string.</param>
         /// <returns>Length of the longest substring without repeating characters.</returns>
-        public int FindMaxUniqueSubstringLength(ReadOnlySpan<char> sourceString)
+        public int FindMaxUniqueSubstringLength(ReadOnlySpan<char> initialString)
         {
             int maxUniqSubstringLength = 0;
             int currentUniqSequenceLength;
-            for (int startSubstIndex = 0; maxUniqSubstringLength < sourceString.Length - startSubstIndex; startSubstIndex++)
+            for (int startSubstIndex = 0; maxUniqSubstringLength < initialString.Length - startSubstIndex; startSubstIndex++)
             // if maxUniqSubstringLength greater than the substring length that will be given to GetMaxUniqueSubstringLength method
             // then iteration process finish
             {
-                currentUniqSequenceLength = GetMaxUniqueSubstringLength(sourceString.Slice(startSubstIndex, sourceString.Length - startSubstIndex));
+                currentUniqSequenceLength = GetMaxUniqueSubstringLength(initialString.Slice(startSubstIndex, initialString.Length - startSubstIndex));
+
                 if (currentUniqSequenceLength > maxUniqSubstringLength)
                 {
                     maxUniqSubstringLength = currentUniqSequenceLength;
                 }
             }
+
             return maxUniqSubstringLength;
         }
+
         private int GetMaxUniqueSubstringLength(ReadOnlySpan<char> sourceString)
         {
-            HashSet<char> uniqSubstring = new HashSet<char>();
-            int maxUniqSubstringLength = 0;
-            foreach (var ch in sourceString)
+            var uniqueSubstring = new HashSet<char>();
+            int maxUniqueSubstringLength = 0;
+            foreach (var symbol in sourceString)
             {
-                if (uniqSubstring.Contains(ch))
-                    uniqSubstring.Clear();
+                if (uniqueSubstring.Contains(symbol))
+                {
+                    uniqueSubstring.Clear();
+                }
 
-                uniqSubstring.Add(ch);
+                uniqueSubstring.Add(symbol);
 
-                if (uniqSubstring.Count > maxUniqSubstringLength)
-                    maxUniqSubstringLength++;
+                if (uniqueSubstring.Count > maxUniqueSubstringLength)
+                {
+                    maxUniqueSubstringLength++;
+                }
             }
-            return maxUniqSubstringLength;
+
+            return maxUniqueSubstringLength;
         }
     }
 }
