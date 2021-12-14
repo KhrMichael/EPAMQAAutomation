@@ -8,12 +8,15 @@ namespace Task5.FlyingEntities
         /// Unit of mesure - km per hour
         /// </summary>
         private double startSpeed;
+
         public Coordinate CurrentPosition { get; set; }
+
         public Airplane(Coordinate currentPosition = new())
         {
             startSpeed = 200;//start speed of airplane is 200 km/hour
             CurrentPosition = currentPosition;
         }
+
         public void FlyTo(Coordinate coordinate)
         {
             CurrentPosition = coordinate;
@@ -23,7 +26,8 @@ namespace Task5.FlyingEntities
         {
             double time = 0;
             double currentSpeed = startSpeed;
-            double flightDistance = Coordinate.GetDistanceBetweenAB(CurrentPosition, destinationCoordinate);
+            double flightDistance = Coordinate.GetDistanceBetweenTwoCoordinates(CurrentPosition, destinationCoordinate);
+
             while (flightDistance > 0) // airplane increase its own speed by 10 km/hour every 10 km of flight 
             {
                 if (flightDistance > 10)
@@ -37,6 +41,7 @@ namespace Task5.FlyingEntities
                 flightDistance -= 10;
                 currentSpeed += 10;
             }
+
             return time;
         }
     }
