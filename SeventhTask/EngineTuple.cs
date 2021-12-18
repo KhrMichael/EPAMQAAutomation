@@ -12,7 +12,7 @@ namespace Task7
         public string SerialNumber { get; set; }
         public double Power { get; set; }
 
-        public EngineTuple() {}
+        public EngineTuple() { }
 
         public static implicit operator EngineTuple(Tuple<string, string, double> tuple)
         {

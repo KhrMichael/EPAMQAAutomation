@@ -1,4 +1,5 @@
 ﻿using System;
+using VehicleFleet.Vehicles.Exceptions;
 using VehicleFleet.Vehicles.Parts;
 
 namespace VehicleFleet.Vehicles.Vehicles
@@ -13,10 +14,15 @@ namespace VehicleFleet.Vehicles.Vehicles
         public override Chassis Chassis { get; set; }
         public override Transmission Transmission { get; set; }
 
-        private Bus() :base(null, null, null) { }
+        private Bus() : base(null, null, null) { }
 
         public Bus(Engine engine, Chassis chassis, Transmission transmission, string color = "yellow", bool isDoubleDeckerBus = false) : base(engine, chassis, transmission)
         {
+            if (engine.Power < 300)
+            {
+                throw new InitializationException("Engine power for bus must be greater then 300.");
+            }
+
             Color = color;
             IsDoubleDeckerBus = isDoubleDeckerBus;
         }
