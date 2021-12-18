@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
 using VehicleFleet;
+using VehicleFleet.Vehicles.Exceptions;
 using VehicleFleet.Vehicles.Vehicles;
 
 namespace Task7
@@ -14,9 +15,18 @@ namespace Task7
             string busAndTruckFilePath = "bus_and_truck_info.xml";
             string engineDisplacementSortedVehiclesFilePath = "vehicles_with_engine_displacement_more_then_1_5.xml";
             string transmissionSortedVehiclesFilePath = "vehicles_by_transmission_type.xml";
-
+            List<Vehicle> vehicles = new List<Vehicle>();
             VehiclesCollectionGenerator collectionGenerator = new VehiclesCollectionGenerator();
-            collectionGenerator.TryFillVehicleCollection(out List<Vehicle> vehicles);
+
+            try
+            {
+                collectionGenerator.FillVehicleCollection(out vehicles);
+            }
+            catch(InitializationException initializationException)
+            {
+                System.Console.WriteLine(initializationException.Message);
+            }
+
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Vehicle>));
 
             using (FileStream fileStream = new FileStream(engineDisplacementSortedVehiclesFilePath, FileMode.OpenOrCreate))
