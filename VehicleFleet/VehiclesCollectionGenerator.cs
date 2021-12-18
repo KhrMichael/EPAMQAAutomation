@@ -1,4 +1,5 @@
 ﻿using System;
+using VehicleFleet.Vehicles.Exceptions;
 using System.Collections.Generic;
 using VehicleFleet.Vehicles.AdditionalParts;
 using VehicleFleet.Vehicles.Parts;
@@ -9,10 +10,9 @@ namespace VehicleFleet
     public class VehiclesCollectionGenerator
     {
         /// <summary>
-        /// Fills the collection with vehicles.
+        /// Trying to fill a collection of vehicles.
         /// </summary>
         /// <param name="vehicles">Collection to fill.</param>
-        /// <param name="length">Length of collection.</param>
         public void TryFillVehicleCollection(out List<Vehicle> vehicles)
         {
             vehicles = new List<Vehicle>();
@@ -29,9 +29,27 @@ namespace VehicleFleet
             }
             catch
             {
-
             }
         }
+
+
+        /// <summary>
+        /// Fills a collection of vehicles.
+        /// </summary>
+        /// <param name="vehicles">Collection to fill.</param>
+        public void FillVehicleCollection(out List<Vehicle> vehicles)
+        {
+            vehicles = new List<Vehicle>();
+            vehicles.Add(new Truck(GenerateEngine("Electrical"), GenerateChassis(), GenerateTransmission("Manual"), TrailerType.RefrigeratedTrailer));
+            vehicles.Add(new Truck(GenerateEngine("Electrical"), GenerateChassis(), GenerateTransmission("Auto")));
+            vehicles.Add(new Car(GenerateEngine("Electrical"), GenerateChassis(), GenerateTransmission("Manual"), 6));
+            vehicles.Add(new Car(GenerateEngine("Electrical"), GenerateChassis(), GenerateTransmission("Auto")));
+            vehicles.Add(new Car(GenerateEngine("Electrical"), GenerateChassis(), GenerateTransmission("Auto"), 9));
+            vehicles.Add(new Car(GenerateEngine("Electrical"), GenerateChassis(), GenerateTransmission("Auto"), 6));
+            vehicles.Add(new Bus(GenerateEngine("Thermal"), GenerateChassis(), GenerateTransmission("Manual"), "red"));
+            vehicles.Add(new Scooter(GenerateEngine("Electrical"), GenerateChassis(), GenerateTransmission("Manual"), true));
+        }
+
 
         /// <summary>
         /// Generates new engine with given engine type.
