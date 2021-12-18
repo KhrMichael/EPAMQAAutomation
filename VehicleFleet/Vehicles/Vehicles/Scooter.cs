@@ -17,7 +17,7 @@ namespace VehicleFleet.Vehicles.Vehicles
 
         public Scooter(Engine engine, Chassis chassis, Transmission transmission, bool isNaked = false) : base(engine, chassis, transmission)
         {
-            if(chassis.WheelNumber < 2 || chassis.WheelNumber > 3)
+            if (chassis.WheelNumber < 2 || chassis.WheelNumber > 3)
             {
                 throw new InitializationException("Number of scooter scooter must be 2 or 3.");
             }

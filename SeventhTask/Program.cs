@@ -22,7 +22,7 @@ namespace Task7
             {
                 collectionGenerator.FillVehicleCollection(out vehicles);
             }
-            catch(InitializationException initializationException)
+            catch (InitializationException initializationException)
             {
                 System.Console.WriteLine(initializationException.Message);
             }
