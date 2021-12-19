@@ -6,7 +6,7 @@ using VehicleFleet;
 using VehicleFleet.Vehicles.Exceptions;
 using VehicleFleet.Vehicles.Vehicles;
 
-namespace Task7
+namespace SeventhTask
 {
     class Program
     {
@@ -27,22 +27,19 @@ namespace Task7
                 System.Console.WriteLine(initializationException.Message);
             }
 
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Vehicle>));
+            VehiclesXmlSerializer vehiclesXmlSerializer = new VehiclesXmlSerializer();
 
-            using (FileStream fileStream = new FileStream(engineDisplacementSortedVehiclesFilePath, FileMode.OpenOrCreate))
+            vehiclesXmlSerializer.BusAndTruckSerialize(vehicles, busAndTruckFilePath);
+            vehiclesXmlSerializer.EngineDisplacementSortedSerialize(vehicles, engineDisplacementSortedVehiclesFilePath);
+            vehiclesXmlSerializer.TransmissionSortedSerialize(vehicles, transmissionSortedVehiclesFilePath);
+
+            try
             {
-                xmlSerializer.Serialize(fileStream, vehicles.Where(vehicle => vehicle.Engine.Displacement > 1.5).ToList());
+                vehicles.GetVehicleByParameter("parameter", "value");
             }
-            using (FileStream fileStream = new FileStream(transmissionSortedVehiclesFilePath, FileMode.OpenOrCreate))
+            catch(GetVehicleByParametrException parameterException)
             {
-                xmlSerializer.Serialize(fileStream, vehicles.OrderBy(vehicle => vehicle.Transmission.Type).ToList());
-            }
-            xmlSerializer = new XmlSerializer(typeof(List<EngineTuple>));
-            using (FileStream fileStream = new FileStream(busAndTruckFilePath, FileMode.OpenOrCreate))
-            {
-                xmlSerializer.Serialize(fileStream, vehicles.Where(vh => vh.GetType() == typeof(Truck) || vh.GetType() == typeof(Bus))
-                    .Select(vehicle => new EngineTuple() { Type = vehicle.Engine.Type, SerialNumber = vehicle.Engine.SerialNumber, Power = vehicle.Engine.Power })
-                    .ToList());
+                System.Console.WriteLine(parameterException.Message);
             }
         }
     }

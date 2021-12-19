@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Task7
+namespace SeventhTask
 {
     /// <summary>
     /// Represent Truck and Bus engine fields.
