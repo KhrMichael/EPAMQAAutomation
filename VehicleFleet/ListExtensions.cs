@@ -3,7 +3,7 @@ using VehicleFleet.Vehicles.Vehicles;
 
 namespace VehicleFleet
 {
-    static class ListExtensions
+    public static class ListExtensions
     {
         /// <summary>
         /// Find and return first vehicle with given parameter name and it value.
@@ -28,7 +28,7 @@ namespace VehicleFleet
                 }
             }
 
-            throw new GetVehicleByParametrException($"Vehicles in vehicles collection don't have parameter {parameter} with given value \"{value}\"");
+            throw new GetVehicleByParametrException($"Vehicles in vehicles collection don't have parameter \"{parameter}\" with given value \"{value}\"");
         }
     }
 }
