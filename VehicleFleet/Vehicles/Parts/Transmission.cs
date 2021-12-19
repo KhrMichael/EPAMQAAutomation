@@ -5,9 +5,9 @@ namespace VehicleFleet.Vehicles.Parts
     [Serializable]
     public class Transmission : VehiclePart
     {
-        public string Type { get; private set; }
-        public int TransmissionsNumber { get; private set; }
-        public string Manufacturer { get; private set; }
+        public string Type { get; set; }
+        public int TransmissionsNumber { get; set; }
+        public string Manufacturer { get; set; }
 
         private Transmission() { }
 

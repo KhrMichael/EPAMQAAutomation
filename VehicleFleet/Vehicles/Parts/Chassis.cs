@@ -2,11 +2,14 @@
 
 namespace VehicleFleet.Vehicles.Parts
 {
+    [Serializable]
     public class Chassis : VehiclePart
     {
-        public int WheelNumber { get; private set; }
-        public string Number { get; private set; }
-        public double PermissbleLoad { get; private set; }
+        public int WheelNumber { get; set; }
+        public string Number { get; set; }
+        public double PermissbleLoad { get; set; }
+
+        private Chassis() { }
 
         public Chassis(int wheelNumber, string number, double permissbleLoad)
         {

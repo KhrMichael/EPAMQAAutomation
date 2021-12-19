@@ -5,10 +5,10 @@ namespace VehicleFleet.Vehicles.Parts
     [Serializable]
     public class Engine : VehiclePart
     {
-        public double Power { get; private set; }
-        public double Displacement { get; private set; }
-        public string Type { get; private set; }
-        public string SerialNumber { get; private set; }
+        public double Power { get; set; }
+        public double Displacement { get; set; }
+        public string Type { get; set; }
+        public string SerialNumber { get; set; }
 
         private Engine() { }
 
