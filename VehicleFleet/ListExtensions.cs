@@ -31,9 +31,15 @@ namespace VehicleFleet
             throw new GetVehicleByParametrException($"Vehicles in vehicles collection don't have parameter \"{parameter}\" with given value \"{value}\"");
         }
 
+        /// <summary>
+        /// Add vehicle.
+        /// </summary>
+        /// <param name="vehicles"></param>
+        /// <param name="vehicle">Vehicle to add.</param>
+        /// <returns></returns>
         public static List<Vehicle> AddVehicle(this List<Vehicle> vehicles, Vehicle vehicle)
         {
-            if(vehicle is Bus && ((Bus)vehicle).Color.ToUpperInvariant() == "IMPOSSIBLE COLOR")
+            if (vehicle is Bus && ((Bus)vehicle).Color.ToUpperInvariant() == "IMPOSSIBLE COLOR")
             {
                 throw new AddException("Vehicles list can't contain bus with \"Imposible color\"");
             }
@@ -42,5 +48,6 @@ namespace VehicleFleet
 
             return vehicles;
         }
+
     }
 }

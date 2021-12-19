@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Xml.Serialization;
 using VehicleFleet;
 using VehicleFleet.Vehicles.Exceptions;
 using VehicleFleet.Vehicles.Vehicles;
@@ -42,7 +39,7 @@ namespace SeventhTask
             {
                 vehicles.GetVehicleByParameter("parameter", "value");
             }
-            catch(GetVehicleByParametrException parameterException)
+            catch (GetVehicleByParametrException parameterException)
             {
                 Console.WriteLine(parameterException.Message);
             }
