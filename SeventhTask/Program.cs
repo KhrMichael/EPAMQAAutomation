@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
@@ -24,7 +25,11 @@ namespace SeventhTask
             }
             catch (InitializationException initializationException)
             {
-                System.Console.WriteLine(initializationException.Message);
+                Console.WriteLine(initializationException.Message);
+            }
+            catch (AddException addException)
+            {
+                Console.WriteLine(addException.Message);
             }
 
             VehiclesXmlSerializer vehiclesXmlSerializer = new VehiclesXmlSerializer();
@@ -39,7 +44,7 @@ namespace SeventhTask
             }
             catch(GetVehicleByParametrException parameterException)
             {
-                System.Console.WriteLine(parameterException.Message);
+                Console.WriteLine(parameterException.Message);
             }
         }
     }
