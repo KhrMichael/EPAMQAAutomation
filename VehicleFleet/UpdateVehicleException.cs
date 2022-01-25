@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VehicleFleet.Vehicles
+namespace VehicleFleet
 {
     public class UpdateVehicleException : Exception
     {

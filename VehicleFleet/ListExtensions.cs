@@ -49,5 +49,20 @@ namespace VehicleFleet
             return vehicles;
         }
 
+
+        public static void Update(this List<Vehicle> vehicles, VIN identificationNumber, Vehicle newVehicle)
+        {
+            int index;
+
+            if ( (index = vehicles.FindIndex(vh => vh.VehicleIdentificationNumber == identificationNumber)) > 0)
+            {
+                vehicles[index] = newVehicle;
+            }
+            else
+            {
+                throw new UpdateVehicleException($"No vehicle with VIN - {identificationNumber}");
+            }
+        }
+
     }
 }
