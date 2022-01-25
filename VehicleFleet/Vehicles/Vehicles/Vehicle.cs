@@ -11,6 +11,7 @@ namespace VehicleFleet.Vehicles.Vehicles
     [Serializable]
     public abstract class Vehicle
     {
+        public VIN VehicleIdentificationNumber { get; private set; }
         public abstract Engine Engine { get; set; }
         public abstract Chassis Chassis { get; set; }
         public abstract Transmission Transmission { get; set; }
@@ -22,6 +23,7 @@ namespace VehicleFleet.Vehicles.Vehicles
             Engine = engine;
             Chassis = chassis;
             Transmission = transmission;
+            VehicleIdentificationNumber = new VIN();
         }
 
         /// <summary>
