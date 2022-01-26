@@ -37,6 +37,7 @@ namespace VehicleFleet.Vehicles.Parts
             Type = reader.ReadElementContentAsString("Type", "");
             SerialNumber = reader.ReadElementContentAsString("SerialNumber", "");
         }
+
         protected override string GetInfo() => $"Engine:\n\tPower: {Power}\n\tDisplacement: {Displacement}\n\tType: {Type}\n\tSerial number: {SerialNumber}";
     }
 }
