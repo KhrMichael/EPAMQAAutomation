@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Xml;
+using System.Xml.Schema;
 using System.Xml.Serialization;
 
 namespace VehicleFleet.Vehicles.Parts
@@ -7,7 +9,7 @@ namespace VehicleFleet.Vehicles.Parts
     [XmlInclude(typeof(Chassis))]
     [XmlInclude(typeof(Transmission))]
     [Serializable]
-    public abstract class VehiclePart
+    public abstract class VehiclePart : IXmlSerializable
     {
         /// <summary>
         /// Provide information about Vehicle part in string format.
@@ -18,5 +20,16 @@ namespace VehicleFleet.Vehicles.Parts
         {
             return GetInfo();
         }
+
+        public XmlSchema GetSchema()
+        {
+            return null;
+        }
+
+        public virtual void ReadXml(XmlReader reader)
+        {}
+
+        public virtual void WriteXml(XmlWriter writer)
+        {}
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 
 namespace VehicleFleet.Vehicles.Parts
 {
@@ -7,7 +8,7 @@ namespace VehicleFleet.Vehicles.Parts
     {
         public int WheelNumber { get; set; }
         public string Number { get; set; }
-        public double PermissbleLoad { get; set; }
+        public double PermissibleLoad { get; set; }
 
         private Chassis() { }
 
@@ -15,9 +16,20 @@ namespace VehicleFleet.Vehicles.Parts
         {
             WheelNumber = wheelNumber;
             Number = number;
-            PermissbleLoad = permissbleLoad;
+            PermissibleLoad = permissbleLoad;
         }
 
-        protected override string GetInfo() => String.Format("Chassis:\n\tNumber of wheels: {0}\n\tNumber: {1}\n\tPermissable load: {2}", WheelNumber, Number, PermissbleLoad);
+        public override void WriteXml(XmlWriter writer)
+        {
+            base.WriteXml(writer);
+            writer.WriteElementString("WheelNumber", WheelNumber.ToString());
+            writer.WriteElementString("Number", Number);
+            writer.WriteElementString("PermissibleLoad", PermissibleLoad.ToString());
+        }
+        public override void ReadXml(XmlReader reader)
+        {
+            base.ReadXml(reader);
+        }
+        protected override string GetInfo() => $"Chassis:\n\tNumber of wheels: {WheelNumber}\n\tNumber: {Number}\n\tPermissable load: {PermissibleLoad}";
     }
 }

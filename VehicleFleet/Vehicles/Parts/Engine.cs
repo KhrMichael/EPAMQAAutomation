@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 
 namespace VehicleFleet.Vehicles.Parts
 {
@@ -20,6 +21,22 @@ namespace VehicleFleet.Vehicles.Parts
             SerialNumber = serialNumber;
         }
 
-        protected override string GetInfo() => String.Format("Engine:\n\tPower: {0}\n\tDisplacement: {1}\n\tType: {2}\n\tSerial number: {3}", Power, Displacement, Type, SerialNumber);
+        public override void WriteXml(XmlWriter writer)
+        {
+            base.WriteXml(writer);
+            writer.WriteElementString("Power", Power.ToString());
+            writer.WriteElementString("Displacement", Displacement.ToString());
+            writer.WriteElementString("Type", Type);
+            writer.WriteElementString("SerialNumber", SerialNumber);
+        }
+        public override void ReadXml(XmlReader reader)
+        {
+            base.ReadXml(reader);
+            Power = reader.ReadElementContentAsDouble("Power", "");
+            Displacement = reader.ReadElementContentAsDouble("Displacement", "");
+            Type = reader.ReadElementContentAsString("Type", "");
+            SerialNumber = reader.ReadElementContentAsString("SerialNumber", "");
+        }
+        protected override string GetInfo() => $"Engine:\n\tPower: {Power}\n\tDisplacement: {Displacement}\n\tType: {Type}\n\tSerial number: {SerialNumber}";
     }
 }
