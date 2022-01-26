@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 using VehicleFleet.Vehicles.Exceptions;
 using VehicleFleet.Vehicles.Parts;
 
@@ -9,7 +10,6 @@ namespace VehicleFleet.Vehicles.Vehicles
     {
         public string Color { get; set; }
         public bool IsDoubleDeckerBus { get; set; }
-
         public override Engine Engine { get; set; }
         public override Chassis Chassis { get; set; }
         public override Transmission Transmission { get; set; }
@@ -28,5 +28,18 @@ namespace VehicleFleet.Vehicles.Vehicles
         }
 
         protected override string GetInfo() => string.Format("Bus:\n{0}\n{1}\n{2}\nColor: {3}\nIs double decker bus: {4}", Engine, Chassis, Transmission, Color, IsDoubleDeckerBus);
+
+        public override void WriteXml(XmlWriter writer)
+        {
+            base.WriteXml(writer);
+            writer.WriteElementString("Color", Color);
+            writer.WriteElementString("IsDoubleDeckerBus", IsDoubleDeckerBus.ToString());
+        }
+        public override void ReadXml(XmlReader reader)
+        {
+            base.ReadXml(reader);
+            reader.ReadElementContentAsString("Color", "");
+            reader.ReadElementContentAsBoolean("IsDoubleDeckerBus", "");
+        }
     }
 }

@@ -38,13 +38,13 @@ namespace VehicleFleet.Vehicles.Vehicles
         {
             return GetInfo();
         }
-
         public XmlSchema GetSchema()
         {
             return null;
         }
         public virtual void WriteXml(XmlWriter writer)
         {
+            writer.WriteAttributeString("Type", this.GetType().Name);
             VehicleIdentificationNumber.WriteXml(writer);
 
             writer.WriteStartElement("Engine");

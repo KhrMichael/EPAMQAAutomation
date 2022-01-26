@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 using VehicleFleet.Vehicles.Parts;
 
 namespace VehicleFleet.Vehicles.Vehicles
@@ -32,5 +33,16 @@ namespace VehicleFleet.Vehicles.Vehicles
         }
 
         protected override string GetInfo() => String.Format("Car:\n{0}\n{1}\n{2}\nSeats number: {3}", Engine, Chassis, Transmission, SeatsNumber);
+
+        public override void WriteXml(XmlWriter writer)
+        {
+            base.WriteXml(writer);
+            writer.WriteElementString("SeatsNumber", SeatsNumber.ToString());
+        }
+        public override void ReadXml(XmlReader reader)
+        {
+            base.ReadXml(reader);
+            reader.ReadElementContentAsInt("SeatsNumber", "");
+        }
     }
 }

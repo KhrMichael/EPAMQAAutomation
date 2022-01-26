@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 using VehicleFleet.Vehicles.Exceptions;
 using VehicleFleet.Vehicles.Parts;
 
@@ -8,7 +9,6 @@ namespace VehicleFleet.Vehicles.Vehicles
     public class Scooter : Vehicle
     {
         public bool IsNaked { get; set; }
-
         public override Engine Engine { get; set; }
         public override Chassis Chassis { get; set; }
         public override Transmission Transmission { get; set; }
@@ -26,5 +26,16 @@ namespace VehicleFleet.Vehicles.Vehicles
         }
 
         protected override string GetInfo() => string.Format("Scooter:\n{0}\n{1}\n{2}\nIs naked: {3}", Engine, Chassis, Transmission, IsNaked);
+
+        public override void WriteXml(XmlWriter writer)
+        {
+            base.WriteXml(writer);
+            writer.WriteElementString("IsNaked", IsNaked.ToString());
+        }
+        public override void ReadXml(XmlReader reader)
+        {
+            base.ReadXml(reader);
+            IsNaked = reader.ReadElementContentAsBoolean("IsNaked", "");
+        }
     }
 }
