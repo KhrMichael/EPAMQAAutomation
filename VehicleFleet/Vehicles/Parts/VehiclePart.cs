@@ -26,8 +26,8 @@ namespace VehicleFleet.Vehicles.Parts
             return null;
         }
         public virtual void ReadXml(XmlReader reader)
-        {}
+        { }
         public virtual void WriteXml(XmlWriter writer)
-        {}
+        { }
     }
 }
