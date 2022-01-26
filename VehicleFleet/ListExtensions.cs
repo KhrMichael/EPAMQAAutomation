@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using VehicleFleet.Vehicles.Exceptions;
 using VehicleFleet.Vehicles.Vehicles;
 
 namespace VehicleFleet
@@ -61,6 +62,19 @@ namespace VehicleFleet
             else
             {
                 throw new UpdateVehicleException($"No vehicle with VIN - {identificationNumber}");
+            }
+        }
+        public static void Remove(this List<Vehicle> vehicles, VIN identificationNumber)
+        {
+            int index;
+
+            if ((index = vehicles.FindIndex(vh => vh.VehicleIdentificationNumber == identificationNumber)) > 0)
+            {
+                vehicles.RemoveAt(index);
+            }
+            else
+            {
+                throw new RemoveVehicleException($"No vehicle with VIN - {identificationNumber}");
             }
         }
 
