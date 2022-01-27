@@ -19,7 +19,7 @@ namespace VehicleFleet.Vehicles.Vehicles
         {
             if (chassis.WheelNumber < 2 || chassis.WheelNumber > 3)
             {
-                throw new InitializationException("Number of scooter scooter must be 2 or 3.");
+                throw new InitializationException("Number of scooter wheels must be 2 or 3.");
             }
 
             IsNaked = isNaked;
