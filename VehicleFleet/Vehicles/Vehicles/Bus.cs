@@ -18,7 +18,7 @@ namespace VehicleFleet.Vehicles.Vehicles
 
         public Bus(Engine engine, Chassis chassis, Transmission transmission, string color = "yellow", bool isDoubleDeckerBus = false) : base(engine, chassis, transmission)
         {
-            if (engine.Power < 300)
+            if (engine?.Power < 300)
             {
                 throw new InitializationException("Engine power for bus must be greater then 300.");
             }
