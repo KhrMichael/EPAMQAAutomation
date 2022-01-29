@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SeventhTask.XmlSerialization;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
@@ -11,7 +12,7 @@ namespace SeventhTask
 
         public void BusAndTruckSerialize(List<Vehicle> vehicles, string filePath)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<EngineTuple>));
+            var xmlSerializer = new XmlSerializer(typeof(List<EngineTuple>));
 
             using (FileStream fileStream = new FileStream(filePath, FileMode.OpenOrCreate))
             {
@@ -23,21 +24,21 @@ namespace SeventhTask
 
         public void EngineDisplacementSortedSerialize(List<Vehicle> vehicles, string filePath)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Vehicle>));
+            var genericListSerializer = new GenericListSerializer<Vehicle>();
 
-            using (FileStream fileStream = new FileStream(filePath, FileMode.OpenOrCreate))
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
             {
-                xmlSerializer.Serialize(fileStream, vehicles.Where(vehicle => vehicle.Engine.Displacement > 1.5).ToList());
+                genericListSerializer.Serialize(fileStream, vehicles.Where(vehicle => vehicle.Engine.Displacement > 1.5).ToList());
             }
         }
 
         public void TransmissionSortedSerialize(List<Vehicle> vehicles, string filePath)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Vehicle>));
+            var genericListSerializer = new GenericListSerializer<Vehicle>();
 
-            using (FileStream fileStream = new FileStream(filePath, FileMode.OpenOrCreate))
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
             {
-                xmlSerializer.Serialize(fileStream, vehicles.OrderBy(vehicle => vehicle.Transmission.Type).ToList());
+                genericListSerializer.Serialize(fileStream, vehicles.OrderBy(vehicle => vehicle.Transmission.Type).ToList());
             }
         }
     }
