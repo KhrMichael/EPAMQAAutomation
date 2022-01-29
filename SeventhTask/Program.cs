@@ -13,8 +13,8 @@ namespace SeventhTask
             string busAndTruckFilePath = "bus_and_truck_info.xml";
             string engineDisplacementSortedVehiclesFilePath = "vehicles_with_engine_displacement_more_then_1_5.xml";
             string transmissionSortedVehiclesFilePath = "vehicles_by_transmission_type.xml";
-            List<Vehicle> vehicles = new List<Vehicle>();
-            VehiclesCollectionGenerator collectionGenerator = new VehiclesCollectionGenerator();
+            var vehicles = new List<Vehicle>();
+            var collectionGenerator = new VehiclesCollectionGenerator();
 
             try
             {
@@ -29,7 +29,7 @@ namespace SeventhTask
                 Console.WriteLine(addException.Message);
             }
 
-            VehiclesXmlSerializer vehiclesXmlSerializer = new VehiclesXmlSerializer();
+            var vehiclesXmlSerializer = new VehiclesXmlSerializer();
 
             vehiclesXmlSerializer.BusAndTruckSerialize(vehicles, busAndTruckFilePath);
             vehiclesXmlSerializer.EngineDisplacementSortedSerialize(vehicles, engineDisplacementSortedVehiclesFilePath);
