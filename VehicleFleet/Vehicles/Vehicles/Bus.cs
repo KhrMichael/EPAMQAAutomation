@@ -34,18 +34,5 @@ namespace VehicleFleet.Vehicles.Vehicles
         }
 
         protected override string GetInfo() => string.Format("Bus:\n{0}\n{1}\n{2}\nColor: {3}\nIs double decker bus: {4}", Engine, Chassis, Transmission, Color, IsDoubleDeckerBus);
-
-        public override void WriteXml(XmlWriter writer)
-        {
-            base.WriteXml(writer);
-            writer.WriteElementString("Color", Color);
-            writer.WriteElementString("IsDoubleDeckerBus", IsDoubleDeckerBus.ToString());
-        }
-        public override void ReadXml(XmlReader reader)
-        {
-            base.ReadXml(reader);
-            reader.ReadElementContentAsString("Color", "");
-            reader.ReadElementContentAsBoolean("IsDoubleDeckerBus", "");
-        }
     }
 }
