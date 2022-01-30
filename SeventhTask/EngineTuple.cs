@@ -1,15 +1,19 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace SeventhTask
 {
     /// <summary>
     /// Represent Truck and Bus engine fields.
     /// </summary>
-    [Serializable]
+    [DataContract]
     public class EngineTuple
     {
+        [DataMember]
         public string Type { get; set; }
+        [DataMember]
         public string SerialNumber { get; set; }
+        [DataMember]
         public double Power { get; set; }
 
         public EngineTuple() { }
