@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeventhTask", "SeventhTask\SeventhTask.csproj", "{72F7F496-A73F-4D9E-AB67-2D6CD4B21E2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleFleet", "VehicleFleet\VehicleFleet.csproj", "{79F0599E-A405-4E50-9A29-4B88861CA25D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleFleet", "VehicleFleet\VehicleFleet.csproj", "{79F0599E-A405-4E50-9A29-4B88861CA25D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionTaskTests", "ExceptionTaskTests\ExceptionTaskTests.csproj", "{1D84165C-4412-4A80-982C-280F125D9542}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{79F0599E-A405-4E50-9A29-4B88861CA25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79F0599E-A405-4E50-9A29-4B88861CA25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79F0599E-A405-4E50-9A29-4B88861CA25D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D84165C-4412-4A80-982C-280F125D9542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D84165C-4412-4A80-982C-280F125D9542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D84165C-4412-4A80-982C-280F125D9542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D84165C-4412-4A80-982C-280F125D9542}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
