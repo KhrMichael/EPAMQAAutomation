@@ -1,7 +1,10 @@
 ﻿using SeventhTask.XmlSerialization;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Xml;
 using System.Xml.Serialization;
 using VehicleFleet.Vehicles.Vehicles;
 
@@ -9,14 +12,14 @@ namespace SeventhTask
 {
     public class VehiclesXmlSerializer
     {
+        private DataContractSerializer xmlSerializer;
 
         public void BusAndTruckSerialize(List<Vehicle> vehicles, string filePath)
         {
-            var xmlSerializer = new XmlSerializer(typeof(List<EngineTuple>));
-
-            using (FileStream fileStream = new FileStream(filePath, FileMode.OpenOrCreate))
+            xmlSerializer = new DataContractSerializer(typeof(List<EngineTuple>));
+            using (var xmlWriter = XmlWriter.Create(filePath, new XmlWriterSettings() { Indent = true }))
             {
-                xmlSerializer.Serialize(fileStream, vehicles.Where(vh => vh.GetType() == typeof(Truck) || vh.GetType() == typeof(Bus))
+                xmlSerializer.WriteObject(xmlWriter, vehicles.Where(vh => vh.GetType() == typeof(Truck) || vh.GetType() == typeof(Bus))
                     .Select(vehicle => new EngineTuple() { Type = vehicle.Engine.Type, SerialNumber = vehicle.Engine.SerialNumber, Power = vehicle.Engine.Power })
                     .ToList());
             }
@@ -24,21 +27,19 @@ namespace SeventhTask
 
         public void EngineDisplacementSortedSerialize(List<Vehicle> vehicles, string filePath)
         {
-            var genericListSerializer = new GenericListSerializer<Vehicle>();
-
-            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            xmlSerializer = new DataContractSerializer(typeof(List<Vehicle>));
+            using (var xmlWriter = XmlWriter.Create(filePath, new XmlWriterSettings() { Indent = true }))
             {
-                genericListSerializer.Serialize(fileStream, vehicles.Where(vehicle => vehicle.Engine.Displacement > 1.5).ToList());
+                xmlSerializer.WriteObject(xmlWriter, vehicles.Where(vehicle => vehicle.Engine.Displacement > 1.5).ToList());
             }
         }
 
         public void TransmissionSortedSerialize(List<Vehicle> vehicles, string filePath)
         {
-            var genericListSerializer = new GenericListSerializer<Vehicle>();
-
-            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            xmlSerializer = new DataContractSerializer(typeof(List<Vehicle>));
+            using (var xmlWriter = XmlWriter.Create(filePath, new XmlWriterSettings() { Indent = true }))
             {
-                genericListSerializer.Serialize(fileStream, vehicles.OrderBy(vehicle => vehicle.Transmission.Type).ToList());
+                xmlSerializer.WriteObject(xmlWriter, vehicles.OrderBy(vehicle => vehicle.Transmission.Type).ToList());
             }
         }
     }
