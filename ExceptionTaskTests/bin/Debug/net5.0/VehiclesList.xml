@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfVehicle xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Vehicles">
+  <Vehicle i:type="Truck">
+    <Chassis xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Number>339929065,3091962</d3p1:Number>
+      <d3p1:PermissibleLoad>2502.5</d3p1:PermissibleLoad>
+      <d3p1:WheelNumber>10</d3p1:WheelNumber>
+    </Chassis>
+    <Engine xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Displacement>1.3557209653573674</d3p1:Displacement>
+      <d3p1:Power>442.2595843762437</d3p1:Power>
+      <d3p1:SerialNumber>1311216355,306812</d3p1:SerialNumber>
+      <d3p1:Type>Electrical</d3p1:Type>
+    </Engine>
+    <Transmission xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Manufacturer>Transmission INC</d3p1:Manufacturer>
+      <d3p1:TransmissionsNumber>4</d3p1:TransmissionsNumber>
+      <d3p1:Type>Auto</d3p1:Type>
+    </Transmission>
+    <VehicleIdentificationNumber>
+      <Number>8C6007M43AGYEX861</Number>
+    </VehicleIdentificationNumber>
+    <TrailerType>None</TrailerType>
+  </Vehicle>
+  <Vehicle i:type="Car">
+    <Chassis xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Number>678525666,4089788</d3p1:Number>
+      <d3p1:PermissibleLoad>500.5</d3p1:PermissibleLoad>
+      <d3p1:WheelNumber>2</d3p1:WheelNumber>
+    </Chassis>
+    <Engine xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Displacement>3.836939960176563</d3p1:Displacement>
+      <d3p1:Power>385.1842879546733</d3p1:Power>
+      <d3p1:SerialNumber>1265794687,1927888</d3p1:SerialNumber>
+      <d3p1:Type>Electrical</d3p1:Type>
+    </Engine>
+    <Transmission xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Manufacturer>Transmission INC</d3p1:Manufacturer>
+      <d3p1:TransmissionsNumber>3</d3p1:TransmissionsNumber>
+      <d3p1:Type>Auto</d3p1:Type>
+    </Transmission>
+    <VehicleIdentificationNumber>
+      <Number>7F3NLKMM40HD5NF06</Number>
+    </VehicleIdentificationNumber>
+    <SeatsNumber>5</SeatsNumber>
+    <seatsNumber>5</seatsNumber>
+  </Vehicle>
+  <Vehicle i:type="Car">
+    <Chassis xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Number>662158148,9602273</d3p1:Number>
+      <d3p1:PermissibleLoad>1001</d3p1:PermissibleLoad>
+      <d3p1:WheelNumber>4</d3p1:WheelNumber>
+    </Chassis>
+    <Engine xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Displacement>4.433573573563981</d3p1:Displacement>
+      <d3p1:Power>220.3453201583332</d3p1:Power>
+      <d3p1:SerialNumber>9484227,010912186</d3p1:SerialNumber>
+      <d3p1:Type>Electrical</d3p1:Type>
+    </Engine>
+    <Transmission xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Manufacturer>Transmission INC</d3p1:Manufacturer>
+      <d3p1:TransmissionsNumber>1</d3p1:TransmissionsNumber>
+      <d3p1:Type>Auto</d3p1:Type>
+    </Transmission>
+    <VehicleIdentificationNumber>
+      <Number>1JLK6T0WKR8D05PUX</Number>
+    </VehicleIdentificationNumber>
+    <SeatsNumber>9</SeatsNumber>
+    <seatsNumber>9</seatsNumber>
+  </Vehicle>
+  <Vehicle i:type="Car">
+    <Chassis xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Number>59931500,87898504</d3p1:Number>
+      <d3p1:PermissibleLoad>1501.5</d3p1:PermissibleLoad>
+      <d3p1:WheelNumber>6</d3p1:WheelNumber>
+    </Chassis>
+    <Engine xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Displacement>3.9120642798543277</d3p1:Displacement>
+      <d3p1:Power>206.21290074578155</d3p1:Power>
+      <d3p1:SerialNumber>600476010,9429415</d3p1:SerialNumber>
+      <d3p1:Type>Electrical</d3p1:Type>
+    </Engine>
+    <Transmission xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Manufacturer>Transmission INC</d3p1:Manufacturer>
+      <d3p1:TransmissionsNumber>6</d3p1:TransmissionsNumber>
+      <d3p1:Type>Auto</d3p1:Type>
+    </Transmission>
+    <VehicleIdentificationNumber>
+      <Number>19PDEDP023J00K684</Number>
+    </VehicleIdentificationNumber>
+    <SeatsNumber>6</SeatsNumber>
+    <seatsNumber>6</seatsNumber>
+  </Vehicle>
+  <Vehicle i:type="Truck">
+    <Chassis xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Number>382523655,89635736</d3p1:Number>
+      <d3p1:PermissibleLoad>500.5</d3p1:PermissibleLoad>
+      <d3p1:WheelNumber>2</d3p1:WheelNumber>
+    </Chassis>
+    <Engine xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Displacement>1.7452670786274909</d3p1:Displacement>
+      <d3p1:Power>431.27369168925736</d3p1:Power>
+      <d3p1:SerialNumber>511429583,8659394</d3p1:SerialNumber>
+      <d3p1:Type>Electrical</d3p1:Type>
+    </Engine>
+    <Transmission xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Manufacturer>Transmission INC</d3p1:Manufacturer>
+      <d3p1:TransmissionsNumber>4</d3p1:TransmissionsNumber>
+      <d3p1:Type>Manual</d3p1:Type>
+    </Transmission>
+    <VehicleIdentificationNumber>
+      <Number>DQ1E32533PH7A5100</Number>
+    </VehicleIdentificationNumber>
+    <TrailerType>RefrigeratedTrailer</TrailerType>
+  </Vehicle>
+  <Vehicle i:type="Car">
+    <Chassis xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Number>18757687,716111865</d3p1:Number>
+      <d3p1:PermissibleLoad>2002</d3p1:PermissibleLoad>
+      <d3p1:WheelNumber>8</d3p1:WheelNumber>
+    </Chassis>
+    <Engine xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Displacement>4.546761777040903</d3p1:Displacement>
+      <d3p1:Power>477.66389282311496</d3p1:Power>
+      <d3p1:SerialNumber>964947711,5626116</d3p1:SerialNumber>
+      <d3p1:Type>Electrical</d3p1:Type>
+    </Engine>
+    <Transmission xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Manufacturer>Transmission INC</d3p1:Manufacturer>
+      <d3p1:TransmissionsNumber>6</d3p1:TransmissionsNumber>
+      <d3p1:Type>Manual</d3p1:Type>
+    </Transmission>
+    <VehicleIdentificationNumber>
+      <Number>MKAF356P4KIHK5N2U</Number>
+    </VehicleIdentificationNumber>
+    <SeatsNumber>6</SeatsNumber>
+    <seatsNumber>6</seatsNumber>
+  </Vehicle>
+  <Vehicle i:type="Bus">
+    <Chassis xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Number>753260021,6094701</d3p1:Number>
+      <d3p1:PermissibleLoad>1001</d3p1:PermissibleLoad>
+      <d3p1:WheelNumber>4</d3p1:WheelNumber>
+    </Chassis>
+    <Engine xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Displacement>1.975151498324774</d3p1:Displacement>
+      <d3p1:Power>347.74471786280384</d3p1:Power>
+      <d3p1:SerialNumber>18091739,345958862</d3p1:SerialNumber>
+      <d3p1:Type>Thermal</d3p1:Type>
+    </Engine>
+    <Transmission xmlns:d3p1="http://schemas.datacontract.org/2004/07/VehicleFleet.Vehicles.Parts">
+      <d3p1:Manufacturer>Transmission INC</d3p1:Manufacturer>
+      <d3p1:TransmissionsNumber>1</d3p1:TransmissionsNumber>
+      <d3p1:Type>Manual</d3p1:Type>
+    </Transmission>
+    <VehicleIdentificationNumber>
+      <Number>YAO63VPQC3X4B7PJF</Number>
+    </VehicleIdentificationNumber>
+    <Color>red</Color>
+    <IsDoubleDeckerBus>false</IsDoubleDeckerBus>
+  </Vehicle>
+</ArrayOfVehicle>
