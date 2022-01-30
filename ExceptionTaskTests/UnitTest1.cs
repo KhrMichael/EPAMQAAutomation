@@ -55,7 +55,7 @@ namespace ExceptionTaskTests
             get
             {
                 var xmlSerializer = new DataContractSerializer(typeof(List<Vehicle>));
-                List<Vehicle> vehicles = new List<Vehicle>();
+                List<Vehicle> vehicles;
 
                 using (FileStream vehiclesListXmlFileStream = new FileStream(vehiclesListPath, FileMode.Open))
                 {
