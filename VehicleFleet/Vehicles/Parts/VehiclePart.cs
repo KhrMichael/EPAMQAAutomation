@@ -1,8 +1,4 @@
-﻿using System;
-using System.Runtime.Serialization;
-using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace VehicleFleet.Vehicles.Parts
 {
@@ -10,7 +6,7 @@ namespace VehicleFleet.Vehicles.Parts
     [KnownType(typeof(Chassis))]
     [KnownType(typeof(Transmission))]
     [DataContract]
-    public abstract class VehiclePart 
+    public abstract class VehiclePart
     {
         /// <summary>
         /// Provide information about Vehicle part in string format.

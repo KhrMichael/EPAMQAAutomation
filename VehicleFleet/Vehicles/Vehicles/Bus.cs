@@ -1,6 +1,4 @@
-﻿using System;
-using System.Runtime.Serialization;
-using System.Xml;
+﻿using System.Runtime.Serialization;
 using VehicleFleet.Vehicles.Exceptions;
 using VehicleFleet.Vehicles.Parts;
 

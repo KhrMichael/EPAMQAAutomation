@@ -1,11 +1,7 @@
-﻿using SeventhTask.XmlSerialization;
-using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Xml;
-using System.Xml.Serialization;
 using VehicleFleet.Vehicles.Vehicles;
 
 namespace SeventhTask

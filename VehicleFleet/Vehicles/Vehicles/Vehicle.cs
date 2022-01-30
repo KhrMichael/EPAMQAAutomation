@@ -1,8 +1,4 @@
-﻿using System;
-using System.Runtime.Serialization;
-using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
+﻿using System.Runtime.Serialization;
 using VehicleFleet.Vehicles.Parts;
 
 namespace VehicleFleet.Vehicles.Vehicles
@@ -12,7 +8,7 @@ namespace VehicleFleet.Vehicles.Vehicles
     [KnownType(typeof(Truck))]
     [KnownType(typeof(Scooter))]
     [DataContract]
-    public abstract class Vehicle 
+    public abstract class Vehicle
     {
         [DataMember]
         public VIN VehicleIdentificationNumber { get; private set; }

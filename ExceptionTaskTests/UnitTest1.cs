@@ -1,5 +1,4 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SeventhTask.XmlSerialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
