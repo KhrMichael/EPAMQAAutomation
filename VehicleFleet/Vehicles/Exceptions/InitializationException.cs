@@ -1,12 +1,20 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace VehicleFleet.Vehicles.Exceptions
 {
     public class InitializationException : Exception
     {
-        public InitializationException(string message) : base(message)
-        {
-        }
+        public InitializationException()
+        { }
 
+        public InitializationException(string message) : base(message)
+        { }
+
+        public InitializationException(string message, Exception innerException) : base(message, innerException)
+        { }
+
+        protected InitializationException(SerializationInfo info, StreamingContext context) : base(info, context)
+        { }
     }
 }
