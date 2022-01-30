@@ -78,7 +78,7 @@ namespace ExceptionTaskTests
         public void AddVehicleThrowAddExceptionForIncorrectInputValues(Vehicle vehicle)
         {
             List<Vehicle> vehicles = Vehicles;
-            Action testAddVehicle = () => vehicles.AddVehicle(vehicle);
+            Action testAddVehicle = () => vehicles?.AddVehicle(vehicle);
 
             Assert.ThrowsException<AddException>(testAddVehicle);
         }
@@ -88,7 +88,7 @@ namespace ExceptionTaskTests
         public void GetVehicleByParameterThrowGetVehicleByParameterExceptionForIncorrectValues(string parameter, object value)
         {
             List<Vehicle> vehicles = Vehicles;
-            Action testGetVehicleByParameter = () => vehicles.GetVehicleByParameter(parameter, value.ToString());
+            Action testGetVehicleByParameter = () => vehicles?.GetVehicleByParameter(parameter, value.ToString());
 
             Assert.ThrowsException<GetVehicleByParametrException>(testGetVehicleByParameter);
         }
