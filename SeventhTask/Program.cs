@@ -18,7 +18,7 @@ namespace SeventhTask
 
             try
             {
-                collectionGenerator.TryFillVehicleCollection(out vehicles);
+                collectionGenerator.FillVehicleCollection(out vehicles);
             }
             catch (InitializationException initializationException)
             {
