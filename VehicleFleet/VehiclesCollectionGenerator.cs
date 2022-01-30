@@ -55,7 +55,7 @@ namespace VehicleFleet
         /// </summary>
         /// <param name="type">Engine type.</param>
         /// <returns>New Engine.</returns>
-        static Engine GenerateEngine(string type)
+        public static Engine GenerateEngine(string type)
         {
             Random rnd = new Random();
 
@@ -70,7 +70,7 @@ namespace VehicleFleet
         /// Generates new Chassis.
         /// </summary>
         /// <returns>New Chassis.</returns>
-        static Chassis GenerateChassis()
+        public static Chassis GenerateChassis()
         {
             Random rnd = new Random();
 
@@ -87,7 +87,7 @@ namespace VehicleFleet
         /// <param name="type">Transmission type.</param>
         /// <param name="manufacturer">Transmission manufacturer.</param>
         /// <returns>New Transmission.</returns>
-        static Transmission GenerateTransmission(string type, string manufacturer = "Transmission INC")
+        public static Transmission GenerateTransmission(string type, string manufacturer = "Transmission INC")
         {
             int transmissionNumber = new Random().Next() % 6 + 1; //transmission number from 1 to 6
 

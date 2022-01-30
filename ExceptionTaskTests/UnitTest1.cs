@@ -21,9 +21,9 @@ namespace ExceptionTaskTests
             {
                 return new[]
                 {
-                    new object[]{ new Action(() => new Truck(new Engine(220, 4.3, "electrical", "34347910DFS"), null, null)) },
-                    new object[]{ new Action(() => new Scooter(null, new Chassis(4, "344548DKU", 200.25), null))},
-                    new object[]{ new Action(() => new Bus(new Engine(12, 4.3, "electrical", "3253880LPK"), null, null)) },
+                    new object[]{ new Action(() => new Truck(new Engine(220, 4.3, "electrical", "34347910DFS"), VehiclesCollectionGenerator.GenerateChassis(), VehiclesCollectionGenerator.GenerateTransmission("auto"))) },
+                    new object[]{ new Action(() => new Scooter(VehiclesCollectionGenerator.GenerateEngine("electrical"), new Chassis(4, "344548DKU", 200.25), VehiclesCollectionGenerator.GenerateTransmission("auto")))},
+                    new object[]{ new Action(() => new Bus(new Engine(12, 4.3, "electrical", "3253880LPK"), VehiclesCollectionGenerator.GenerateChassis(), VehiclesCollectionGenerator.GenerateTransmission("auto"))) },
                 };
             }
         }
@@ -33,7 +33,7 @@ namespace ExceptionTaskTests
             {
                 return new[]
                 {
-                   new object[]{ new Bus(null, null, null, "Impossible color")}
+                   new object[]{ new Bus( new Engine( 300, 3, "electical", "234234"), VehiclesCollectionGenerator.GenerateChassis(), VehiclesCollectionGenerator.GenerateTransmission("auto"), "Impossible color")}
                 };
             }
         }

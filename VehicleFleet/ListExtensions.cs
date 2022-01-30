@@ -42,7 +42,7 @@ namespace VehicleFleet
         {
             if (vehicle is Bus && ((Bus)vehicle).Color.ToUpperInvariant() == "IMPOSSIBLE COLOR")
             {
-                throw new AddException("The list of vehicles can't contain a bus with \"Imposible color\"");
+                throw new AddException("The list of vehicles can't contain a bus with \"Impossible color\"");
             }
 
             vehicles.Add(vehicle);
