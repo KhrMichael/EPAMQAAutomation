@@ -1,17 +1,23 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using System.Xml;
 using VehicleFleet.Vehicles.Parts;
 
 namespace VehicleFleet.Vehicles.Vehicles
 {
-    [Serializable]
+    [DataContract]
     public class Car : Vehicle
     {
+        [DataMember]
         private int seatsNumber;
 
+        [DataMember]
         public override Engine Engine { get; set; }
+        [DataMember]
         public override Chassis Chassis { get; set; }
+        [DataMember]
         public override Transmission Transmission { get; set; }
+        [DataMember]
         public int SeatsNumber
         {
             get => seatsNumber;
@@ -33,16 +39,5 @@ namespace VehicleFleet.Vehicles.Vehicles
         }
 
         protected override string GetInfo() => String.Format("Car:\n{0}\n{1}\n{2}\nSeats number: {3}", Engine, Chassis, Transmission, SeatsNumber);
-
-        public override void WriteXml(XmlWriter writer)
-        {
-            base.WriteXml(writer);
-            writer.WriteElementString("SeatsNumber", SeatsNumber.ToString());
-        }
-        public override void ReadXml(XmlReader reader)
-        {
-            base.ReadXml(reader);
-            reader.ReadElementContentAsInt("SeatsNumber", "");
-        }
     }
 }

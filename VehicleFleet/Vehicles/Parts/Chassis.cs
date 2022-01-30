@@ -1,13 +1,17 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using System.Xml;
 
 namespace VehicleFleet.Vehicles.Parts
 {
-    [Serializable]
+    [DataContract]
     public class Chassis : VehiclePart
     {
+        [DataMember]
         public int WheelNumber { get; set; }
+        [DataMember]
         public string Number { get; set; }
+        [DataMember]
         public double PermissibleLoad { get; set; }
 
         private Chassis() { }
@@ -19,17 +23,6 @@ namespace VehicleFleet.Vehicles.Parts
             PermissibleLoad = permissbleLoad;
         }
 
-        public override void WriteXml(XmlWriter writer)
-        {
-            base.WriteXml(writer);
-            writer.WriteElementString("WheelNumber", WheelNumber.ToString());
-            writer.WriteElementString("Number", Number);
-            writer.WriteElementString("PermissibleLoad", PermissibleLoad.ToString());
-        }
-        public override void ReadXml(XmlReader reader)
-        {
-            base.ReadXml(reader);
-        }
         protected override string GetInfo() => $"Chassis:\n\tNumber of wheels: {WheelNumber}\n\tNumber: {Number}\n\tPermissable load: {PermissibleLoad}";
     }
 }

@@ -1,17 +1,23 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using System.Xml;
 using VehicleFleet.Vehicles.Exceptions;
 using VehicleFleet.Vehicles.Parts;
 
 namespace VehicleFleet.Vehicles.Vehicles
 {
-    [Serializable]
+    [DataContract]
     public class Bus : Vehicle
     {
+        [DataMember]
         public string Color { get; set; }
+        [DataMember]
         public bool IsDoubleDeckerBus { get; set; }
+        [DataMember]
         public override Engine Engine { get; set; }
+        [DataMember]
         public override Chassis Chassis { get; set; }
+        [DataMember]
         public override Transmission Transmission { get; set; }
 
         private Bus() : base(null, null, null) { }

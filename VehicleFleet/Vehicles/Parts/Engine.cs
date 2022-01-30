@@ -1,14 +1,19 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using System.Xml;
 
 namespace VehicleFleet.Vehicles.Parts
 {
-    [Serializable]
+    [DataContract]
     public class Engine : VehiclePart
     {
+        [DataMember]
         public double Power { get; set; }
+        [DataMember]
         public double Displacement { get; set; }
+        [DataMember]
         public string Type { get; set; }
+        [DataMember]
         public string SerialNumber { get; set; }
 
         private Engine() { }
@@ -19,23 +24,6 @@ namespace VehicleFleet.Vehicles.Parts
             Displacement = displacement;
             Type = type;
             SerialNumber = serialNumber;
-        }
-
-        public override void WriteXml(XmlWriter writer)
-        {
-            base.WriteXml(writer);
-            writer.WriteElementString("Power", Power.ToString());
-            writer.WriteElementString("Displacement", Displacement.ToString());
-            writer.WriteElementString("Type", Type);
-            writer.WriteElementString("SerialNumber", SerialNumber);
-        }
-        public override void ReadXml(XmlReader reader)
-        {
-            base.ReadXml(reader);
-            Power = reader.ReadElementContentAsDouble("Power", "");
-            Displacement = reader.ReadElementContentAsDouble("Displacement", "");
-            Type = reader.ReadElementContentAsString("Type", "");
-            SerialNumber = reader.ReadElementContentAsString("SerialNumber", "");
         }
 
         protected override string GetInfo() => $"Engine:\n\tPower: {Power}\n\tDisplacement: {Displacement}\n\tType: {Type}\n\tSerial number: {SerialNumber}";

@@ -1,16 +1,21 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using System.Xml;
 using VehicleFleet.Vehicles.Exceptions;
 using VehicleFleet.Vehicles.Parts;
 
 namespace VehicleFleet.Vehicles.Vehicles
 {
-    [Serializable]
+    [DataContract]
     public class Scooter : Vehicle
     {
+        [DataMember]
         public bool IsNaked { get; set; }
+        [DataMember]
         public override Engine Engine { get; set; }
+        [DataMember]
         public override Chassis Chassis { get; set; }
+        [DataMember]
         public override Transmission Transmission { get; set; }
 
         private Scooter() : base(null, null, null) { }
@@ -26,16 +31,5 @@ namespace VehicleFleet.Vehicles.Vehicles
         }
 
         protected override string GetInfo() => string.Format("Scooter:\n{0}\n{1}\n{2}\nIs naked: {3}", Engine, Chassis, Transmission, IsNaked);
-
-        public override void WriteXml(XmlWriter writer)
-        {
-            base.WriteXml(writer);
-            writer.WriteElementString("IsNaked", IsNaked.ToString());
-        }
-        public override void ReadXml(XmlReader reader)
-        {
-            base.ReadXml(reader);
-            IsNaked = reader.ReadElementContentAsBoolean("IsNaked", "");
-        }
     }
 }
