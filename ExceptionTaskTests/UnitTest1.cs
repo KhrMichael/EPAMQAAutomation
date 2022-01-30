@@ -49,6 +49,18 @@ namespace ExceptionTaskTests
                 };
             }
         }
+        private static IEnumerable<object[]> IncorrectParametersForUpdateVehicle
+        {
+            get
+            {
+                return new[]
+                {
+                    new object[]{ new VIN(), null},
+                    new object[]{ new VIN(), null},
+                    new object[]{ new VIN(), null}
+                };
+            }
+        }
 
         private List<Vehicle> Vehicles
         {
@@ -92,5 +104,16 @@ namespace ExceptionTaskTests
 
             Assert.ThrowsException<GetVehicleByParametrException>(testGetVehicleByParameter);
         }
+
+        [TestMethod]
+        [DynamicData("IncorrectParametersForUpdateVehicle")]
+        public void UpdateVehicleThrowUpdateVehicleExceptionForIncorrectParameters(VIN vin, Vehicle vehicle)
+        {
+            List<Vehicle> vehicles = Vehicles;
+            Action testVehicleUpdate = () => vehicles.Update(vin, vehicle);
+
+            Assert.ThrowsException<UpdateVehicleException>(testVehicleUpdate);
+        }
+
     }
 }
