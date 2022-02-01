@@ -18,11 +18,11 @@ namespace ExceptionTask
             {
                 vehiclesCollectionGenerator.FillVehicleCollection(out vehicles);
             }
-            catch(InitializationException exception)
+            catch (InitializationException exception)
             {
                 Console.WriteLine(exception.Message);
             }
-            catch(AddException exception)
+            catch (AddException exception)
             {
                 Console.WriteLine(exception.Message);
             }
@@ -31,7 +31,7 @@ namespace ExceptionTask
             {
                 vehicles.Add(vehicleCreator.Create());
             }
-            catch(AddException exception)
+            catch (AddException exception)
             {
                 Console.WriteLine(exception.Message);
             }
@@ -40,7 +40,7 @@ namespace ExceptionTask
             {
                 vehicles.GetVehicleByParameter("power", "399");
             }
-            catch(GetVehicleByParametrException exception)
+            catch (GetVehicleByParametrException exception)
             {
                 Console.WriteLine(exception.Message);
             }
@@ -49,7 +49,7 @@ namespace ExceptionTask
             {
                 vehicles.Remove(new VIN());
             }
-            catch(RemoveVehicleException exception)
+            catch (RemoveVehicleException exception)
             {
                 Console.WriteLine(exception.Message);
             }
