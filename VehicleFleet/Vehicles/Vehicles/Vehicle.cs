@@ -24,8 +24,8 @@ namespace VehicleFleet.Vehicles.Vehicles
 
         public Vehicle(Engine engine, Chassis chassis, Transmission transmission)
         {
-            if(engine != null && chassis != null && transmission != null)
-            { 
+            if (engine != null && chassis != null && transmission != null)
+            {
                 Engine = engine;
                 Chassis = chassis;
                 Transmission = transmission;
