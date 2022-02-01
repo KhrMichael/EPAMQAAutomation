@@ -74,7 +74,7 @@ namespace VehicleFleet
             }
             else
             {
-                throw new RemoveVehicleException($"No vehicle with VIN - {identificationNumber}");
+                throw new RemoveVehicleException($"No vehicle with VIN - {identificationNumber.Number}");
             }
         }
 
