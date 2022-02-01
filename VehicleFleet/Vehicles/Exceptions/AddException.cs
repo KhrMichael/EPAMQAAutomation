@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace VehicleFleet
+namespace VehicleFleet.Vehicles.Exceptions
 {
     public class AddException : Exception
     {
