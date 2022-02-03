@@ -1,4 +1,4 @@
-﻿namespace ObjectOrientedDesignPrinciplesTask.VehiclesManager
+﻿namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 {
     public class CountAll : Command
     {
@@ -8,6 +8,7 @@
 
         public override void Execute()
         {
+            analyzer.Action(CommandTypes.CountAll);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace ObjectOrientedDesignPrinciplesTask.VehiclesManager.Exceptions
+namespace ObjectOrientedDesignPrinciplesTask.Vehicles.Exceptions
 {
     public class ExecuteCommandException : Exception
     {

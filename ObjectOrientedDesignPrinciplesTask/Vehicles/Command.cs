@@ -1,8 +1,8 @@
-﻿namespace ObjectOrientedDesignPrinciplesTask.VehiclesManager
+﻿namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 {
     public abstract class Command
     {
-        private VehiclesAnalyzer analyzer;
+        protected VehiclesAnalyzer analyzer;
 
         public Command(VehiclesAnalyzer analyzer)
         {

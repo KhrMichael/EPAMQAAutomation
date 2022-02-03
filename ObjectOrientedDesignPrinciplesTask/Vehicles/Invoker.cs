@@ -1,7 +1,7 @@
-﻿using ObjectOrientedDesignPrinciplesTask.VehiclesManager.Exceptions;
+﻿using ObjectOrientedDesignPrinciplesTask.Vehicles.Exceptions;
 using System.Collections.Generic;
 
-namespace ObjectOrientedDesignPrinciplesTask.VehiclesManager
+namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 {
     public class Invoker
     {

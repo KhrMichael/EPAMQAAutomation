@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ObjectOrientedDesignPrinciplesTask.VehiclesManager
+namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 {
     public class VehiclesAnalyzer
     {
@@ -73,7 +73,7 @@ namespace ObjectOrientedDesignPrinciplesTask.VehiclesManager
         {
             switch (commandType)
             {
-                case CommandTypes.CountType:
+                case CommandTypes.CountTypes:
                     CountType();
                     break;
                 case CommandTypes.CountAll:

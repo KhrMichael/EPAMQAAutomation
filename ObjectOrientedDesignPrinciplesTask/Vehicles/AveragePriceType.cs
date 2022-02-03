@@ -1,16 +1,16 @@
-﻿using System;
-
-namespace ObjectOrientedDesignPrinciplesTask.VehiclesManager
+﻿namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 {
     public class AveragePriceType : Command
     {
+        public string Type { get; set; }
+
         public AveragePriceType(VehiclesAnalyzer analyzer) : base(analyzer)
         {
         }
 
         public override void Execute()
         {
-            throw new NotImplementedException();
+            analyzer.Action(CommandTypes.AveragePriceType, Type);
         }
     }
 }

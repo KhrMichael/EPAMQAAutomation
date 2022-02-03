@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ObjectOrientedDesignPrinciplesTask.VehiclesManager
+﻿namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 {
     public class AveragePrice : Command
     {
@@ -10,7 +8,7 @@ namespace ObjectOrientedDesignPrinciplesTask.VehiclesManager
 
         public override void Execute()
         {
-            throw new NotImplementedException();
+            analyzer.Action(CommandTypes.AveragePrice);
         }
     }
 }

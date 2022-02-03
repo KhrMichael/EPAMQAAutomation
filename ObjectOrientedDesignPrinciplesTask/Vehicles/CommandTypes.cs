@@ -1,8 +1,8 @@
-﻿namespace ObjectOrientedDesignPrinciplesTask.VehiclesManager
+﻿namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 {
     public enum CommandTypes
     {
-        CountType,
+        CountTypes,
         CountAll,
         AveragePrice,
         AveragePriceType,
