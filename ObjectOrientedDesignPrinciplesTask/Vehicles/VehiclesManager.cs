@@ -29,6 +29,9 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
         public void Start()
         {
             ReceiveVehiclesData();
+            Invoker.StoreCommand(new Help(VehiclesAnalyzer));
+            Invoker.ExecuteCommand();
+            Console.WriteLine(VehiclesAnalyzer.CommandResult);
         }
 
         private void ReceiveVehiclesData()
