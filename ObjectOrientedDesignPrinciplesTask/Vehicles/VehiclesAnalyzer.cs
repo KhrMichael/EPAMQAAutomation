@@ -64,7 +64,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 
         private void Help()
         {
-            string helpMessage = "Count type [t] - number of car stemps\tCount all [a] - total number of vehicles\tAverage price [p] - average vehicle price\tAverage price type [x] - average price of each type, such as average price volvo\tExit[q] - exit.";
+            string helpMessage = "Count type [t] - number of car stemps\nCount all [a] - total number of vehicles\nAverage price [p] - average vehicle price\nAverage price type [x] - average price of each type, such as average price volvo\nExit[q] - exit.";
 
             CommandResult = helpMessage;
         }
