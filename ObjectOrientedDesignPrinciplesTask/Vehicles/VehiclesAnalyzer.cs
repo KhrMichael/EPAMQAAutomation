@@ -8,6 +8,11 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
         public List<Vehicle> Vehicles { get; set; }
         public bool Exit { get; private set; }
 
+        public VehiclesAnalyzer()
+        {
+            Vehicles = new List<Vehicle>();
+        }
+
         private void CountType()
         {
             List<string> types = new List<string>();
@@ -36,12 +41,11 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
         private void AveragePrice()
         {
             double totalPrice = 0;
-            double averagePrice;
             foreach (var vehicle in Vehicles)
             {
                 totalPrice += vehicle.Price;
             }
-            averagePrice = totalPrice / Vehicles.Count;
+            double averagePrice = totalPrice / Vehicles.Count;
 
             CommandResult = averagePrice.ToString();
         }
@@ -49,22 +53,23 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
         private void AveragePriceType(string type)
         {
             double totalPrice = 0;
-            double averagePrice;
+            int numberOfModels = 0;
             foreach (var vehicle in Vehicles)
             {
                 if (vehicle.Type == type)
                 {
                     totalPrice += vehicle.Price;
+                    numberOfModels++;
                 }
             }
-            averagePrice = totalPrice / Vehicles.Count;
+            double averagePrice = totalPrice / numberOfModels;
 
             CommandResult = averagePrice.ToString();
         }
 
         private void Help()
         {
-            string helpMessage = "Count type [t] - number of car stemps\nCount all [a] - total number of vehicles\nAverage price [p] - average vehicle price\nAverage price type [x] - average price of each type, such as average price volvo\nExit[q] - exit.";
+            string helpMessage = "count types - number of car stemps\ncount all - total number of vehicles\naverage price - average vehicle price\naverage price [type] - average price of each type, such as average price volvo\nexit - exit.";
 
             CommandResult = helpMessage;
         }
@@ -90,6 +95,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
                     break;
                 case CommandTypes.Exit:
                     Exit = true;
+                    CommandResult = string.Empty;
                     break;
             }
         }
