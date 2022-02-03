@@ -1,11 +1,10 @@
-﻿using System;
-
-namespace ObjectOrientedDesignPrinciplesTask
+﻿namespace ObjectOrientedDesignPrinciplesTask
 {
     class Program
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
