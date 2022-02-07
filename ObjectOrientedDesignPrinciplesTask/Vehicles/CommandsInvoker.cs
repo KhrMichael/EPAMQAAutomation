@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 {
-    public class Invoker
+    public class CommandsInvoker
     {
         private List<Command> commands;
         private int currentCommand;
 
-        public Invoker()
+        public CommandsInvoker()
         {
             commands = new List<Command>();
             currentCommand = 0;
@@ -20,7 +20,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
         }
 
         /// <summary>
-        /// Execute next command.
+        /// Executes the next command in the queue.
         /// </summary>
         /// <exception cref="ExecuteCommandException"></exception>
         public void ExecuteCommand()
