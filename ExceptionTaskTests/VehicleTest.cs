@@ -25,7 +25,7 @@ namespace ExceptionTaskTests
 
         [TestMethod]
         [DynamicData("ActionsWithIncorrectVehiclesInitialization")]
-        public void VehicleThrowInitializationExceptionForIncorectInputValues(Action testVehicleInitialization)
+        public void Vehicle_ThrowInitializationException_ForIncorectInputValues(Action testVehicleInitialization)
         {
             Assert.ThrowsException<InitializationException>(testVehicleInitialization);
         }

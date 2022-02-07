@@ -81,7 +81,7 @@ namespace ExceptionTaskTests
 
         [TestMethod]
         [DynamicData("IncorrectParametersForAddVehicle")]
-        public void AddVehicleThrowAddExceptionForIncorrectInputValues(Vehicle vehicle)
+        public void AddVehicle_ThrowAddException_ForIncorrectInputValues(Vehicle vehicle)
         {
             List<Vehicle> vehicles = Vehicles;
             Action testAddVehicle = () => vehicles?.AddVehicle(vehicle);
@@ -91,7 +91,7 @@ namespace ExceptionTaskTests
 
         [TestMethod]
         [DynamicData("IncorrectParametersForGetVehicleByParameter")]
-        public void GetVehicleByParameterThrowGetVehicleByParameterExceptionForIncorrectValues(string parameter, object value)
+        public void GetVehicleByParameter_ThrowGetVehicleByParameterException_ForIncorrectValues(string parameter, object value)
         {
             List<Vehicle> vehicles = Vehicles;
             Action testGetVehicleByParameter = () => vehicles?.GetVehicleByParameter(parameter, value.ToString());
@@ -101,7 +101,7 @@ namespace ExceptionTaskTests
 
         [TestMethod]
         [DynamicData("IncorrectParametersForUpdateVehicle")]
-        public void UpdateVehicleThrowUpdateVehicleExceptionForIncorrectParameters(VIN vin, Vehicle vehicle)
+        public void UpdateVehicle_ThrowUpdateVehicleException_ForIncorrectParameters(VIN vin, Vehicle vehicle)
         {
             List<Vehicle> vehicles = Vehicles;
             Action testVehicleUpdate = () => vehicles.Update(vin, vehicle);
@@ -111,7 +111,7 @@ namespace ExceptionTaskTests
 
         [TestMethod]
         [DynamicData("IncorrectParametersForRemoveVehicle")]
-        public void RemoveVehicleThrowRemoveVehicleExceptionForIncorrectParameter(VIN vin)
+        public void RemoveVehicle_ThrowRemoveVehicleException_ForIncorrectParameter(VIN vin)
         {
             List<Vehicle> vehicles = Vehicles;
             Action testRemoveVehcle = () => vehicles.Remove(vin);
