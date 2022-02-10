@@ -13,6 +13,7 @@ namespace VehicleFleet
         /// <param name="parameter">Parameter name.</param>
         /// <param name="value">Parameter value.</param>
         /// <returns>First vehicle with given parameter name and it value.</returns>
+        /// <exception cref="GetVehicleByParametrException"></exception>
         public static Vehicle GetVehicleByParameter(this List<Vehicle> vehicles, string parameter, string value)
         {
             foreach (var vehicle in vehicles)
@@ -37,6 +38,7 @@ namespace VehicleFleet
         /// </summary>
         /// <param name="vehicles"></param>
         /// <param name="vehicle">Vehicle to add.</param>
+        /// <exception cref="AddException"></exception>
         /// <returns></returns>
         public static List<Vehicle> AddVehicle(this List<Vehicle> vehicles, Vehicle vehicle)
         {
@@ -51,6 +53,13 @@ namespace VehicleFleet
         }
 
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="vehicles"></param>
+        /// <param name="identificationNumber"></param>
+        /// <param name="newVehicle"></param>
+        /// <exception cref="UpdateVehicleException"></exception>
         public static void Update(this List<Vehicle> vehicles, VIN identificationNumber, Vehicle newVehicle)
         {
             int index;
@@ -64,6 +73,13 @@ namespace VehicleFleet
                 throw new UpdateVehicleException($"No vehicle with VIN - {identificationNumber}");
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="vehicles"></param>
+        /// <param name="identificationNumber"></param>
+        /// <exception cref="RemoveVehicleException"></exception>
         public static void Remove(this List<Vehicle> vehicles, VIN identificationNumber)
         {
             int index;
