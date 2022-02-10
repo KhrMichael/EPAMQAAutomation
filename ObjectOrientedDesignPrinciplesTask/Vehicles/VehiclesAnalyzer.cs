@@ -4,7 +4,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 {
     public class VehiclesAnalyzer
     {
-        public string CommandResult { get; private set; }
+        public string Message { get; private set; }
         public List<Vehicle> Vehicles { get; set; }
         public bool Exit { get; private set; }
 
@@ -24,7 +24,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
                 }
             }
 
-            CommandResult = types.Count.ToString();
+            Message = types.Count.ToString();
         }
 
         private void CountAll()
@@ -35,7 +35,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
                 numberOfVehicles += vehicle.Quantity;
             }
 
-            CommandResult = numberOfVehicles.ToString();
+            Message = numberOfVehicles.ToString();
         }
 
         private void AveragePrice()
@@ -47,7 +47,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
             }
             double averagePrice = totalPrice / Vehicles.Count;
 
-            CommandResult = averagePrice.ToString();
+            Message = averagePrice.ToString();
         }
 
         private void AveragePriceType(string type)
@@ -64,14 +64,14 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
             }
             double averagePrice = totalPrice / numberOfModels;
 
-            CommandResult = averagePrice.ToString();
+            Message = averagePrice.ToString();
         }
 
         private void Help()
         {
             string helpMessage = "count types - number of car stemps\ncount all - total number of vehicles\naverage price - average vehicle price\naverage price [type] - average price of each type, such as average price volvo\nexit - exit.";
 
-            CommandResult = helpMessage;
+            Message = helpMessage;
         }
 
         public void Action(CommandTypes commandType, params object[] parameters)
@@ -95,7 +95,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
                     break;
                 case CommandTypes.Exit:
                     Exit = true;
-                    CommandResult = string.Empty;
+                    Message = string.Empty;
                     break;
             }
         }

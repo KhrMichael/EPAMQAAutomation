@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -40,41 +39,35 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
         {
             while (!VehiclesAnalyzer.Exit)
             {
-                try
+                var command = Console.ReadLine().Trim();
+                switch (command)
                 {
-                    var command = Console.ReadLine().Trim();
-                    switch (command)
-                    {
-                        case countTypesCommand:
-                            ExecuteCommand(new CountTypes(VehiclesAnalyzer));
-                            break;
-                        case countAllCommand:
-                            ExecuteCommand(new CountAll(VehiclesAnalyzer));
-                            break;
-                        case averagePriceCommand:
-                            ExecuteCommand(new AveragePrice(VehiclesAnalyzer));
-                            break;
-                        case exitCommand:
-                            ExecuteCommand(new Exit(VehiclesAnalyzer));
-                            break;
-                        default:
-                            if (command.Contains(averagePriceCommand))
-                            {
-                                string type = command.Substring(averagePriceCommand.Length);
-                                type = type.Trim();
-                                ExecuteCommand(new AveragePriceType(VehiclesAnalyzer) { Type = type });
-                            }
-                            else
-                            {
-                                Console.WriteLine("Incorrect command.");
-                            }
-                            break;
-                    }
+                    case countTypesCommand:
+                        ExecuteCommand(new CountTypes(VehiclesAnalyzer));
+                        break;
+                    case countAllCommand:
+                        ExecuteCommand(new CountAll(VehiclesAnalyzer));
+                        break;
+                    case averagePriceCommand:
+                        ExecuteCommand(new AveragePrice(VehiclesAnalyzer));
+                        break;
+                    case exitCommand:
+                        ExecuteCommand(new Exit(VehiclesAnalyzer));
+                        break;
+                    default:
+                        if (command.Contains(averagePriceCommand))
+                        {
+                            //substring with the type of vehicles
+                            string type = command.Substring(averagePriceCommand.Length);
+                            type = type.Trim();
+                            ExecuteCommand(new AveragePriceType(VehiclesAnalyzer) { Type = type });
+                        }
+                        else
+                        {
+                            Console.WriteLine("Incorrect command.");
+                        }
+                        break;
                 }
-                catch (IOException)
-                {
-                }
-
             }
         }
 
@@ -82,7 +75,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
         {
             Invoker.StoreCommand(command);
             Invoker.ExecuteCommand();
-            Console.WriteLine(VehiclesAnalyzer.CommandResult);
+            Console.WriteLine(VehiclesAnalyzer.Message);
         }
 
         private void ReceiveVehiclesData()
@@ -91,7 +84,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
             string vehiclesData = Console.ReadLine();
             vehiclesData = string.Concat(vehiclesData.Where(symblol => !char.IsWhiteSpace(symblol)));
 
-            string vehicelceDataPattern = "\\\"\\w+[,]\\w+[,]\\d+[,]\\d+[.]?\\d*\\\"";
+            string vehicelceDataPattern = "\\\"\\w+[,]\\w+[,]\\d+[,]\\d+[.]?\\d*\\\"";//"[type],[model],[number],[price]"
             Regex regex = new Regex(vehicelceDataPattern);
 
             foreach (Match vehicleData in regex.Matches(vehiclesData))
