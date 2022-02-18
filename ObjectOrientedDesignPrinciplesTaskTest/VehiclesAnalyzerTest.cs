@@ -28,7 +28,7 @@ namespace ObjectOrientedDesignPrinciplesTaskTest
         [DataRow(CommandTypes.CountTypes, "2")]
         public void Action_VehiclesAnalysisCommand_ValidMessage(CommandTypes command, string expectedMessage, params object[] parameters)
         {
-            VehiclesAnalyzer vehiclesAnalyzer = new VehiclesAnalyzer() { Vehicles = Vehicles };
+            var vehiclesAnalyzer = new VehiclesAnalyzer() { Vehicles = Vehicles };
 
             vehiclesAnalyzer.Action(command, parameters);
 
@@ -38,8 +38,8 @@ namespace ObjectOrientedDesignPrinciplesTaskTest
         [TestMethod]
         public void Action_HelpCommand_ValidHelpMessage()
         {
-            VehiclesAnalyzer vehiclesAnalyzer = new VehiclesAnalyzer() { Vehicles = Vehicles };
-            string expectedMessage = "count types - number of car stemps\ncount all - total number of vehicles\naverage price - average vehicle price\naverage price [type] - average price of each type, such as average price volvo\nexit - exit.";
+            var vehiclesAnalyzer = new VehiclesAnalyzer() { Vehicles = Vehicles };
+            var expectedMessage = "count types - number of car stemps\ncount all - total number of vehicles\naverage price - average vehicle price\naverage price [type] - average price of each type, such as average price volvo\nexit - exit.";
 
             vehiclesAnalyzer.Action(CommandTypes.Help);
 
@@ -49,7 +49,7 @@ namespace ObjectOrientedDesignPrinciplesTaskTest
         [TestMethod]
         public void Action_ExitCommand_ExitIsTrue()
         {
-            VehiclesAnalyzer vehiclesAnalyzer = new VehiclesAnalyzer() { Vehicles = Vehicles };
+            var vehiclesAnalyzer = new VehiclesAnalyzer() { Vehicles = Vehicles };
 
             vehiclesAnalyzer.Action(CommandTypes.Exit);
 

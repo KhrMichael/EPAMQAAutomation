@@ -18,7 +18,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 
         private void CountType()
         {
-            List<string> types = new List<string>();
+            var types = new List<string>();
             foreach (var vehicle in Vehicles)
             {
                 if (!types.Exists(type => type == vehicle.Type))
@@ -84,7 +84,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 
         private void Help()
         {
-            string helpMessage = "count types - number of car stemps\ncount all - total number of vehicles\naverage price - average vehicle price\naverage price [type] - average price of each type, such as average price volvo\nexit - exit.";
+            var helpMessage = "count types - number of car stemps\ncount all - total number of vehicles\naverage price - average vehicle price\naverage price [type] - average price of each type, such as average price volvo\nexit - exit.";
 
             Message = helpMessage;
         }

@@ -92,8 +92,8 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
             string vehiclesData = Console.ReadLine();
             vehiclesData = string.Concat(vehiclesData.Where(symblol => !char.IsWhiteSpace(symblol)));
 
-            string vehicelceDataPattern = "\\\"\\w+[,]\\w+[,]\\d+[,]\\d+[.]?\\d*\\\"";//"[type],[model],[number],[price]"
-            Regex regex = new Regex(vehicelceDataPattern);
+            var vehicelceDataPattern = "\\\"\\w+[,]\\w+[,]\\d+[,]\\d+[.]?\\d*\\\"";//"[type],[model],[number],[price]"
+            var regex = new Regex(vehicelceDataPattern);
 
             foreach (Match vehicleData in regex.Matches(vehiclesData))
             {
