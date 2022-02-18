@@ -45,5 +45,15 @@ namespace ObjectOrientedDesignPrinciplesTaskTest
 
             Assert.AreEqual(expectedMessage, vehiclesAnalyzer.Message);
         }
+
+        [TestMethod]
+        public void Action_ExitCommand_ExitIsTrue()
+        {
+            VehiclesAnalyzer vehiclesAnalyzer = new VehiclesAnalyzer() { Vehicles = Vehicles };
+
+            vehiclesAnalyzer.Action(CommandTypes.Exit);
+
+            Assert.IsTrue(vehiclesAnalyzer.Exit);
+        }
     }
 }
