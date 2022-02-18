@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 
 namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 {
@@ -47,7 +48,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
             }
             double averagePrice = totalPrice / Vehicles.Count;
 
-            Message = averagePrice.ToString();
+            Message = averagePrice.ToString(CultureInfo.InvariantCulture);
         }
 
         private void AveragePriceType(string type)
@@ -64,7 +65,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
             }
             double averagePrice = totalPrice / numberOfModels;
 
-            Message = averagePrice.ToString();
+            Message = averagePrice.ToString(CultureInfo.InvariantCulture);
         }
 
         private void Help()
