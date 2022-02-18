@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using ObjectOrientedDesignPrinciplesTask.Vehicles.Exceptions;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 
 namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 {
@@ -51,10 +53,22 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
             Message = averagePrice.ToString(CultureInfo.InvariantCulture);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <exception cref="ExecuteCommandException"></exception>
         private void AveragePriceType(string type)
         {
             double totalPrice = 0;
             int numberOfModels = 0;
+            double averagePrice = 0;
+
+            if (!Vehicles.Any(vh => vh.Type == type))
+            {
+                throw new ExecuteCommandException($"There is no such type [{type}].");
+            }
+
             foreach (var vehicle in Vehicles)
             {
                 if (vehicle.Type == type)
@@ -63,7 +77,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
                     numberOfModels++;
                 }
             }
-            double averagePrice = totalPrice / numberOfModels;
+            averagePrice = totalPrice / numberOfModels;
 
             Message = averagePrice.ToString(CultureInfo.InvariantCulture);
         }
@@ -75,6 +89,12 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
             Message = helpMessage;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="commandType"></param>
+        /// <param name="parameters"></param>
+        /// <exception cref="ExecuteCommandException"></exception>
         public void Action(CommandTypes commandType, params object[] parameters)
         {
             switch (commandType)

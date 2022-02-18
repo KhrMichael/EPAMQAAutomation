@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ObjectOrientedDesignPrinciplesTask.Vehicles.Exceptions;
+using System;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -73,9 +74,16 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 
         private void ExecuteCommand(Command command)
         {
-            Invoker.StoreCommand(command);
-            Invoker.ExecuteCommand();
-            Console.WriteLine(VehiclesAnalyzer.Message);
+            try 
+            {
+                Invoker.StoreCommand(command);
+                Invoker.ExecuteCommand();
+                Console.WriteLine(VehiclesAnalyzer.Message);
+            }
+            catch(ExecuteCommandException exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
         }
 
         private void ReceiveVehiclesData()
