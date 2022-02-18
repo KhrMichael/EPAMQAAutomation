@@ -34,5 +34,16 @@ namespace ObjectOrientedDesignPrinciplesTaskTest
 
             Assert.AreEqual(expectedMessage, vehiclesAnalyzer.Message);
         }
+
+        [TestMethod]
+        public void Action_HelpCommand_ValidHelpMessage()
+        {
+            VehiclesAnalyzer vehiclesAnalyzer = new VehiclesAnalyzer() { Vehicles = Vehicles };
+            string expectedMessage = "count types - number of car stemps\ncount all - total number of vehicles\naverage price - average vehicle price\naverage price [type] - average price of each type, such as average price volvo\nexit - exit.";
+
+            vehiclesAnalyzer.Action(CommandTypes.Help);
+
+            Assert.AreEqual(expectedMessage, vehiclesAnalyzer.Message);
+        }
     }
 }
