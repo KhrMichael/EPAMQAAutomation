@@ -28,6 +28,6 @@ namespace VehicleFleet.Vehicles.Vehicles
             IsNaked = isNaked;
         }
 
-        protected override string GetInfo() => string.Format("Scooter:\n{0}\n{1}\n{2}\nIs naked: {3}", Engine, Chassis, Transmission, IsNaked);
+        protected override string GetInfo() => $"Scooter:\n{Engine}\n{Chassis}\n{Transmission}\nIs naked: {IsNaked}";
     }
 }

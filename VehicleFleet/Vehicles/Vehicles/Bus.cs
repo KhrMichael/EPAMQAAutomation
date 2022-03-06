@@ -31,6 +31,6 @@ namespace VehicleFleet.Vehicles.Vehicles
             IsDoubleDeckerBus = isDoubleDeckerBus;
         }
 
-        protected override string GetInfo() => string.Format("Bus:\n{0}\n{1}\n{2}\nColor: {3}\nIs double decker bus: {4}", Engine, Chassis, Transmission, Color, IsDoubleDeckerBus);
+        protected override string GetInfo() => $"Bus:\n{Engine}\n{Chassis}\n{Transmission}\nColor: {Color}\nIs double decker bus: {IsDoubleDeckerBus}";
     }
 }

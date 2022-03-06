@@ -37,6 +37,6 @@ namespace VehicleFleet.Vehicles.Vehicles
             SeatsNumber = seatsNumber;
         }
 
-        protected override string GetInfo() => String.Format("Car:\n{0}\n{1}\n{2}\nSeats number: {3}", Engine, Chassis, Transmission, SeatsNumber);
+        protected override string GetInfo() => $"Car:\n{Engine}\n{Chassis}\n{Transmission}\nSeats number: {SeatsNumber}";
     }
 }

@@ -29,6 +29,6 @@ namespace VehicleFleet.Vehicles.Vehicles
             TrailerType = trailerType;
         }
 
-        protected override string GetInfo() => string.Format("Truck:\n{0}\n{1}\n{2}\nTrailer type: {3}", Engine, Chassis, Transmission, TrailerType);
+        protected override string GetInfo() => $"Truck:\n{Engine}\n{Chassis}\n{Transmission}\nTrailer type: {TrailerType}";
     }
 }

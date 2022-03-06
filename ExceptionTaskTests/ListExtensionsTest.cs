@@ -15,7 +15,7 @@ namespace ExceptionTaskTests
     {
         private const string vehiclesListPath = "VehiclesList.xml";
 
-        private static IEnumerable<object[]> IncorrectParametersForAddVehicle
+        private static IEnumerable<object[]> AddVehicleParameters
         {
             get
             {
@@ -25,7 +25,7 @@ namespace ExceptionTaskTests
                 };
             }
         }
-        private static IEnumerable<object[]> IncorrectParametersForGetVehicleByParameter
+        private static IEnumerable<object[]> GetVehicleByParameterParameters
         {
             get
             {
@@ -37,7 +37,7 @@ namespace ExceptionTaskTests
                 };
             }
         }
-        private static IEnumerable<object[]> IncorrectParametersForUpdateVehicle
+        private static IEnumerable<object[]> UpdateVehicleParameters
         {
             get
             {
@@ -49,7 +49,7 @@ namespace ExceptionTaskTests
                 };
             }
         }
-        private static IEnumerable<object[]> IncorrectParametersForRemoveVehicle
+        private static IEnumerable<object[]> RemoveVehicleParameters
         {
             get
             {
@@ -80,40 +80,44 @@ namespace ExceptionTaskTests
 
 
         [TestMethod]
-        [DynamicData("IncorrectParametersForAddVehicle")]
+        [DynamicData("AddVehicleParameters")]
         public void AddVehicle_ThrowAddException_ForIncorrectInputValues(Vehicle vehicle)
         {
-            List<Vehicle> vehicles = Vehicles;
+            var vehicles = Vehicles;
+
             Action testAddVehicle = () => vehicles.AddVehicle(vehicle);
 
             Assert.ThrowsException<AddException>(testAddVehicle);
         }
 
         [TestMethod]
-        [DynamicData("IncorrectParametersForGetVehicleByParameter")]
+        [DynamicData("GetVehicleByParameterParameters")]
         public void GetVehicleByParameter_ThrowGetVehicleByParameterException_ForIncorrectValues(string parameter, object value)
         {
             List<Vehicle> vehicles = Vehicles;
+
             Action testGetVehicleByParameter = () => vehicles.GetVehicleByParameter(parameter, value.ToString());
 
             Assert.ThrowsException<GetVehicleByParametrException>(testGetVehicleByParameter);
         }
 
         [TestMethod]
-        [DynamicData("IncorrectParametersForUpdateVehicle")]
+        [DynamicData("UpdateVehicleParameters")]
         public void UpdateVehicle_ThrowUpdateVehicleException_ForIncorrectParameters(VIN vin, Vehicle vehicle)
         {
             List<Vehicle> vehicles = Vehicles;
+
             Action testVehicleUpdate = () => vehicles.Update(vin, vehicle);
 
             Assert.ThrowsException<UpdateVehicleException>(testVehicleUpdate);
         }
 
         [TestMethod]
-        [DynamicData("IncorrectParametersForRemoveVehicle")]
+        [DynamicData("RemoveVehicleParameters")]
         public void RemoveVehicle_ThrowRemoveVehicleException_ForIncorrectParameter(VIN vin)
         {
             List<Vehicle> vehicles = Vehicles;
+
             Action testRemoveVehcle = () => vehicles.Remove(vin);
 
             Assert.ThrowsException<RemoveVehicleException>(testRemoveVehcle);

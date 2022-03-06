@@ -64,7 +64,7 @@ namespace VehicleFleet
         {
             int index;
 
-            if (identificationNumber != null && (index = vehicles.FindIndex(vh => vh.VehicleIdentificationNumber == identificationNumber)) > 0)
+            if (identificationNumber != null && (index = vehicles.FindIndex(vh => vh.VehicleIdentificationNumber == identificationNumber)) >= 0)
             {
                 vehicles[index] = newVehicle;
             }

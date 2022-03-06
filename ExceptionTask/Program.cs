@@ -10,9 +10,9 @@ namespace ExceptionTask
     {
         static void Main(string[] args)
         {
-            VehiclesCollectionGenerator vehiclesCollectionGenerator = new VehiclesCollectionGenerator();
-            VehicleCreator vehicleCreator = new BusCreator();
-            List<Vehicle> vehicles = new List<Vehicle>();
+            var vehiclesCollectionGenerator = new VehiclesCollectionGenerator();
+            var vehicleCreator = new BusCreator();
+            var vehicles = new List<Vehicle>();
 
             try
             {
@@ -29,7 +29,8 @@ namespace ExceptionTask
 
             try
             {
-                vehicles.Add(vehicleCreator.Create());
+                var vehicle = vehicleCreator.Create();
+                vehicles.Add(vehicle);
             }
             catch (AddException exception)
             {
@@ -47,7 +48,8 @@ namespace ExceptionTask
 
             try
             {
-                vehicles.Remove(new VIN());
+                var vehicleIdentifier = new VIN();
+                vehicles.Remove(vehicleIdentifier);
             }
             catch (RemoveVehicleException exception)
             {

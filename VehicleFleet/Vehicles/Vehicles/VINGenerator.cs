@@ -11,6 +11,8 @@ namespace VehicleFleet.Vehicles.Vehicles
         {
             string VIN = string.Empty;
             int vinSize = 17;
+            int asciiLatinAlphabetStart = 65;
+            int asciiLatinAlphabetEnd = 90;
             Random random = new Random();
 
             for (int vinLength = 0; vinLength < vinSize; vinLength++)
@@ -28,12 +30,11 @@ namespace VehicleFleet.Vehicles.Vehicles
                         break;
                     //add letter
                     case 1:
-                        int randomLetter = random.Next(65, 90);
-
+                        int randomLetter = random.Next(asciiLatinAlphabetStart, asciiLatinAlphabetEnd);
                         //
-                        if (randomLetter == 73 || randomLetter == 79 || randomLetter == 81)
+                        if (randomLetter == 73 || randomLetter == 79 || randomLetter == 81)//forbidden Q, I, O
                         {
-                            randomLetter -= random.Next(5);
+                            randomLetter--;
                         }
                         VIN += (char)randomLetter;
 
