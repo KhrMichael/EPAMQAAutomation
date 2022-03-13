@@ -1,57 +1,45 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
+using System.Text;
 
-namespace Task1
+namespace FirstTask
 {
     public class TextAnalyzer
     {
 
-        /// <summary>
-        /// Searches for the longest substring without repeating characters and return the length of this substring.
-        /// </summary>
-        /// <param name="initialString">Intitial string.</param>
-        /// <returns>Length of the longest substring without repeating characters.</returns>
-        public int FindMaxUniqueSubstringLength(ReadOnlySpan<char> initialString)
+        public int FindLengthOfLongestUniqueSubstring(ReadOnlySpan<char> sourceString)
         {
-            int maxUniqSubstringLength = 0;
-            int currentUniqSequenceLength;
-
-            for (int startSubstIndex = 0; maxUniqSubstringLength < initialString.Length - startSubstIndex; startSubstIndex++)
-            // if maxUniqSubstringLength greater than the substring length that will be given to GetMaxUniqueSubstringLength method
-            // then iteration process finish
-            {
-                currentUniqSequenceLength = GetMaxUniqueSubstringLength(initialString.Slice(startSubstIndex, initialString.Length - startSubstIndex));
-
-                if (currentUniqSequenceLength > maxUniqSubstringLength)
-                {
-                    maxUniqSubstringLength = currentUniqSequenceLength;
-                }
-            }
-
-            return maxUniqSubstringLength;
+            string longestSubstring = FindLongestUniqueSubstring(sourceString);
+            return longestSubstring.Length;
         }
 
-        private int GetMaxUniqueSubstringLength(ReadOnlySpan<char> sourceString)
+        public string FindLongestUniqueSubstring(ReadOnlySpan<char> sourceString)
         {
-            var uniqueSubstring = new HashSet<char>();
-            int maxUniqueSubstringLength = 0;
+            var longestSubstring = string.Empty;
+            var substringToCompare = new List<char>();
 
-            foreach (var symbol in sourceString)
+            for (int substringStartIndex = 0; sourceString.Length - substringStartIndex > longestSubstring.Length; substringStartIndex++)
             {
-                if (uniqueSubstring.Contains(symbol))
+                for (int i = substringStartIndex; i < sourceString.Length; i++)
                 {
-                    uniqueSubstring.Clear();
+                    if (substringToCompare.Contains(sourceString[i]))
+                    {
+                        break;
+                    }
+                    substringToCompare.Add(sourceString[i]);
+                } 
+
+                if(longestSubstring.Length < substringToCompare.Count)
+                {
+                    longestSubstring = new string(substringToCompare.ToArray());
                 }
 
-                uniqueSubstring.Add(symbol);
-
-                if (uniqueSubstring.Count > maxUniqueSubstringLength)
-                {
-                    maxUniqueSubstringLength++;
-                }
+                substringToCompare.Clear();
             }
 
-            return maxUniqueSubstringLength;
+            return longestSubstring;
         }
+
     }
 }

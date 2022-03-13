@@ -1,10 +1,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Task1;
+using FirstTask;
 
 namespace Task1Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class TextAnalyzerTest
     {
         [TestMethod]
         [DataRow("absddabssdfansfekol", 8)]
@@ -12,13 +12,13 @@ namespace Task1Tests
         [DataRow("23r0z/astlvn; d", 15)]
         [DataRow("asd98hgoia4eli", 12)]
         [DataRow("wq0tzvxlg,abscdbascd", 15)]
-        public void TestFindMaxUniqueSubstringLength(string initialString, int longestUniqueSubstringLength)
+        public void TestFindMaxUniqueSubstringLength(string sourceString, int expectedLength)
         {
             TextAnalyzer textAnalyzer = new TextAnalyzer();
 
-            int substringLength = textAnalyzer.FindMaxUniqueSubstringLength(initialString);
+            int longestUniqueSubstringLength = textAnalyzer.FindLengthOfLongestUniqueSubstring(sourceString);
 
-            Assert.AreEqual(substringLength, longestUniqueSubstringLength);
+            Assert.AreEqual(expectedLength, longestUniqueSubstringLength);
         }
     }
 }

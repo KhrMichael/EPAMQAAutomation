@@ -1,16 +1,16 @@
 ﻿using System;
 
-namespace Task1
+namespace FirstTask
 {
     class Program
     {
         static void Main(string[] args)
         {
-            TextAnalyzer textAnalyzer = new TextAnalyzer();
+            var textAnalyzer = new TextAnalyzer();
 
-            if (args != null && args.Length == 1)
+            if (args.Length == 1)
             {
-                Console.WriteLine(textAnalyzer.FindMaxUniqueSubstringLength(args[0]));
+                Console.WriteLine(textAnalyzer.FindLengthOfLongestUniqueSubstring(args[0]));
             }
         }
     }
