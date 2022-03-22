@@ -2,13 +2,13 @@
 {
     public class Help : Command
     {
-        public Help(VehiclesAnalyzer analyzer) : base(analyzer)
+        public Help(VehiclesFleet fleet) : base(fleet)
         {
         }
 
         public override void Execute()
         {
-            analyzer.Action(CommandTypes.Help);
+            Fleet.Action(CommandTypes.Help);
         }
     }
 }

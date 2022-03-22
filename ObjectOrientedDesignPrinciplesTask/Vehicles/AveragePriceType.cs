@@ -4,13 +4,13 @@
     {
         public string Type { get; set; }
 
-        public AveragePriceType(VehiclesAnalyzer analyzer) : base(analyzer)
+        public AveragePriceType(VehiclesFleet fleet) : base(fleet)
         {
         }
 
         public override void Execute()
         {
-            analyzer.Action(CommandTypes.AveragePriceType, Type);
+            Fleet.Action(CommandTypes.AveragePriceType, Type);
         }
     }
 }

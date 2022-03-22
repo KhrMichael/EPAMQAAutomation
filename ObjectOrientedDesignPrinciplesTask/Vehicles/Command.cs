@@ -2,11 +2,11 @@
 {
     public abstract class Command
     {
-        protected VehiclesAnalyzer analyzer;
+        protected VehiclesFleet Fleet;
 
-        public Command(VehiclesAnalyzer analyzer)
+        public Command(VehiclesFleet fleet)
         {
-            this.analyzer = analyzer;
+            this.Fleet = fleet;
         }
 
         public abstract void Execute();

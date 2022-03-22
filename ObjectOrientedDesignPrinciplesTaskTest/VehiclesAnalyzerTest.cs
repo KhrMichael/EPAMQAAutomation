@@ -28,7 +28,7 @@ namespace ObjectOrientedDesignPrinciplesTaskTest
         [DataRow(CommandTypes.CountTypes, "2")]
         public void Action_VehiclesAnalysisCommand_ValidMessage(CommandTypes command, string expectedMessage, params object[] parameters)
         {
-            var vehiclesAnalyzer = new VehiclesAnalyzer() { Vehicles = Vehicles };
+            var vehiclesAnalyzer = new VehiclesFleet() { Vehicles = Vehicles };
 
             vehiclesAnalyzer.Action(command, parameters);
 
@@ -38,7 +38,7 @@ namespace ObjectOrientedDesignPrinciplesTaskTest
         [TestMethod]
         public void Action_HelpCommand_ValidHelpMessage()
         {
-            var vehiclesAnalyzer = new VehiclesAnalyzer() { Vehicles = Vehicles };
+            var vehiclesAnalyzer = new VehiclesFleet() { Vehicles = Vehicles };
             var expectedMessage = "count types - number of car stemps\ncount all - total number of vehicles\naverage price - average vehicle price\naverage price [type] - average price of each type, such as average price volvo\nexit - exit.";
 
             vehiclesAnalyzer.Action(CommandTypes.Help);
@@ -49,7 +49,7 @@ namespace ObjectOrientedDesignPrinciplesTaskTest
         [TestMethod]
         public void Action_ExitCommand_ExitIsTrue()
         {
-            var vehiclesAnalyzer = new VehiclesAnalyzer() { Vehicles = Vehicles };
+            var vehiclesAnalyzer = new VehiclesFleet() { Vehicles = Vehicles };
 
             vehiclesAnalyzer.Action(CommandTypes.Exit);
 

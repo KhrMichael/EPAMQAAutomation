@@ -15,45 +15,42 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
         private const string averagePriceCommand = "average price";
         private const string exitCommand = "exit";
 
-        private VehiclesAnalyzer VehiclesAnalyzer { get; set; }
-        private CommandsInvoker Invoker { get; set; }
+        private VehiclesFleet VehiclesFleet { get; }
+        private CommandsInvoker Invoker { get; }
 
         protected VehiclesManager()
         {
-            VehiclesAnalyzer = new VehiclesAnalyzer();
+            VehiclesFleet = new VehiclesFleet();
             Invoker = new CommandsInvoker();
         }
 
-        public static VehiclesManager Instance()
-        {
-            return manager != null ? manager : manager = new VehiclesManager();
-        }
+        public static VehiclesManager Instance() => manager ??= new VehiclesManager();
 
         public void Start()
         {
             ReceiveVehiclesData();
-            ExecuteCommand(new Help(VehiclesAnalyzer));
+            ExecuteCommand(new Help(VehiclesFleet));
             Monitor();
         }
 
         private void Monitor()
         {
-            while (!VehiclesAnalyzer.Exit)
+            while (!VehiclesFleet.Exit)
             {
-                var command = Console.ReadLine().Trim();
+                var command = Console.ReadLine()!.Trim();
                 switch (command)
                 {
                     case countTypesCommand:
-                        ExecuteCommand(new CountTypes(VehiclesAnalyzer));
+                        ExecuteCommand(new CountTypes(VehiclesFleet));
                         break;
                     case countAllCommand:
-                        ExecuteCommand(new CountAll(VehiclesAnalyzer));
+                        ExecuteCommand(new CountAll(VehiclesFleet));
                         break;
                     case averagePriceCommand:
-                        ExecuteCommand(new AveragePrice(VehiclesAnalyzer));
+                        ExecuteCommand(new AveragePrice(VehiclesFleet));
                         break;
                     case exitCommand:
-                        ExecuteCommand(new Exit(VehiclesAnalyzer));
+                        ExecuteCommand(new Exit(VehiclesFleet));
                         break;
                     default:
                         if (command.Contains(averagePriceCommand))
@@ -61,7 +58,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
                             //substring with the type of vehicles
                             string type = command.Substring(averagePriceCommand.Length);
                             type = type.Trim();
-                            ExecuteCommand(new AveragePriceType(VehiclesAnalyzer) { Type = type });
+                            ExecuteCommand(new AveragePriceType(VehiclesFleet) { Type = type });
                         }
                         else
                         {
@@ -78,7 +75,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
             {
                 Invoker.StoreCommand(command);
                 Invoker.ExecuteCommand();
-                Console.WriteLine(VehiclesAnalyzer.Message);
+                Console.WriteLine(VehiclesFleet.Message);
             }
             catch(ExecuteCommandException exception)
             {
@@ -98,7 +95,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
             foreach (Match vehicleData in regex.Matches(vehiclesData))
             {
                 var vehicle = ParseVehicleData(vehicleData.Value);
-                VehiclesAnalyzer.Vehicles.Add(vehicle);
+                VehiclesFleet.Vehicles.Add(vehicle);
             }
         }
 

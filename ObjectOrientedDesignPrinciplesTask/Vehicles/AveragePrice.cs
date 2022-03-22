@@ -2,13 +2,13 @@
 {
     public class AveragePrice : Command
     {
-        public AveragePrice(VehiclesAnalyzer analyzer) : base(analyzer)
+        public AveragePrice(VehiclesFleet fleet) : base(fleet)
         {
         }
 
         public override void Execute()
         {
-            analyzer.Action(CommandTypes.AveragePrice);
+            Fleet.Action(CommandTypes.AveragePrice);
         }
     }
 }

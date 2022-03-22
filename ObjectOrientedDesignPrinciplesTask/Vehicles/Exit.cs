@@ -2,13 +2,13 @@
 {
     public class Exit : Command
     {
-        public Exit(VehiclesAnalyzer analyzer) : base(analyzer)
+        public Exit(VehiclesFleet fleet) : base(fleet)
         {
         }
 
         public override void Execute()
         {
-            analyzer.Action(CommandTypes.Exit);
+            Fleet.Action(CommandTypes.Exit);
         }
     }
 }

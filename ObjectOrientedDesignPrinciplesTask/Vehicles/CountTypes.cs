@@ -2,13 +2,13 @@
 {
     public class CountTypes : Command
     {
-        public CountTypes(VehiclesAnalyzer analyzer) : base(analyzer)
+        public CountTypes(VehiclesFleet fleet) : base(fleet)
         {
         }
 
         public override void Execute()
         {
-            analyzer.Action(CommandTypes.CountTypes);
+            Fleet.Action(CommandTypes.CountTypes);
         }
     }
 }

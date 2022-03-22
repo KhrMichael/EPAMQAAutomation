@@ -5,18 +5,18 @@ using System.Linq;
 
 namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 {
-    public class VehiclesAnalyzer
+    public class VehiclesFleet
     {
         public string Message { get; private set; }
         public List<Vehicle> Vehicles { get; set; }
         public bool Exit { get; private set; }
 
-        public VehiclesAnalyzer()
+        public VehiclesFleet()
         {
             Vehicles = new List<Vehicle>();
         }
 
-        private void CountType()
+        private void CountTypes()
         {
             var types = new List<string>();
             foreach (var vehicle in Vehicles)
@@ -100,7 +100,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
             switch (commandType)
             {
                 case CommandTypes.CountTypes:
-                    CountType();
+                    CountTypes();
                     break;
                 case CommandTypes.CountAll:
                     CountAll();
