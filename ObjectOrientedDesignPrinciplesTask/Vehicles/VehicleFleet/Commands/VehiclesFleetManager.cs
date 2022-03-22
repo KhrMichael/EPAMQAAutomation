@@ -28,7 +28,6 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles.VehicleFleet.Commands
             {
                 throw new ExecuteCommandException("Nothing to execute.");
             }
-
             try
             {
                 commands[currentCommand].Execute();

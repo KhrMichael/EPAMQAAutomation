@@ -2,6 +2,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ObjectOrientedDesignPrinciplesTask;
 using ObjectOrientedDesignPrinciplesTask.Vehicles.VehicleFleet.Commands;
 using System.Collections.Generic;
+using ObjectOrientedDesignPrinciplesTask.Vehicles;
+using ObjectOrientedDesignPrinciplesTask.Vehicles.VehicleFleet;
 
 namespace ObjectOrientedDesignPrinciplesTaskTest
 {
@@ -20,32 +22,7 @@ namespace ObjectOrientedDesignPrinciplesTaskTest
                 };
             }
         }
-
-        [TestMethod]
-        [DataRow(CommandTypes.CountAll, "21000")]
-        [DataRow(CommandTypes.AveragePrice, "168")]
-        [DataRow(CommandTypes.AveragePriceType, "184.72", "Volvo")]
-        [DataRow(CommandTypes.CountTypes, "2")]
-        public void Action_VehiclesAnalysisCommand_ValidMessage(CommandTypes command, string expectedMessage, params object[] parameters)
-        {
-            var vehiclesAnalyzer = new VehiclesFleet() { Vehicles = Vehicles };
-
-            vehiclesAnalyzer.Action(command, parameters);
-
-            Assert.AreEqual(expectedMessage, vehiclesAnalyzer.Result);
-        }
-
-        [TestMethod]
-        public void Action_HelpCommand_ValidHelpMessage()
-        {
-            var vehiclesAnalyzer = new VehiclesFleet() { Vehicles = Vehicles };
-            var expectedMessage = "count types - number of car stemps\ncount all - total number of vehicles\naverage price - average vehicle price\naverage price [type] - average price of each type, such as average price volvo\nexit - exit.";
-
-            vehiclesAnalyzer.Action(CommandTypes.Help);
-
-            Assert.AreEqual(expectedMessage, vehiclesAnalyzer.Result);
-        }
-
+        
         [TestMethod]
         public void Action_ExitCommand_ExitIsTrue()
         {
