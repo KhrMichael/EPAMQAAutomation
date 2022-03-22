@@ -44,12 +44,14 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles.VehicleFleet
 
         private void AveragePrice()
         {
-            double totalPrice = 0.0;
+            var totalPrice = 0.0;
+            var vechiclesQuantity = 0u;
             foreach (var vehicle in Vehicles)
             {
-                totalPrice += vehicle.Price;
+                totalPrice += vehicle.Price * vehicle.Quantity;
+                vechiclesQuantity += vehicle.Quantity;
             }
-            double averagePrice = totalPrice / Vehicles.Count;
+            var averagePrice = totalPrice / vechiclesQuantity;
 
             Result = averagePrice;
         }
@@ -57,9 +59,8 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles.VehicleFleet
         /// <exception cref="ExecuteCommandException"></exception>
         private void AveragePriceType(string type)
         {
-            double totalPrice = 0;
-            int numberOfModels = 0;
-            double averagePrice = 0;
+            var totalPrice = 0.0;
+            var vehiclesQuantity = 0u;
 
             if (Vehicles.All(vh => vh.Type != type))
             {
@@ -70,16 +71,17 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles.VehicleFleet
             {
                 if (vehicle.Type == type)
                 {
-                    totalPrice += vehicle.Price;
-                    numberOfModels++;
+                    totalPrice += vehicle.Price * vehicle.Quantity;
+                    vehiclesQuantity += vehicle.Quantity;
                 }
             }
-            averagePrice = totalPrice / numberOfModels;
+            var averagePrice = totalPrice / vehiclesQuantity;
 
             Result = averagePrice;
         }
 
         private void Help()
+        
         {
             var helpMessage = "Available commands:\n" +
                               "count types\n" +
