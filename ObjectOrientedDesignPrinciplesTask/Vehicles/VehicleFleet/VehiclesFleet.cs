@@ -1,13 +1,14 @@
-﻿using ObjectOrientedDesignPrinciplesTask.Vehicles.Exceptions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using ObjectOrientedDesignPrinciplesTask.Vehicles.VehicleFleet.Commands;
+using ObjectOrientedDesignPrinciplesTask.Vehicles.VehicleFleet.Commands.Exceptions;
 
-namespace ObjectOrientedDesignPrinciplesTask.Vehicles
+namespace ObjectOrientedDesignPrinciplesTask.Vehicles.VehicleFleet
 {
     public class VehiclesFleet
     {
-        public string Message { get; private set; }
+        public object Result { get; private set; }
         public List<Vehicle> Vehicles { get; set; }
         public bool Exit { get; private set; }
 
@@ -27,7 +28,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
                 }
             }
 
-            Message = types.Count.ToString();
+            Result = types.Count;
         }
 
         private void CountAll()
@@ -38,25 +39,21 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
                 numberOfVehicles += vehicle.Quantity;
             }
 
-            Message = numberOfVehicles.ToString();
+            Result = numberOfVehicles;
         }
 
         private void AveragePrice()
         {
-            double totalPrice = 0;
+            double totalPrice = 0.0;
             foreach (var vehicle in Vehicles)
             {
                 totalPrice += vehicle.Price;
             }
             double averagePrice = totalPrice / Vehicles.Count;
 
-            Message = averagePrice.ToString(CultureInfo.InvariantCulture);
+            Result = averagePrice;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="type"></param>
         /// <exception cref="ExecuteCommandException"></exception>
         private void AveragePriceType(string type)
         {
@@ -64,9 +61,9 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
             int numberOfModels = 0;
             double averagePrice = 0;
 
-            if (!Vehicles.Any(vh => vh.Type == type))
+            if (Vehicles.All(vh => vh.Type != type))
             {
-                throw new ExecuteCommandException($"There is no such type [{type}].");
+                throw new ExecuteCommandException($"Vehicle fleet doesn't have type: [{type}].");
             }
 
             foreach (var vehicle in Vehicles)
@@ -79,14 +76,19 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
             }
             averagePrice = totalPrice / numberOfModels;
 
-            Message = averagePrice.ToString(CultureInfo.InvariantCulture);
+            Result = averagePrice;
         }
 
         private void Help()
         {
-            var helpMessage = "count types - number of car stemps\ncount all - total number of vehicles\naverage price - average vehicle price\naverage price [type] - average price of each type, such as average price volvo\nexit - exit.";
+            var helpMessage = "Available commands:\n" +
+                              "count types\n" +
+                              "count all\n" +
+                              "average price\n" +
+                              "average price [type]\n" +
+                              "exit";
 
-            Message = helpMessage;
+            Result = helpMessage;
         }
 
         /// <summary>
@@ -116,7 +118,6 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
                     break;
                 case CommandTypes.Exit:
                     Exit = true;
-                    Message = string.Empty;
                     break;
             }
         }

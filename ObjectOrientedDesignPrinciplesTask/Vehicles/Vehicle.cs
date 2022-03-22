@@ -1,4 +1,4 @@
-﻿namespace ObjectOrientedDesignPrinciplesTask
+﻿namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 {
     public class Vehicle
     {

@@ -1,4 +1,4 @@
-﻿namespace ObjectOrientedDesignPrinciplesTask.Vehicles
+﻿namespace ObjectOrientedDesignPrinciplesTask.Vehicles.VehicleFleet.Commands
 {
     public enum CommandTypes
     {

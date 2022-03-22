@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ObjectOrientedDesignPrinciplesTask;
-using ObjectOrientedDesignPrinciplesTask.Vehicles;
+using ObjectOrientedDesignPrinciplesTask.Vehicles.VehicleFleet.Commands;
 using System.Collections.Generic;
 
 namespace ObjectOrientedDesignPrinciplesTaskTest
@@ -32,7 +32,7 @@ namespace ObjectOrientedDesignPrinciplesTaskTest
 
             vehiclesAnalyzer.Action(command, parameters);
 
-            Assert.AreEqual(expectedMessage, vehiclesAnalyzer.Message);
+            Assert.AreEqual(expectedMessage, vehiclesAnalyzer.Result);
         }
 
         [TestMethod]
@@ -43,7 +43,7 @@ namespace ObjectOrientedDesignPrinciplesTaskTest
 
             vehiclesAnalyzer.Action(CommandTypes.Help);
 
-            Assert.AreEqual(expectedMessage, vehiclesAnalyzer.Message);
+            Assert.AreEqual(expectedMessage, vehiclesAnalyzer.Result);
         }
 
         [TestMethod]

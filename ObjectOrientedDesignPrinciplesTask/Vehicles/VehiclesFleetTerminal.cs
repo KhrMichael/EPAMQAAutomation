@@ -1,14 +1,16 @@
-﻿using ObjectOrientedDesignPrinciplesTask.Vehicles.Exceptions;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
+using ObjectOrientedDesignPrinciplesTask.Vehicles.VehicleFleet;
+using ObjectOrientedDesignPrinciplesTask.Vehicles.VehicleFleet.Commands;
+using ObjectOrientedDesignPrinciplesTask.Vehicles.VehicleFleet.Commands.Exceptions;
 
 namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 {
-    public class VehiclesManager
+    public class VehiclesFleetTerminal
     {
-        protected static VehiclesManager manager;
+        protected static VehiclesFleetTerminal terminal;
 
         private const string countTypesCommand = "count types";
         private const string countAllCommand = "count all";
@@ -16,15 +18,15 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
         private const string exitCommand = "exit";
 
         private VehiclesFleet VehiclesFleet { get; }
-        private CommandsInvoker Invoker { get; }
+        private VehiclesFleetManager Invoker { get; }
 
-        protected VehiclesManager()
+        protected VehiclesFleetTerminal()
         {
             VehiclesFleet = new VehiclesFleet();
-            Invoker = new CommandsInvoker();
+            Invoker = new VehiclesFleetManager();
         }
 
-        public static VehiclesManager Instance() => manager ??= new VehiclesManager();
+        public static VehiclesFleetTerminal Instance() => terminal ??= new VehiclesFleetTerminal();
 
         public void Start()
         {
@@ -58,7 +60,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
                             //substring with the type of vehicles
                             string type = command.Substring(averagePriceCommand.Length);
                             type = type.Trim();
-                            ExecuteCommand(new AveragePriceType(VehiclesFleet) { Type = type });
+                            ExecuteCommand(new AveragePriceType(VehiclesFleet, type));
                         }
                         else
                         {
@@ -69,15 +71,15 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
             }
         }
 
-        private void ExecuteCommand(Command command)
+        private void ExecuteCommand(VehicleFleetCommand command)
         {
-            try 
+            try
             {
                 Invoker.StoreCommand(command);
                 Invoker.ExecuteCommand();
-                Console.WriteLine(VehiclesFleet.Message);
+                Console.WriteLine(VehiclesFleet.Result);
             }
-            catch(ExecuteCommandException exception)
+            catch (ExecuteCommandException exception)
             {
                 Console.WriteLine(exception.Message);
             }
@@ -85,8 +87,8 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 
         private void ReceiveVehiclesData()
         {
-            Console.WriteLine("Enter vehicle information as \"[type], [model], [number], [price]\"");
-            string vehiclesData = Console.ReadLine();
+            Console.WriteLine("Enter vehicles information as \"[type], [model], [number], [price]\"");
+            var vehiclesData = Console.ReadLine();
             vehiclesData = string.Concat(vehiclesData.Where(symblol => !char.IsWhiteSpace(symblol)));
 
             var vehicelceDataPattern = "\\\"\\w+[,]\\w+[,]\\d+[,]\\d+[.]?\\d*\\\"";//"[type],[model],[number],[price]"

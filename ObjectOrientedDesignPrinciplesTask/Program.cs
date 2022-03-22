@@ -1,4 +1,4 @@
 ﻿using ObjectOrientedDesignPrinciplesTask.Vehicles;
 
-var vehiclesManager = VehiclesManager.Instance();
-vehiclesManager.Start();
+var fleetTerminal = VehiclesFleetTerminal.Instance();
+fleetTerminal.Start();
