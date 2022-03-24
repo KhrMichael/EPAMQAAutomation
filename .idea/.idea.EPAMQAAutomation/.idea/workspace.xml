@@ -10,11 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/LocatorsSandbox/LocatorsSandbox.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LocatorsSandbox/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPAMQAAutomation.sln" beforeDir="false" afterPath="$PROJECT_DIR$/EPAMQAAutomation.sln" afterDir="false" />
-    </list>
+    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +132,16 @@
       <workItem from="1647968807313" duration="47000" />
       <workItem from="1647968858921" duration="3145000" />
       <workItem from="1647979562672" duration="2665000" />
+      <workItem from="1647983891576" duration="77000" />
     </task>
+    <task id="LOCAL-00001" summary="initial">
+      <created>1647983910103</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1647983910103</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +163,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="initial" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

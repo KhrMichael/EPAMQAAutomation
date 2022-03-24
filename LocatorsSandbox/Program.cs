@@ -9,3 +9,4 @@ chromeDriver.Url = "https://www.bbc.com/sport";
 var newsButtonLocator = By.XPath("//*[@id=\"orb-nav-links\"]/ul/li[2]");
 var newsButton = chromeDriver.FindElement(newsButtonLocator);
 newsButton.Click();
+chromeDriver.Quit();
