@@ -10,7 +10,7 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
 {
     public class VehiclesFleetTerminal
     {
-        protected static VehiclesFleetTerminal terminal;
+        private static VehiclesFleetTerminal terminal;
 
         private const string countTypesCommand = "count types";
         private const string countAllCommand = "count all";
@@ -18,12 +18,12 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
         private const string exitCommand = "exit";
 
         private VehiclesFleet VehiclesFleet { get; }
-        private VehiclesFleetManager Invoker { get; }
+        private VehiclesFleetManager VehiclesFleetManager { get; }
 
-        protected VehiclesFleetTerminal()
+        private VehiclesFleetTerminal()
         {
             VehiclesFleet = new VehiclesFleet();
-            Invoker = new VehiclesFleetManager();
+            VehiclesFleetManager = new VehiclesFleetManager();
         }
 
         public static VehiclesFleetTerminal Instance() => terminal ??= new VehiclesFleetTerminal();
@@ -75,8 +75,8 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
         {
             try
             {
-                Invoker.StoreCommand(command);
-                Invoker.ExecuteCommand();
+                VehiclesFleetManager.StoreCommand(command);
+                VehiclesFleetManager.ExecuteCommand();
                 Console.WriteLine(VehiclesFleet.Result);
             }
             catch (ExecuteCommandException exception)
@@ -104,8 +104,8 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles
         private Vehicle ParseVehicleData(string vehicleData)
         {
             vehicleData = vehicleData.Trim('"');
-            string[] vehicleParameters = vehicleData.Split(',');
-            Vehicle vehicle = new Vehicle()
+            var vehicleParameters = vehicleData.Split(',');
+            var vehicle = new Vehicle()
             {
                 Type = vehicleParameters[0],
                 Model = vehicleParameters[1],
