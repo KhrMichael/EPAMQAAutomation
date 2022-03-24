@@ -31,14 +31,12 @@ namespace ObjectOrientedDesignPrinciplesTask.Vehicles.VehicleFleet.Commands
             try
             {
                 commands[currentCommand].Execute();
-            }
-            catch (ExecuteCommandException e)
-            {
-                throw;
-            }
-            finally
-            {
                 currentCommand++;
+            }
+            catch (ExecuteCommandException)
+            {
+                commands.RemoveAt(currentCommand);
+                throw;
             }
         }
     }
