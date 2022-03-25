@@ -27,13 +27,15 @@ searchButton.Click();
 chromeDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 var searchInput = chromeDriver.FindElement(By.XPath("//*[@id='search-input']"));
 searchInput.SendKeys("belarus");
-var searchInputButton = chromeDriver.FindElement(By.XPath("//*[@id='main-content']/div[1]/form/div/div/div/button"));
+//var searchInputButton = chromeDriver.FindElement(By.XPath("//*[@id='main-content']/div[1]/form/div/div/div/button"));
+var searchInputButton = chromeDriver.FindElement(By.XPath("//*[@id='search-input']/following-sibling::button"));
 searchInputButton.Click();
 
 //click on first belarus news
 chromeDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 var belarusFirstNews = chromeDriver.FindElement(By.XPath("//*[@id='main-content']/div/div[@class='ssrcss-1v7bxtk-StyledContainer enjd40x0']/div/div/ul/li[1]"));
 belarusFirstNews.Click();
+
 
 chromeDriver.Close();
 chromeDriver.Quit();
