@@ -1,10 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using System.Xml;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.DevTools.V85.DOM;
-using OpenQA.Selenium.Support.UI;
 
 var chromeDriver = new ChromeDriver();
 chromeDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
