@@ -11,12 +11,12 @@ public class MailRuMainPageTest
 {
     private WebDriver Driver { get; set; }
     private string MailRuURI => "https://mail.ru/";
+    private string Title => "Mail.ru: почта, поиск в интернете, новости, игры";
     
     [TestInitialize]
     public void Initialize()
     {
         Driver = new ChromeDriver();
-        Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
     }
     
     [TestMethod]
@@ -24,7 +24,18 @@ public class MailRuMainPageTest
     {
         Driver.Url = MailRuURI;
 
-        Assert.AreEqual("Mail.ru: почта, поиск в интернете, новости, игры", Driver.Title);
+        Assert.AreEqual(Title, Driver.Title);
+    }
+
+    [TestMethod]
+    public void ShouldOpenMailRuLogInPageByClickingOnLogInButton()
+    {
+        Driver.Url = MailRuURI;
+        var mailRuMainPage = new MailRuMainPage(Driver);
+
+        var mailRuLogInPage = mailRuMainPage.LogInButtonClick();
+        
+        Assert.IsNotNull(mailRuMainPage);
     }
 
     [TestCleanup]
