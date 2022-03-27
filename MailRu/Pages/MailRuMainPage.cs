@@ -1,4 +1,6 @@
-﻿using MailRu.Exceptions;
+﻿using System.Diagnostics;
+using System.Text.RegularExpressions;
+using MailRu.Exceptions;
 using OpenQA.Selenium;
 
 namespace Pages.MailRu;
@@ -13,8 +15,8 @@ public class MailRuMainPage
     public MailRuMainPage(WebDriver driver)
     {
         Driver = driver;
-
-        if (!Driver.Title.Equals(Title)) ;
+        
+        if (!Driver.Title.Equals(Title)) 
         {
             throw new MailRuMainPageSetupException();
         }
