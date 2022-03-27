@@ -40,7 +40,7 @@ public class LocatorsTest
         Assert.AreEqual("BBC - Search", driver.Title);
     }
 
-[TestCleanup]
+    [TestCleanup]
     public void EndTest()
     {
         driver.Quit();

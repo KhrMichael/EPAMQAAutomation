@@ -10,9 +10,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="refactoring">
+    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LocatorsTaskTest/LocatorsTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LocatorsTaskTest/BbcPageTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LocatorsTaskTest/BbcPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LocatorsTaskTest/BbcPageTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +28,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/6d/37465b29/WebDriver.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/projects/EPAMQAAutomation/LocatorsSandbox/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/8e/e41cac69/WebElement.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -138,7 +137,8 @@
       <workItem from="1647968858921" duration="3145000" />
       <workItem from="1647979562672" duration="2665000" />
       <workItem from="1647983891576" duration="77000" />
-      <workItem from="1648300020627" duration="1801000" />
+      <workItem from="1648300020627" duration="1901000" />
+      <workItem from="1648395163530" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1647983910103</created>
@@ -168,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648300291120</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add ShouldOpenBbcSearchPage test method">
+      <created>1648303558731</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1648303558731</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +201,8 @@
     <MESSAGE value="optimize locator path to bbc searchInputButton" />
     <MESSAGE value="remove unnecessary using of implicitlyWait" />
     <MESSAGE value="refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+    <MESSAGE value="add ShouldOpenBbcSearchPage test method" />
+    <option name="LAST_COMMIT_MESSAGE" value="add ShouldOpenBbcSearchPage test method" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
