@@ -3,11 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailRu", "MailRu\MailRu.csproj", "{71FE8E23-3E75-43AC-8538-094D4A903E6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailRuTest", "MailRuTest\MailRuTest.csproj", "{2D163786-2989-481B-B84B-C78C11A02D2D}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6EA93CDE-5C4B-41CF-8F16-B7A2C41F5AD4}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71FE8E23-3E75-43AC-8538-094D4A903E6E}.MailRu|Any CPU.ActiveCfg = MailRu|Any CPU
+		{71FE8E23-3E75-43AC-8538-094D4A903E6E}.MailRu|Any CPU.Build.0 = MailRu|Any CPU
+		{2D163786-2989-481B-B84B-C78C11A02D2D}.MailRu|Any CPU.ActiveCfg = MailRu|Any CPU
+		{2D163786-2989-481B-B84B-C78C11A02D2D}.MailRu|Any CPU.Build.0 = MailRu|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		MailRu|Any CPU = MailRu|Any CPU
 	EndGlobalSection
 EndGlobal
