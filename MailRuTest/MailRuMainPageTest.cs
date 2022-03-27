@@ -13,7 +13,7 @@ public class MailRuMainPageTest
     private string MailRuURI => "https://mail.ru/";
     private string Title => "Mail.ru: почта, поиск в интернете, новости, игры";
     
-    [TestInitialize]
+    [ClassInitialize]
     public void Initialize()
     {
         Driver = new ChromeDriver();
@@ -39,9 +39,15 @@ public class MailRuMainPageTest
     }
 
     [TestCleanup]
-    public void Cleanup()
+    public void TestCleanup()
     {
        Driver.Close();
+       Driver.Quit();
+    }
+
+    [ClassCleanup]
+    public void ClassCleanup()
+    {
        Driver.Quit();
     }
 }
