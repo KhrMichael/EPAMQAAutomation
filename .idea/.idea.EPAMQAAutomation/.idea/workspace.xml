@@ -10,7 +10,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="add MailRu base exceptions, MailRu main page, MailRu login page, and some tests" />
+    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="add MailRu base exceptions, MailRu main page, MailRu login page, and some tests">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuMainPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuMainPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuMainPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuMainPageTest.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,8 +37,16 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9e821d4c3a394f8faea3644256a35d4811590/61/5c78beea/Assert.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/974fa14c57bab8fe29f1bddd39b1a6548b9cc8cf9e0ef5e670c2407a56d9/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d46f122b26cd58f29c516e7276a9627b5e8c401791ed1b79e15925cb2f5d954/Debug.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/b1/47f871c7/Command.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/55ed6ee557de3524b576e7488a18eeb88135c4998790a451c7fca1468b4a57/SpanHelpers.Byte.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/6d/37465b29/WebDriver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/df71358f7b7337a1eee3a65abe6d678dd9a065e256b8cc3fd44a2949754/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/efd3e9c4749621d4a53b45d7117d2a581e02a265c444a040f1387a155db/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/8e/e41cac69/WebElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5fead5fbf2bee3da1b9f378a09d78479a62db80dae1e1c6453efdb0bc92a8/String.Comparison.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -143,7 +156,7 @@
       <workItem from="1647979562672" duration="2665000" />
       <workItem from="1647983891576" duration="77000" />
       <workItem from="1648300020627" duration="1901000" />
-      <workItem from="1648395163530" duration="3382000" />
+      <workItem from="1648395163530" duration="8516000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1647983910103</created>
@@ -201,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648398522823</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add MailRu base exceptions, MailRu main page, MailRu login page, and some tests">
+      <created>1648398635553</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1648398635553</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +235,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="WebDriverTask" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -230,6 +262,13 @@
     <MESSAGE value="refactoring" />
     <MESSAGE value="add MailRu base exceptions, MailRu main page, MailRu login page, and some tests" />
     <option name="LAST_COMMIT_MESSAGE" value="add MailRu base exceptions, MailRu main page, MailRu login page, and some tests" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#OpenQA.Selenium.WebDriver" memberName="Title" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
