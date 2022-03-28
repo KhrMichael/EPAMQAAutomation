@@ -11,11 +11,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="add mail ru authorization and tests">
-      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuLogInIncorrectAccountNameException.cs" afterDir="false" />
+    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuMainPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuMainPage.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +184,7 @@
       <workItem from="1648395163530" duration="9024000" />
       <workItem from="1648404264195" duration="30000" />
       <workItem from="1648410282247" duration="6944000" />
-      <workItem from="1648460764687" duration="11359000" />
+      <workItem from="1648460764687" duration="13457000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1647983910103</created>
@@ -307,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648477083109</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add account name validation and test">
+      <created>1648480170431</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1648480170431</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +358,8 @@
     <MESSAGE value="add correct initialize and cleanup methods" />
     <MESSAGE value="add MailRuIncomingMailPage.cs and exceptions also add more functionality to MailRuLogInPage.cs and tests" />
     <MESSAGE value="add mail ru authorization and tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="add mail ru authorization and tests" />
+    <MESSAGE value="add account name validation and test" />
+    <option name="LAST_COMMIT_MESSAGE" value="add account name validation and test" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

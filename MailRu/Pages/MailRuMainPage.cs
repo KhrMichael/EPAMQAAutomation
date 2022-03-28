@@ -9,9 +9,8 @@ namespace Pages.MailRu;
 public class MailRuMainPage
 {
     private WebDriver Driver { get; }
-    private string LogInXPathButtonLocator => "//*[@id='ph-whiteline']/div/div[2]/button";
-        
-    public string Title => "Mail.ru: почта, поиск в интернете, новости, игры";
+    private string LogInButtonXPath => "//*[@id='ph-whiteline']/div/div[2]/button";
+    private string Title => "Mail.ru: почта, поиск в интернете, новости, игры";
 
     public MailRuMainPage(WebDriver driver)
     {
@@ -30,7 +29,7 @@ public class MailRuMainPage
 
     public MailRuLogInPage LogInButtonClick()
     {
-        var logInButton = Driver.FindElement(By.XPath(LogInXPathButtonLocator));
+        var logInButton = Driver.FindElement(By.XPath(LogInButtonXPath));
         logInButton.Click();
 
         return new MailRuLogInPage(Driver);
