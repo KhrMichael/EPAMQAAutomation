@@ -18,14 +18,14 @@ public class MailRuLogInPage
    private string SubmitAccountNameButtonCssSelector =>
       "#root > div > div > div > div.wrapper-0-2-5 > div > div > form > div:nth-child(2) > div:nth-child(2) >" +
       " div:nth-child(3) > div > div > div.submit-button-wrap > button";
-
    private string InputPasswordXPath =>
       "//*[@id='root']/div/div/div/div[2]/div/div/form/div[2]/div/div[2]/div/div/div/div/div/input";
-
    private string InputPasswordName => "password";
    private string SubmitPasswordButtonCssSelector =>
       "#root > div > div > div > div.wrapper-0-2-5 > div > div > form > " +
       "div:nth-child(2) > div > div:nth-child(3) > div > div > div.submit-button-wrap > div > button";
+   private string LogInAccountNameErrorDivXPath =>
+      "//*[@id='root']/div/div/div/div[2]/div/div/form/div[2]/div[2]/div[1]/div/div/div/div[2]/small";
 
    public string AccountName { get; set; }
    public string Passowrd { get; set; }
@@ -36,6 +36,7 @@ public class MailRuLogInPage
    public MailRuLogInPage(WebDriver driver)
    {
       Driver = driver;
+      Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
       var webDriverWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
       
       try
@@ -83,6 +84,15 @@ public class MailRuLogInPage
    {
       var submitButton = Driver.FindElement(By.CssSelector(SubmitAccountNameButtonCssSelector));
       submitButton.Click();
+
+      try
+      {
+         new WebDriverWait(Driver, TimeSpan.FromSeconds(10)).Until(driver =>
+            driver.FindElement(By.XPath(LogInAccountNameErrorDivXPath)));
+         throw new MailRuLogInIncorrectAccountNameException();
+      }
+      catch (WebDriverTimeoutException)
+      { }
 
       return this;
    }

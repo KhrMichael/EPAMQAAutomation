@@ -11,15 +11,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="">
+    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="add mail ru authorization and tests">
+      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuLogInIncorrectAccountNameException.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPAMQAAutomation.sln" beforeDir="false" afterPath="$PROJECT_DIR$/EPAMQAAutomation.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRu/MailRu.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/MailRu.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailPage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuMainPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuMainPage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuTest.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuTest.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +47,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/55ed6ee557de3524b576e7488a18eeb88135c4998790a451c7fca1468b4a57/SpanHelpers.Byte.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/cb/89e609cb/NoSuchElementException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/8e/e41cac69/WebElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/9c/4a9af769/ElementNotInteractableException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/b1/47f871c7/Command.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/26671011cacf42038b5a7d023d37851c25390/9b/c812aae8/MethodInfoExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/6d/37465b29/WebDriver.cs" root0="SKIP_HIGHLIGHTING" />
@@ -189,7 +186,7 @@
       <workItem from="1648395163530" duration="9024000" />
       <workItem from="1648404264195" duration="30000" />
       <workItem from="1648410282247" duration="6944000" />
-      <workItem from="1648460764687" duration="8674000" />
+      <workItem from="1648460764687" duration="11359000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1647983910103</created>
@@ -303,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648417264071</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add mail ru authorization and tests">
+      <created>1648477083109</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1648477083109</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,26 +352,10 @@
     <MESSAGE value="add ShouldOpenMailRuLogInPageByClickingOnLogInButton" />
     <MESSAGE value="add correct initialize and cleanup methods" />
     <MESSAGE value="add MailRuIncomingMailPage.cs and exceptions also add more functionality to MailRuLogInPage.cs and tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="add MailRuIncomingMailPage.cs and exceptions also add more functionality to MailRuLogInPage.cs and tests" />
+    <MESSAGE value="add mail ru authorization and tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="add mail ru authorization and tests" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs</url>
-          <line>48</line>
-          <properties documentPath="D:\projects\EPAMQAAutomation\MailRu\Pages\MailRuLogInPage.cs" initialLine="46" containingFunctionPresentation="constructor 'MailRuLogInPage'">
-            <startOffsets>
-              <option value="2071" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2152" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#OpenQA.Selenium.WebDriver" memberName="Title" />
