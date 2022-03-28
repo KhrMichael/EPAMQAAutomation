@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using MailRu.Exceptions;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace Pages.MailRu;
 
@@ -15,8 +16,13 @@ public class MailRuMainPage
     public MailRuMainPage(WebDriver driver)
     {
         Driver = driver;
-        
-        if (!Driver.Title.Equals(Title)) 
+        var webDriverWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+
+        try
+        {
+            webDriverWait.Until(driver => driver.Title.Equals(Title));
+        }
+        catch(WebDriverTimeoutException)
         {
             throw new MailRuMainPageSetupException();
         }

@@ -1,29 +1,28 @@
 using MailRu.Exceptions;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace Pages.MailRu;
 
 public class MailRuLogInPage
 {
    private WebDriver Driver { get; }
-   private string LogInTitle => "Authorization";
+   private string LogInTitle => "Авторизация";
    private string MainPageTitle => "Mail.ru: почта, поиск в интернете, новости, игры";
-
+   private string SignInFrameXPath => "/html/body/div[3]/div/iframe";
    private string InputAccountNameCssSelector =>
       "#root > div > div > div > div.wrapper-0-2-5 > div > div > form > div:nth-child(2) > div:nth-child(2) >" +
       " div.login-row.username > div > div > div > div > div > div.base-0-2-58.first-0-2-64 > div > input";
-
    private string InputAccountNameXPath =>
       "//input[@name='username']";
-
    private string SubmitAccountNameButtonCssSelector =>
       "#root > div > div > div > div.wrapper-0-2-5 > div > div > form > div:nth-child(2) > div:nth-child(2) >" +
       " div:nth-child(3) > div > div > div.submit-button-wrap > button";
 
-   private string InputPasswordCssSelector =>
-      "#root > div > div > div > div.wrapper-0-2-5 > div > div > form > " +
-      "div:nth-child(2) > div > div.login-row.password";
+   private string InputPasswordXPath =>
+      "//*[@id='root']/div/div/div/div[2]/div/div/form/div[2]/div/div[2]/div/div/div/div/div/input";
 
+   private string InputPasswordName => "password";
    private string SubmitPasswordButtonCssSelector =>
       "#root > div > div > div > div.wrapper-0-2-5 > div > div > form > " +
       "div:nth-child(2) > div > div:nth-child(3) > div > div > div.submit-button-wrap > div > button";
@@ -37,11 +36,22 @@ public class MailRuLogInPage
    public MailRuLogInPage(WebDriver driver)
    {
       Driver = driver;
+      var webDriverWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+      
+      try
+      {
+         var pageTitle = webDriverWait.Until(driver => driver.Title);
+         webDriverWait.Until(driver =>
+            driver.SwitchTo().Frame(Driver.FindElement(By.XPath("/html/body/div[3]/div/iframe"))));
+         var logInPopupTitle =
+            webDriverWait.Until(driver => driver.FindElement(By.TagName("title")).GetAttribute("innerHTML"));
 
-      var titleElements = Driver.FindElements(By.TagName("title"));
-      var titles = titleElements.Select(title => title.Text);
-
-      if (titles.Contains(LogInTitle) && titles.Contains(MainPageTitle))
+         if (!pageTitle.Equals(MainPageTitle) && !logInPopupTitle.Equals(logInPopupTitle))
+         {
+            throw new MailRuLogInPageSetupException();
+         }
+      }
+      catch (WebDriverTimeoutException)
       {
          throw new MailRuLogInPageSetupException();
       }
@@ -62,6 +72,7 @@ public class MailRuLogInPage
 
    public MailRuLogInPage SendAccountName()
    {
+      Driver.SwitchTo().ActiveElement();
       var input = Driver.FindElement(By.CssSelector(InputAccountNameCssSelector));
       input.SendKeys(AccountName);
 
@@ -81,7 +92,8 @@ public class MailRuLogInPage
       IWebElement input;
       try
       {
-         input = Driver.FindElement(By.CssSelector(InputPasswordCssSelector));
+         Driver.SwitchTo().ActiveElement();
+         input = Driver.FindElement(By.Name(InputPasswordName));
          input.SendKeys(Passowrd);
       }
       catch (NoSuchElementException)

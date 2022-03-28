@@ -21,8 +21,8 @@ public class MailRuLogInPageTest
     }
 
     [TestMethod]
-    [DataRow("test.account1", "strongpassword")]
-    [DataRow("test.account2", "strongpassword")]
+    [DataRow("account1.test1", "strongpassword")]
+    [DataRow("account2.test", "strongpassword")]
     public void ShouldLogInWithValidCredentials(string accountName, string password)
     {
         var mailRuLogInPage = new MailRuMainPage(Driver).LogInButtonClick();
@@ -35,7 +35,7 @@ public class MailRuLogInPageTest
             .SendPassword()
             .SubmitPassword();
         
-        Assert.IsTrue(Driver.Title.Contains("Входящие - Почта Mail.ru"));
+        Assert.IsNotNull(mailRuIncomingMailPage);
     }
 
     [TestCleanup]

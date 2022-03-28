@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailRu", "MailRu\MailRu.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailRuTest", "MailRuTest\MailRuTest.csproj", "{2D163786-2989-481B-B84B-C78C11A02D2D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{7D7945C3-A776-425E-9250-B18265C7AA7D}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -19,6 +21,8 @@ Global
 		{71FE8E23-3E75-43AC-8538-094D4A903E6E}.MailRu|Any CPU.Build.0 = MailRu|Any CPU
 		{2D163786-2989-481B-B84B-C78C11A02D2D}.MailRu|Any CPU.ActiveCfg = MailRu|Any CPU
 		{2D163786-2989-481B-B84B-C78C11A02D2D}.MailRu|Any CPU.Build.0 = MailRu|Any CPU
+		{7D7945C3-A776-425E-9250-B18265C7AA7D}.MailRu|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D7945C3-A776-425E-9250-B18265C7AA7D}.MailRu|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		MailRu|Any CPU = MailRu|Any CPU

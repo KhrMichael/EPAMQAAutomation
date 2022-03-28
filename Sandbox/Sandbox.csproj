@@ -1,12 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <Configurations>Debug;Release;MailRu</Configurations>
-        <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MailRu\MailRu.csproj" />
+    </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
