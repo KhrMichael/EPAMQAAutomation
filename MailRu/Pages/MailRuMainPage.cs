@@ -9,7 +9,7 @@ namespace Pages.MailRu;
 public class MailRuMainPage
 {
     private WebDriver Driver { get; }
-    private string LogInButtonXPath => "//*[@id='ph-whiteline']/div/div[2]/button";
+    private string LogInButtonXPath => "//*[@class='ph-login svelte-1hiqrvn']";
     private string Title => "Mail.ru: почта, поиск в интернете, новости, игры";
 
     public MailRuMainPage(WebDriver driver)
