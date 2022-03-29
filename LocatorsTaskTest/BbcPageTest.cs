@@ -2,6 +2,7 @@ using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 
 namespace LocatorsTaskTest;
 
@@ -25,6 +26,8 @@ public class LocatorsTest
         var newsButton = driver.FindElement(newsButtonXPath);
         
         newsButton.Click();
+
+        new WebDriverWait(driver, TimeSpan.FromSeconds(5)).Until(driver => driver.Title.Equals("Home - BBC News"));
 
         Assert.AreEqual("Home - BBC News", driver.Title);
     }

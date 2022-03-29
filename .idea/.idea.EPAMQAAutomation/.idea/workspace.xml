@@ -14,6 +14,7 @@
     <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LocatorsSandbox/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LocatorsSandbox/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LocatorsTaskTest/BbcPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LocatorsTaskTest/BbcPageTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +43,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/b1/47f871c7/Command.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/26671011cacf42038b5a7d023d37851c25390/9b/c812aae8/MethodInfoExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/6d/37465b29/WebDriver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/projects/EPAMQAAutomation/LocatorsTaskTest/BbcPageTest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/df71358f7b7337a1eee3a65abe6d678dd9a065e256b8cc3fd44a2949754/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/efd3e9c4749621d4a53b45d7117d2a581e02a265c444a040f1387a155db/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/26671011cacf42038b5a7d023d37851c25390/6e/3c81055a/TestMethodInfo.cs" root0="SKIP_HIGHLIGHTING" />
@@ -158,6 +160,8 @@
       <workItem from="1647983891576" duration="77000" />
       <workItem from="1648300020627" duration="1901000" />
       <workItem from="1648395163530" duration="11000" />
+      <workItem from="1648558039430" duration="3015000" />
+      <workItem from="1648569384625" duration="2072000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1647983910103</created>
@@ -194,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648303558731</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="correct comments">
+      <created>1648490206745</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1648490206745</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +232,8 @@
     <MESSAGE value="remove unnecessary using of implicitlyWait" />
     <MESSAGE value="refactoring" />
     <MESSAGE value="add ShouldOpenBbcSearchPage test method" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ShouldOpenBbcSearchPage test method" />
+    <MESSAGE value="correct comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="correct comments" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
