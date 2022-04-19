@@ -12,7 +12,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="change MailRuMainPage load check&#10;-add unique element check in exchange of a title check">
+    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="change MailRuLogInPage load check&#10;-add a unique element check in exchange of a title check">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" afterDir="false" />
     </list>
@@ -198,7 +198,7 @@
       <workItem from="1648410282247" duration="6944000" />
       <workItem from="1648460764687" duration="13457000" />
       <workItem from="1648758304541" duration="1000" />
-      <workItem from="1650397686149" duration="3066000" />
+      <workItem from="1650397686149" duration="3678000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1647983910103</created>
@@ -333,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650399489325</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="change MailRuLogInPage load check&#10;-add a unique element check in exchange of a title check">
+      <created>1650400852229</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1650400852229</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +355,7 @@
       <expand>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 41% 178/300" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 41% 175/296" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
       </expand>
       <select />
@@ -397,7 +404,8 @@
     <MESSAGE value="add mail ru authorization and tests" />
     <MESSAGE value="add account name validation and test" />
     <MESSAGE value="change MailRuMainPage load check&#10;-add unique element check in exchange of a title check" />
-    <option name="LAST_COMMIT_MESSAGE" value="change MailRuMainPage load check&#10;-add unique element check in exchange of a title check" />
+    <MESSAGE value="change MailRuLogInPage load check&#10;-add a unique element check in exchange of a title check" />
+    <option name="LAST_COMMIT_MESSAGE" value="change MailRuLogInPage load check&#10;-add a unique element check in exchange of a title check" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
