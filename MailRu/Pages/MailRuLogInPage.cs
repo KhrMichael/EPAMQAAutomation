@@ -9,7 +9,7 @@ public class MailRuLogInPage
 {
    private WebDriver Driver { get; }
    private double LoadPageTime => 10;
-   private double SwitchTime => 5;
+   private double TimeToFindElement => 5;
    private string UniqueElementXPath => "//*[@id='login-content']";
    private string LoginFrameXPath => "/html/body/div[3]/div/iframe";
    private string NameInputXPath => "//input[@name='username']";
@@ -64,7 +64,7 @@ public class MailRuLogInPage
 
    public MailRuLogInPage SendAccountName()
    {
-      var webDriverWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(SwitchTime));
+      var webDriverWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(TimeToFindElement));
       var accountName = webDriverWait.Until(driver => driver.FindElement(By.XPath(NameInputXPath)));
       accountName.SendKeys(AccountName);
 
