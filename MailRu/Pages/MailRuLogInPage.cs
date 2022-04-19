@@ -1,5 +1,6 @@
 using MailRu.Exceptions;
 using OpenQA.Selenium;
+using OpenQA.Selenium.DevTools.V85.Page;
 using OpenQA.Selenium.Support.UI;
 
 namespace Pages.MailRu;
@@ -7,9 +8,9 @@ namespace Pages.MailRu;
 public class MailRuLogInPage
 {
    private WebDriver Driver { get; }
-   private string LogInTitle => "Авторизация";
-   private string MainPageTitle => "Mail.ru: почта, поиск в интернете, новости, игры";
-   private string SignInFrameXPath => "/html/body/div[3]/div/iframe";
+   private double LoadPageTime => 10;
+   private string UniqueElementXPath => "//*[@id='login-content']";
+   private string LoginFrameXPath => "/html/body/div[3]/div/iframe";
    private string InputAccountNameCssSelector =>
       "#root > div > div > div > div.wrapper-0-2-5 > div > div > form > div:nth-child(2) > div:nth-child(2) >" +
       " div.login-row.username > div > div > div > div > div > div.base-0-2-58.first-0-2-64 > div > input";
@@ -36,21 +37,17 @@ public class MailRuLogInPage
    public MailRuLogInPage(WebDriver driver)
    {
       Driver = driver;
-      Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-      var webDriverWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-      
+      LoadPage();
+   }
+
+   private void LoadPage()
+   {
+      var webDriverWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(LoadPageTime));
       try
       {
-         var pageTitle = webDriverWait.Until(driver => driver.Title);
-         webDriverWait.Until(driver =>
-            driver.SwitchTo().Frame(Driver.FindElement(By.XPath("/html/body/div[3]/div/iframe"))));
-         var logInPopupTitle =
-            webDriverWait.Until(driver => driver.FindElement(By.TagName("title")).GetAttribute("innerHTML"));
-
-         if (!pageTitle.Equals(MainPageTitle) && !logInPopupTitle.Equals(logInPopupTitle))
-         {
-            throw new MailRuLogInPageSetupException();
-         }
+         var loginFrame = webDriverWait.Until(driver => driver.FindElement(By.XPath(LoginFrameXPath)));
+         webDriverWait.Until(driver => driver.SwitchTo().Frame(loginFrame));
+         webDriverWait.Until(driver => driver.FindElement(By.XPath(UniqueElementXPath)));
       }
       catch (WebDriverTimeoutException)
       {
