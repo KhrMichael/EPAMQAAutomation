@@ -10,18 +10,23 @@ public class MailRuMainPage
 {
     private WebDriver Driver { get; }
     private string LogInButtonXPath => "//*[@class='ph-login svelte-1hiqrvn']";
-    private string Title => "Mail.ru: почта, поиск в интернете, новости, игры";
+    private string UniqueElementXPath => "//*[@id='mailbox']";
+    private double LoadPageTime => 10;
 
     public MailRuMainPage(WebDriver driver)
     {
         Driver = driver;
-        var webDriverWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+        LoadPage();
+    }
 
+    private void LoadPage()
+    {
+        var webDriverWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(LoadPageTime));
         try
         {
-            webDriverWait.Until(driver => driver.Title.Equals(Title));
+            webDriverWait.Until(driver => driver.FindElement(By.XPath(UniqueElementXPath)));
         }
-        catch(WebDriverTimeoutException)
+        catch (WebDriverTimeoutException)
         {
             throw new MailRuMainPageSetupException();
         }
