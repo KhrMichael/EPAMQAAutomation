@@ -17,7 +17,8 @@ public class MailRuLogInPage
     private string PasswordInputXPath => "//*[@name='password']";
     private string PasswordSubmitButtonXPath => "//*[@data-test-id='submit-button']";
 
-    private string InvalidAccountNameErrorXPath => "//*[@data-test-id='accountNotRegistered']";
+    private string InvalidAccountNameErrorXPath => 
+        "//*[@data-test-id='required' or @data-test-id='accountNotRegistered']";
 
     public string AccountName { get; set; }
     public string Passowrd { get; set; }
