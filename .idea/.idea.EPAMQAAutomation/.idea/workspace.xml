@@ -12,7 +12,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="redesign submit account name method">
+    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="redesign send password method">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" afterDir="false" />
     </list>
@@ -337,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650457431566</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="redesign send password method">
+      <created>1650457712243</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1650457712243</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +411,8 @@
     <MESSAGE value="change MailRuLogInPage load check&#10;-add a unique element check in exchange of a title check" />
     <MESSAGE value="redesign send account name method" />
     <MESSAGE value="redesign submit account name method" />
-    <option name="LAST_COMMIT_MESSAGE" value="redesign submit account name method" />
+    <MESSAGE value="redesign send password method" />
+    <option name="LAST_COMMIT_MESSAGE" value="redesign send password method" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
