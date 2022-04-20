@@ -14,10 +14,7 @@ public class MailRuLogInPage
    private string LoginFrameXPath => "/html/body/div[3]/div/iframe";
    private string NameInputXPath => "//input[@name='username']";
    private string SubmitAccountNameButtonXPath => "//*[@data-test-id='next-button']";
-   private string SubmitAccountNameButtonCssSelector =>
-      "#root > div > div > div > div.wrapper-0-2-5 > div > div > form > div:nth-child(2) > div:nth-child(2) >" +
-      " div:nth-child(3) > div > div > div.submit-button-wrap > button";
-   private string InputPasswordName => "password";
+   private string PasswordInputXPath => "//*[@name='password']";
    private string SubmitPasswordButtonCssSelector =>
       "#root > div > div > div > div.wrapper-0-2-5 > div > div > form > " +
       "div:nth-child(2) > div > div:nth-child(3) > div > div > div.submit-button-wrap > div > button";
@@ -97,14 +94,13 @@ public class MailRuLogInPage
 
    public MailRuLogInPage SendPassword()
    {
-      IWebElement input;
+      var webDriverWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(FindElementTime));
       try
       {
-         Driver.SwitchTo().ActiveElement();
-         input = Driver.FindElement(By.Name(InputPasswordName));
-         input.SendKeys(Passowrd);
+         var passwordInput = webDriverWait.Until(driver => driver.FindElement(By.XPath(PasswordInputXPath)));
+         passwordInput.SendKeys(Passowrd);
       }
-      catch (NoSuchElementException)
+      catch (WebDriverTimeoutException)
       {
          throw new MailRuLogInPasswordInputNotFoundException();
       }
