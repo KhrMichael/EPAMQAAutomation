@@ -9,10 +9,11 @@ public class MailRuLogInPage
 {
    private WebDriver Driver { get; }
    private double LoadPageTime => 10;
-   private double SwitchTime => 5;
+   private double FindElementTime => 5;
    private string UniqueElementXPath => "//*[@id='login-content']";
    private string LoginFrameXPath => "/html/body/div[3]/div/iframe";
    private string NameInputXPath => "//input[@name='username']";
+   private string SubmitAccountNameButtonXPath => "//*[@data-test-id='next-button']";
    private string SubmitAccountNameButtonCssSelector =>
       "#root > div > div > div > div.wrapper-0-2-5 > div > div > form > div:nth-child(2) > div:nth-child(2) >" +
       " div:nth-child(3) > div > div > div.submit-button-wrap > button";
@@ -64,7 +65,7 @@ public class MailRuLogInPage
 
    public MailRuLogInPage SendAccountName()
    {
-      var webDriverWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(SwitchTime));
+      var webDriverWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(FindElementTime));
       var accountName = webDriverWait.Until(driver => driver.FindElement(By.XPath(NameInputXPath)));
       accountName.SendKeys(AccountName);
 
@@ -73,19 +74,25 @@ public class MailRuLogInPage
 
    public MailRuLogInPage SubmitAccountName()
    {
-      var submitButton = Driver.FindElement(By.CssSelector(SubmitAccountNameButtonCssSelector));
+      var webDriverWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(FindElementTime));
+      var submitButton
+         = webDriverWait.Until(driver => driver.FindElement(By.XPath(SubmitAccountNameButtonXPath))); 
       submitButton.Click();
+      CheckCorrectAccountName();
 
+      return this;
+   }
+
+   private void CheckCorrectAccountName()
+   {
+      var webDriverWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(FindElementTime));
       try
       {
-         new WebDriverWait(Driver, TimeSpan.FromSeconds(10)).Until(driver =>
-            driver.FindElement(By.XPath(LogInAccountNameErrorDivXPath)));
+         webDriverWait.Until(driver => driver.FindElement(By.XPath(LogInAccountNameErrorDivXPath)));
          throw new MailRuLogInIncorrectAccountNameException();
       }
       catch (WebDriverTimeoutException)
       { }
-
-      return this;
    }
 
    public MailRuLogInPage SendPassword()
