@@ -1,14 +1,13 @@
-﻿using System.Diagnostics;
-using System.Text.RegularExpressions;
-using MailRu.Exceptions;
+﻿using MailRu.Exceptions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace Pages.MailRu;
+namespace MailRu.Pages;
 
 public class MailRuMainPage
 {
     private WebDriver Driver { get; }
+    private string URI => "https://mail.ru/";
     private string LogInButtonXPath => "//*[@class='ph-login svelte-1hiqrvn']";
     private string UniqueElementXPath => "//*[@id='mailbox']";
     private TimeSpan LoadPageTime => TimeSpan.FromSeconds(10);
@@ -16,6 +15,7 @@ public class MailRuMainPage
     public MailRuMainPage(WebDriver driver)
     {
         Driver = driver;
+        driver.Url = URI;
         LoadPage();
     }
 

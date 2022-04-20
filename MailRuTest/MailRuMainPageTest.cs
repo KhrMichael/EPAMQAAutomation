@@ -1,8 +1,7 @@
-using System;
+using MailRu.Pages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using Pages.MailRu;
 
 namespace MailRuTest;
 
@@ -10,19 +9,19 @@ namespace MailRuTest;
 public class MailRuMainPageTest
 {
     private WebDriver Driver { get; set; }
-    private string MailRuURI => "https://mail.ru/";
     private string Title => "Mail.ru: почта, поиск в интернете, новости, игры";
     
     [TestInitialize]
     public void Initialize()
     {
         Driver = new ChromeDriver();
-        Driver.Url = MailRuURI;
     }
     
     [TestMethod]
     public void ShouldOpenMailRuMainPage()
     {
+        new MailRuMainPage(Driver);
+        
         Assert.AreEqual(Title, Driver.Title);
     }
 

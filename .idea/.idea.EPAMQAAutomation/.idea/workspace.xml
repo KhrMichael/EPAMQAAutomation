@@ -12,11 +12,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="redesign submit password method">
+    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="add a mechanism for sending mail">
+      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuIncomingMailsPageOpenMessageConstructorException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuIncomingMailsPageSendMessageException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuIncomingMailsPageWriteMessageException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MailRu/Models/Builders/MessageBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MailRu/Models/Message.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MailRuTest/MailRuIncomingMailsPageTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuMainPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuMainPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuSignInWith.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuSignInWith.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuMainPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuMainPageTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sandbox/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,11 +57,13 @@
     <setting file="file://$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MailRu/Pages/MailRuMainPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/55ed6ee557de3524b576e7488a18eeb88135c4998790a451c7fca1468b4a57/SpanHelpers.Byte.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/cb/89e609cb/NoSuchElementException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MailRu/Exceptions/MailRuLogInIncorrectAccountNameException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MailRu/Exceptions/MailRuLogInPageException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MailRu/Exceptions/MailRuException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c1e5d85c1d435e8f9cd91494cb4b9ab33224e14f43980b6e1acae36ebaa3da4/Exception.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MailRu/Models/Builders/MessageBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sandbox/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9e821d4c3a394f8faea3644256a35d4811590/61/5c78beea/Assert.cs" root0="SKIP_HIGHLIGHTING" />
@@ -370,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650458161720</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="redesign incoming mails page">
+      <created>1650462550879</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1650462550879</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,26 +458,11 @@
     <MESSAGE value="redesign submit account name method" />
     <MESSAGE value="redesign send password method" />
     <MESSAGE value="redesign submit password method" />
-    <option name="LAST_COMMIT_MESSAGE" value="redesign submit password method" />
+    <MESSAGE value="redesign incoming mails page" />
+    <MESSAGE value="add a mechanism for sending mail" />
+    <option name="LAST_COMMIT_MESSAGE" value="add a mechanism for sending mail" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs</url>
-          <line>53</line>
-          <properties documentPath="D:\projects\EPAMQAAutomation\MailRuTest\MailRuLogInPageTest.cs" initialLine="53" containingFunctionPresentation="method 'ShouldNotLogInWithInvalidCredentials'">
-            <startOffsets>
-              <option value="1653" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1820" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#OpenQA.Selenium.WebDriver" memberName="Title" />

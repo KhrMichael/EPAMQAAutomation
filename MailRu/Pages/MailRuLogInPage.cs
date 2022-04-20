@@ -1,9 +1,8 @@
 using MailRu.Exceptions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.DevTools.V85.Page;
 using OpenQA.Selenium.Support.UI;
 
-namespace Pages.MailRu;
+namespace MailRu.Pages;
 
 public class MailRuLogInPage
 {
@@ -87,8 +86,9 @@ public class MailRuLogInPage
             throw new MailRuLogInIncorrectAccountNameException();
         }
         catch (WebDriverTimeoutException)
-        {
-        }
+        { }
+        catch(NoSuchElementException)
+        { }
     }
 
     public MailRuLogInPage SendPassword()

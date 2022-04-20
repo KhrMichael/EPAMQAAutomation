@@ -1,6 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using MailRu.Pages;
 using OpenQA.Selenium.Chrome;using OpenQA.Selenium.Support.UI;
-using Pages.MailRu;
 
 var chromeDriver = new ChromeDriver();
 chromeDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);

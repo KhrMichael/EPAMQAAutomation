@@ -1,4 +1,4 @@
-namespace Pages.MailRu;
+namespace MailRu.Pages;
 
 public enum MailRuSignInWith
 {

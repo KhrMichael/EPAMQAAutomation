@@ -1,9 +1,9 @@
 using System;
 using MailRu.Exceptions;
+using MailRu.Pages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using Pages.MailRu;
 
 namespace MailRuTest;
 
@@ -11,13 +11,11 @@ namespace MailRuTest;
 public class MailRuLogInPageTest
 {
     private WebDriver Driver { get; set; }
-    private string MailRuMainPageURI => "https://mail.ru/";
 
     [TestInitialize]
     public void Initialize()
     {
         Driver = new ChromeDriver();
-        Driver.Url = MailRuMainPageURI;
         Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
     }
 
