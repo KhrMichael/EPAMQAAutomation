@@ -11,7 +11,7 @@ public class MailRuMainPage
     private WebDriver Driver { get; }
     private string LogInButtonXPath => "//*[@class='ph-login svelte-1hiqrvn']";
     private string UniqueElementXPath => "//*[@id='mailbox']";
-    private double LoadPageTime => 10;
+    private TimeSpan LoadPageTime => TimeSpan.FromSeconds(10);
 
     public MailRuMainPage(WebDriver driver)
     {
@@ -21,7 +21,7 @@ public class MailRuMainPage
 
     private void LoadPage()
     {
-        var webDriverWait = new WebDriverWait(Driver, TimeSpan.FromSeconds(LoadPageTime));
+        var webDriverWait = new WebDriverWait(Driver, LoadPageTime);
         try
         {
             webDriverWait.Until(driver => driver.FindElement(By.XPath(UniqueElementXPath)));
