@@ -121,6 +121,6 @@ public class MailRuLogInPage
             throw new MailRuLogInSubmitPasswordButtonNotFoundException();
         }
 
-        return new MailRuIncomingMailsPage(Driver);
+        return new MailRuIncomingMailsPage(Driver, AccountName);
     }
 }

@@ -12,20 +12,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="add a mechanism for sending mail">
-      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuIncomingMailsPageOpenMessageConstructorException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuIncomingMailsPageSendMessageException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuIncomingMailsPageWriteMessageException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MailRu/Models/Builders/MessageBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MailRu/Models/Message.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MailRuTest/MailRuIncomingMailsPageTest.cs" afterDir="false" />
+    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuIncomingMailsPageGetIncomingMessagesException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MailRu/Models/MessageInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPAMQAAutomation.sln" beforeDir="false" afterPath="$PROJECT_DIR$/EPAMQAAutomation.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuMainPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuMainPage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuSignInWith.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuSignInWith.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuMainPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuMainPageTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuIncomingMailsPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuIncomingMailsPageTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sandbox/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,16 +51,19 @@
     <setting file="file://$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MailRu/Pages/MailRuMainPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/55ed6ee557de3524b576e7488a18eeb88135c4998790a451c7fca1468b4a57/SpanHelpers.Byte.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/86/d6540512/ChromiumDriver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/cb/89e609cb/NoSuchElementException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MailRu/Exceptions/MailRuLogInIncorrectAccountNameException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MailRu/Exceptions/MailRuLogInPageException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/bf/e68c3032/ChromeDriver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MailRu/Exceptions/MailRuException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c1e5d85c1d435e8f9cd91494cb4b9ab33224e14f43980b6e1acae36ebaa3da4/Exception.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MailRu/Models/Builders/MessageBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Sandbox/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9e821d4c3a394f8faea3644256a35d4811590/61/5c78beea/Assert.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/d4/34111dd1/StaleElementReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/997d5845245d4dd8869e31cbda5377d39ff8/51/1b12dff4/Executor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f74e7be696643429992f27f0c857221f59fe4efe37e7c1c69db5cd86245d5/Exception.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/8e/e41cac69/WebElement.cs" root0="SKIP_HIGHLIGHTING" />
@@ -95,6 +92,7 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -213,6 +211,8 @@
       <workItem from="1648460764687" duration="13457000" />
       <workItem from="1648758304541" duration="1000" />
       <workItem from="1650397686149" duration="3991000" />
+      <workItem from="1650484484256" duration="12087000" />
+      <workItem from="1650540090560" duration="1293000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1647983910103</created>
@@ -389,7 +389,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650462550879</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="add a mechanism for sending mail">
+      <created>1650472901301</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1650472901301</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
