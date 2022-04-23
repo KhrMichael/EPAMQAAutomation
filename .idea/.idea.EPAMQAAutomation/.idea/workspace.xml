@@ -14,14 +14,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPAMQAAutomation.sln" beforeDir="false" afterPath="$PROJECT_DIR$/EPAMQAAutomation.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRu/Models/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Models/Message.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuIncomingMailsPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuIncomingMailsPageTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuMainPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuMainPageTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sandbox/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,34 +40,34 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/974fa14c57bab8fe29f1bddd39b1a6548b9cc8cf9e0ef5e670c2407a56d9/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9e821d4c3a394f8faea3644256a35d4811590/5d/bce6b112/TestMethodAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MailRu/Exceptions/MailRuLogInIncorrectAccountNameException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../VS/Sandbox/Sandbox/Sandbox/ViewModels/RoomInfosViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d46f122b26cd58f29c516e7276a9627b5e8c401791ed1b79e15925cb2f5d954/Debug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/26671011cacf42038b5a7d023d37851c25390/25/bf85adb3/TestMethodRunner.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MailRu/Pages/MailRuMainPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/55ed6ee557de3524b576e7488a18eeb88135c4998790a451c7fca1468b4a57/SpanHelpers.Byte.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/86/d6540512/ChromiumDriver.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/cb/89e609cb/NoSuchElementException.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MailRu/Exceptions/MailRuLogInIncorrectAccountNameException.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MailRu/Exceptions/MailRuLogInPageException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/bf/e68c3032/ChromeDriver.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MailRu/Exceptions/MailRuException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c1e5d85c1d435e8f9cd91494cb4b9ab33224e14f43980b6e1acae36ebaa3da4/Exception.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MailRu/Models/Builders/MessageBuilder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Sandbox/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9e821d4c3a394f8faea3644256a35d4811590/61/5c78beea/Assert.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/d4/34111dd1/StaleElementReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/997d5845245d4dd8869e31cbda5377d39ff8/51/1b12dff4/Executor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f74e7be696643429992f27f0c857221f59fe4efe37e7c1c69db5cd86245d5/Exception.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/8e/e41cac69/WebElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/9c/4a9af769/ElementNotInteractableException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/b1/47f871c7/Command.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MailRu/Pages/MailRuMainPage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MailRu/Exceptions/MailRuLogInPageException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Sandbox/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/26671011cacf42038b5a7d023d37851c25390/9b/c812aae8/MethodInfoExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/6d/37465b29/WebDriver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MailRu/Exceptions/MailRuException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/df71358f7b7337a1eee3a65abe6d678dd9a065e256b8cc3fd44a2949754/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/efd3e9c4749621d4a53b45d7117d2a581e02a265c444a040f1387a155db/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MailRu/Models/Builders/MessageBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/26671011cacf42038b5a7d023d37851c25390/6e/3c81055a/TestMethodInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/0c/b1ab5987/DefaultWait`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5fead5fbf2bee3da1b9f378a09d78479a62db80dae1e1c6453efdb0bc92a8/String.Comparison.cs" root0="SKIP_HIGHLIGHTING" />
@@ -218,6 +212,7 @@
       <workItem from="1650568077658" duration="2119000" />
       <workItem from="1650642990585" duration="10576000" />
       <workItem from="1650714730340" duration="2011000" />
+      <workItem from="1650748797638" duration="2448000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1647983910103</created>

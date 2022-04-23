@@ -13,25 +13,19 @@ public sealed class MailRuIncomingMailsPageTest
 {
     public WebDriver driver;
 
-    public Message TestMessage { get; set; }
+    public Message TestMessage =>
+        new Message("account2.test@mail.ru", "TestMessage", "This message was sent from account1.");
 
 
     [TestInitialize]
     public void Initialize()
     {
-        Logger.LogMessage($"MailRuIncomingMailsPagTest TestInitialize");
         driver = new ChromeDriver();
-        TestMessage = new MessageBuilder()
-                 .SetReceiver("account2.test@mail.ru")
-                 .SetTheme("TestMessage")
-                 .SetBody("This message was sent from account1.")
-                 .Build();
     }
 
     [TestCleanup]
     public void Cleanup()
     {
-        Logger.LogMessage("MailRuIncomingMailsPageTest TestCleanup");
         driver.Close();
         driver.Quit();
     }
@@ -39,15 +33,7 @@ public sealed class MailRuIncomingMailsPageTest
     [TestMethod]
     public void ShouldSendMessage()
     {
-        var mailRuMainPage = new MailRuMainPage(driver);
-        var mailRuLogInPage = mailRuMainPage.LogInButtonClick();
-        mailRuLogInPage.AccountName = "account1.test1@mail.ru";
-        mailRuLogInPage.Passowrd = "strongpassword";
-        var mailRuIncomingMailsPage = mailRuLogInPage
-            .SendAccountName()
-            .SubmitAccountName()
-            .SendPassword()
-            .SubmitPassword();
+        var mailRuIncomingMailsPage = GetMailRuIncomingMailsPage("account1.test1@mail.ru", "strongpassword");
         var message = TestMessage;
 
         mailRuIncomingMailsPage
@@ -57,22 +43,27 @@ public sealed class MailRuIncomingMailsPageTest
     }
 
     [TestMethod]
-    public void ShouldReturnAllIncomingMessages()
+    public void ShouldFindSpecificUnreadMessage()
     {
-        var mailRuMainPage = new MailRuMainPage(driver);
-        var mailRuLogInPage = mailRuMainPage.LogInButtonClick();
-        mailRuLogInPage.AccountName = "account2.test@mail.ru";
-        mailRuLogInPage.Passowrd = "strongpassword";
-        var mailRuIncomingMailsPage = mailRuLogInPage
-            .SendAccountName()
-            .SubmitAccountName()
-            .SendPassword()
-            .SubmitPassword();
+        var mailRuIncomingMailsPage = GetMailRuIncomingMailsPage("account2.test@mail.ru", "strongpassword");
 
         var incomingMessages = mailRuIncomingMailsPage.GetIncomingMessages();
         var isMessageReceived =
             incomingMessages.Exists(messageInfo => messageInfo.Message.Equals(TestMessage) && messageInfo.IsUnread);
         
         Assert.IsTrue(isMessageReceived);
+    }
+
+    private MailRuIncomingMailsPage GetMailRuIncomingMailsPage(string accountName, string password)
+    {
+        var mailRuMainPage = new MailRuMainPage(driver);
+        var mailRuLogInPage = mailRuMainPage.LogInButtonClick();
+        mailRuLogInPage.AccountName = accountName;
+        mailRuLogInPage.Passowrd = password;
+        return mailRuLogInPage
+            .SendAccountName()
+            .SubmitAccountName()
+            .SendPassword()
+            .SubmitPassword();
     }
 }

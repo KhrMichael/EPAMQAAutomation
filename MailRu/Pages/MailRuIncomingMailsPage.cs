@@ -24,7 +24,7 @@ public class MailRuIncomingMailsPage
     private string ThemeInputXPath =>
        "/html/body/div[1]/div/div[2]/div/div[1]/div[2]/div[3]/div[3]/div[1]/div[2]/div/input";
     private string MessageBodyXPath =>
-       "/html/body/div[1]/div/div[2]/div/div[1]/div[2]/div[3]/div[5]/div/div/div[2]/div[1]/div[1]";
+       "(/html/body/div[1]/div/div[2]/div/div[1]/div[2]/div[3]/div[5]/div/div/div[2]/div[1]/div[not(@*)])";
     private string SendMessageButtonXPath => "/html/body/div[1]/div/div[2]/div/div[2]/div[1]/span[1]";
     private string IncomingMessageGroupsXPath =>
        "//*[@id='app-canvas']/div/div[1]/div[1]/div/div[2]/span/div[2]/div/div/div/div/div[1]/div/div/div/div[1]/div/div/a";
@@ -77,15 +77,23 @@ public class MailRuIncomingMailsPage
     public MailRuIncomingMailsPage WriteMessage(Message message)
     {
         var webDriverWait = new WebDriverWait(Driver, FindeElementTime);
+        var actions = new Actions(Driver);
         try
         {
-            var receiverInput = webDriverWait.Until(driver => driver.FindElement(By.XPath(ReceiverInputXPath)));
-            var themeInput = webDriverWait.Until(driver => driver.FindElement(By.XPath(ThemeInputXPath)));
-            var messageBody = webDriverWait.Until(driver => driver.FindElement(By.XPath(MessageBodyXPath)));
+            var receiverInput = webDriverWait.Until(ExpectedConditions.ElementExists(By.XPath(ReceiverInputXPath)));
+            var themeInput = webDriverWait.Until(ExpectedConditions.ElementExists(By.XPath(ThemeInputXPath)));
+            var messageBody = webDriverWait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.XPath(MessageBodyXPath)));
 
             receiverInput.SendKeys(message.Receiver);
             themeInput.SendKeys(message.Theme);
-            messageBody.SendKeys(message.Body);
+            if (messageBody.Count >= 1)
+            {
+                messageBody[0].SendKeys(message.Body);
+                for (int i = 1; i < messageBody.Count; i++)
+                {
+                    Driver.ExecuteScript($"return document.evaluate(\"{MessageBodyXPath + $"[{i+1}]"}\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.remove();");
+                }
+            }
         }
         catch (WebDriverTimeoutException)
         {
@@ -98,10 +106,11 @@ public class MailRuIncomingMailsPage
     public void SendMessage()
     {
         var webDriverWait = new WebDriverWait(Driver, FindeElementTime);
-
+        var actions = new Actions(Driver);
         try
         {
             var sendButton = webDriverWait.Until(ExpectedConditions.ElementExists(By.XPath(SendMessageButtonXPath)));
+            actions.MoveToElement(sendButton).Perform();
             sendButton.Click();
         }
         catch (WebDriverTimeoutException)
@@ -164,11 +173,11 @@ public class MailRuIncomingMailsPage
 
     private void OpenAllMessages(ReadOnlyCollection<IWebElement> messages)
     {
-        var webDriverWait = new WebDriverWait(Driver, FindeElementTime);
         var actions = new Actions(Driver);
         foreach (var message in messages)
         {
-            actions.MoveToElement(message).Click().Perform();
+            actions.MoveToElement(message).Perform();
+            message.Click();
         }
     }
 
