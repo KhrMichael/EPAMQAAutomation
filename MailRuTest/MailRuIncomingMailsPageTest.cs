@@ -1,3 +1,4 @@
+using MailRu.Models;
 using MailRu.Models.Builders;
 using MailRu.Pages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -12,12 +13,19 @@ public sealed class MailRuIncomingMailsPageTest
 {
     public WebDriver driver;
 
-    
+    public Message TestMessage { get; set; }
+
+
     [TestInitialize]
     public void Initialize()
     {
-        Logger.LogMessage($"MailRuIncomingMailsPageTest TestInitialize");
+        Logger.LogMessage($"MailRuIncomingMailsPagTest TestInitialize");
         driver = new ChromeDriver();
+        TestMessage = new MessageBuilder()
+                 .SetReceiver("account2.test@mail.ru")
+                 .SetTheme("TestMessage")
+                 .SetBody("This message was sent from account1.")
+                 .Build();
     }
 
     [TestCleanup]
@@ -33,18 +41,14 @@ public sealed class MailRuIncomingMailsPageTest
     {
         var mailRuMainPage = new MailRuMainPage(driver);
         var mailRuLogInPage = mailRuMainPage.LogInButtonClick();
-        mailRuLogInPage.AccountName = "account1.test1";
+        mailRuLogInPage.AccountName = "account1.test1@mail.ru";
         mailRuLogInPage.Passowrd = "strongpassword";
         var mailRuIncomingMailsPage = mailRuLogInPage
             .SendAccountName()
             .SubmitAccountName()
             .SendPassword()
             .SubmitPassword();
-        var message = new MessageBuilder()
-            .SetReceiver("account2.test@mail.ru")
-            .SetTheme("TestMessage")
-            .SetBody("This message was sent from account1.")
-            .Build();
+        var message = TestMessage;
 
         mailRuIncomingMailsPage
             .OpenMessageConstructor()
@@ -57,7 +61,7 @@ public sealed class MailRuIncomingMailsPageTest
     {
         var mailRuMainPage = new MailRuMainPage(driver);
         var mailRuLogInPage = mailRuMainPage.LogInButtonClick();
-        mailRuLogInPage.AccountName = "account2.test";
+        mailRuLogInPage.AccountName = "account2.test@mail.ru";
         mailRuLogInPage.Passowrd = "strongpassword";
         var mailRuIncomingMailsPage = mailRuLogInPage
             .SendAccountName()
@@ -66,5 +70,9 @@ public sealed class MailRuIncomingMailsPageTest
             .SubmitPassword();
 
         var incomingMessages = mailRuIncomingMailsPage.GetIncomingMessages();
+        var isMessageReceived =
+            incomingMessages.Exists(messageInfo => messageInfo.Message.Equals(TestMessage) && messageInfo.IsUnread);
+        
+        Assert.IsTrue(isMessageReceived);
     }
 }

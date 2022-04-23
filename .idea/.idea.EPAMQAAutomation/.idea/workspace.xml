@@ -13,13 +13,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuIncomingMailsPageGetIncomingMessagesException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MailRu/Models/MessageInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EPAMQAAutomation.sln" beforeDir="false" afterPath="$PROJECT_DIR$/EPAMQAAutomation.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailRu/Models/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Models/Message.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuIncomingMailsPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuIncomingMailsPageTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuMainPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuMainPageTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sandbox/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +100,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="RiderDotCoverContinuousTestingPageId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Project.Sandbox">
@@ -213,6 +214,10 @@
       <workItem from="1650397686149" duration="3991000" />
       <workItem from="1650484484256" duration="12087000" />
       <workItem from="1650540090560" duration="1293000" />
+      <workItem from="1650560453010" duration="2302000" />
+      <workItem from="1650568077658" duration="2119000" />
+      <workItem from="1650642990585" duration="10576000" />
+      <workItem from="1650714730340" duration="2011000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1647983910103</created>

@@ -16,10 +16,12 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{71FE8E23-3E75-43AC-8538-094D4A903E6E}.MailRu|Any CPU.ActiveCfg = MailRu|Any CPU
 		{71FE8E23-3E75-43AC-8538-094D4A903E6E}.MailRu|Any CPU.Build.0 = MailRu|Any CPU
+		{71FE8E23-3E75-43AC-8538-094D4A903E6E}.MailRu|Any CPU.Deploy.0 = MailRu|Any CPU
 		{2D163786-2989-481B-B84B-C78C11A02D2D}.MailRu|Any CPU.ActiveCfg = MailRu|Any CPU
 		{2D163786-2989-481B-B84B-C78C11A02D2D}.MailRu|Any CPU.Build.0 = MailRu|Any CPU
 		{7D7945C3-A776-425E-9250-B18265C7AA7D}.MailRu|Any CPU.ActiveCfg = Debug|Any CPU
 		{7D7945C3-A776-425E-9250-B18265C7AA7D}.MailRu|Any CPU.Build.0 = Debug|Any CPU
+		{7D7945C3-A776-425E-9250-B18265C7AA7D}.MailRu|Any CPU.Deploy.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,9 +1,9 @@
-using System;
 using MailRu.Exceptions;
 using MailRu.Pages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System;
 
 namespace MailRuTest;
 
@@ -33,16 +33,16 @@ public class MailRuLogInPageTest
             .SubmitAccountName()
             .SendPassword()
             .SubmitPassword();
-        
+
         Assert.IsNotNull(mailRuIncomingMailPage);
     }
 
     [TestMethod]
     [ExpectedException(typeof(MailRuLogInIncorrectAccountNameException))]
-    [DataRow("","")]
-    [DataRow("&&&&&","")]
-    [DataRow("","&&&&&&")]
-    [DataRow("&&&&&","&&&&&&")]
+    [DataRow("", "")]
+    [DataRow("&&&&&", "")]
+    [DataRow("", "&&&&&&")]
+    [DataRow("&&&&&", "&&&&&&")]
     public void ShouldNotLogInWithInvalidCredentials(string accountName, string password)
     {
         var mailRuLogInPage = new MailRuMainPage(Driver).LogInButtonClick();
@@ -59,7 +59,7 @@ public class MailRuLogInPageTest
     [TestCleanup]
     public void TestCleanup()
     {
-       Driver.Close(); 
-       Driver.Quit();
+        Driver.Close();
+        Driver.Quit();
     }
 }
