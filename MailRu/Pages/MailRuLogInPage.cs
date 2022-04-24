@@ -1,12 +1,16 @@
 using MailRu.Exceptions;
+using MailRu.Models;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 namespace MailRu.Pages;
 
 public class MailRuLogInPage
 {
     private WebDriver Driver { get; }
+    private Credentials Credentials { get; set; }
     private TimeSpan LoadPageTime => TimeSpan.FromSeconds(10);
     private TimeSpan FindElementTime => TimeSpan.FromSeconds(5);
     private string UniqueElementXPath => "//*[@id='login-content']";
@@ -15,12 +19,9 @@ public class MailRuLogInPage
     private string SubmitAccountNameButtonXPath => "//*[@data-test-id='next-button']";
     private string PasswordInputXPath => "//*[@name='password']";
     private string PasswordSubmitButtonXPath => "//*[@data-test-id='submit-button']";
-
     private string InvalidAccountNameErrorXPath =>
         "//*[@data-test-id='required' or @data-test-id='accountNotRegistered']";
 
-    public string AccountName { get; set; }
-    public string Passowrd { get; set; }
     public MailRuSignInWith SignInWith { get; set; }
 
 
@@ -35,9 +36,9 @@ public class MailRuLogInPage
         var webDriverWait = new WebDriverWait(Driver, LoadPageTime);
         try
         {
-            var loginFrame = webDriverWait.Until(driver => driver.FindElement(By.XPath(LoginFrameXPath)));
-            webDriverWait.Until(driver => driver.SwitchTo().Frame(loginFrame));
-            webDriverWait.Until(driver => driver.FindElement(By.XPath(UniqueElementXPath)));
+            var loginFrame = webDriverWait.Until(ExpectedConditions.ElementExists(By.XPath(LoginFrameXPath)));
+            Driver.SwitchTo().Frame(loginFrame);
+            webDriverWait.Until(ExpectedConditions.ElementExists(By.XPath(UniqueElementXPath)));
         }
         catch (WebDriverTimeoutException)
         {
@@ -45,14 +46,13 @@ public class MailRuLogInPage
         }
     }
 
-    public MailRuLogInPage(WebDriver driver, string accountName, string passowrd) : this(driver)
+    public MailRuLogInPage(WebDriver driver, Credentials credentials) : this(driver)
     {
-        AccountName = accountName;
-        Passowrd = passowrd;
+        Credentials = credentials;
     }
 
-    public MailRuLogInPage(WebDriver driver, string accountName, string passowrd, MailRuSignInWith signInWith) :
-        this(driver, accountName, passowrd)
+    public MailRuLogInPage(WebDriver driver, Credentials credentials, MailRuSignInWith signInWith) :
+        this(driver, credentials)
     {
         SignInWith = signInWith;
     }
@@ -60,9 +60,15 @@ public class MailRuLogInPage
     public MailRuLogInPage SendAccountName()
     {
         var webDriverWait = new WebDriverWait(Driver, FindElementTime);
-        var accountName = webDriverWait.Until(driver => driver.FindElement(By.XPath(NameInputXPath)));
-        accountName.SendKeys(AccountName);
+        var accountName = webDriverWait.Until(ExpectedConditions.ElementExists(By.XPath(NameInputXPath)));
+        accountName.SendKeys(Credentials.Email);
 
+        return this;
+    }
+
+    public MailRuLogInPage SetCredentials(Credentials credentials)
+    {
+        Credentials = credentials;
         return this;
     }
 
@@ -70,7 +76,7 @@ public class MailRuLogInPage
     {
         var webDriverWait = new WebDriverWait(Driver, FindElementTime);
         var submitButton
-            = webDriverWait.Until(driver => driver.FindElement(By.XPath(SubmitAccountNameButtonXPath)));
+            = webDriverWait.Until(ExpectedConditions.ElementExists(By.XPath(SubmitAccountNameButtonXPath)));
         submitButton.Click();
         CheckCorrectAccountName();
 
@@ -82,7 +88,7 @@ public class MailRuLogInPage
         var webDriverWait = new WebDriverWait(Driver, FindElementTime);
         try
         {
-            webDriverWait.Until(driver => driver.FindElement(By.XPath(InvalidAccountNameErrorXPath)));
+            webDriverWait.Until(ExpectedConditions.ElementExists(By.XPath(InvalidAccountNameErrorXPath)));
             throw new MailRuLogInIncorrectAccountNameException();
         }
         catch (WebDriverTimeoutException)
@@ -96,8 +102,8 @@ public class MailRuLogInPage
         var webDriverWait = new WebDriverWait(Driver, FindElementTime);
         try
         {
-            var passwordInput = webDriverWait.Until(driver => driver.FindElement(By.XPath(PasswordInputXPath)));
-            passwordInput.SendKeys(Passowrd);
+            var passwordInput = webDriverWait.Until(ExpectedConditions.ElementExists(By.XPath(PasswordInputXPath)));
+            passwordInput.SendKeys(Credentials.Password);
         }
         catch (WebDriverTimeoutException)
         {
@@ -113,7 +119,7 @@ public class MailRuLogInPage
         try
         {
             var submitButton =
-                webDriverWait.Until(driver => driver.FindElement(By.XPath(PasswordSubmitButtonXPath)));
+                webDriverWait.Until(ExpectedConditions.ElementExists(By.XPath(PasswordSubmitButtonXPath)));
             submitButton.Click();
         }
         catch (WebDriverTimeoutException)
@@ -121,6 +127,6 @@ public class MailRuLogInPage
             throw new MailRuLogInSubmitPasswordButtonNotFoundException();
         }
 
-        return new MailRuIncomingMailsPage(Driver, AccountName);
+        return new MailRuIncomingMailsPage(Driver, Credentials);
     }
 }

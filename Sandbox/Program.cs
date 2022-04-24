@@ -1,12 +1,12 @@
-﻿using MailRu.Pages;
+﻿using MailRu.Models;using MailRu.Pages;
 using OpenQA.Selenium.Chrome;
 
 var chromeDriver = new ChromeDriver();
 var mailRuMainPage = new MailRuMainPage(chromeDriver);
 var mailRuLogInPage = mailRuMainPage.LogInButtonClick();
-mailRuLogInPage.AccountName = "account2.test";
-mailRuLogInPage.Passowrd = "strongpassword";
+var credentials = new Credentials("account2.test", "strongpassword");
 var mailRuIncomingMailsPage = mailRuLogInPage
+    .SetCredentials(credentials)
     .SendAccountName()
     .SubmitAccountName()
     .SendPassword()

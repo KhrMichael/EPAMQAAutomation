@@ -1,6 +1,7 @@
 ﻿using MailRu.Exceptions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 namespace MailRu.Pages;
 
@@ -8,9 +9,9 @@ public class MailRuMainPage
 {
     private WebDriver Driver { get; }
     private string URI => "https://mail.ru/";
-    private string LogInButtonXPath => "//*[@class='ph-login svelte-1hiqrvn']";
+    private string LogInButtonXPath => "//*[contains(@class, 'ph-login')]";
     private string UniqueElementXPath => "//*[@id='mailbox']";
-    private TimeSpan LoadPageTime => TimeSpan.FromSeconds(10);
+    private TimeSpan LoadPageTime => TimeSpan.FromSeconds(20);
 
     public MailRuMainPage(WebDriver driver)
     {
@@ -24,7 +25,7 @@ public class MailRuMainPage
         var webDriverWait = new WebDriverWait(Driver, LoadPageTime);
         try
         {
-            webDriverWait.Until(driver => driver.FindElement(By.XPath(UniqueElementXPath)));
+            webDriverWait.Until(ExpectedConditions.ElementExists(By.XPath(UniqueElementXPath)));
         }
         catch (WebDriverTimeoutException)
         {
@@ -34,7 +35,8 @@ public class MailRuMainPage
 
     public MailRuLogInPage LogInButtonClick()
     {
-        var logInButton = Driver.FindElement(By.XPath(LogInButtonXPath));
+        var webDriverWait = new WebDriverWait(Driver, LoadPageTime);
+        var logInButton = webDriverWait.Until(ExpectedConditions.ElementExists(By.XPath(LogInButtonXPath)));
         logInButton.Click();
 
         return new MailRuLogInPage(Driver);

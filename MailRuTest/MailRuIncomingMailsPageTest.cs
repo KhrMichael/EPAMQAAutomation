@@ -16,6 +16,9 @@ public sealed class MailRuIncomingMailsPageTest
     public Message TestMessage =>
         new Message("account2.test@mail.ru", "TestMessage", "This message was sent from account1.");
 
+    public Credentials Account1 => new Credentials("account1.test1@mail.ru", "strongpassword");
+    public Credentials Account2 => new Credentials("account2.test@mail.ru", "strongpassword");
+
 
     [TestInitialize]
     public void Initialize()
@@ -33,7 +36,7 @@ public sealed class MailRuIncomingMailsPageTest
     [TestMethod]
     public void ShouldSendMessage()
     {
-        var mailRuIncomingMailsPage = GetMailRuIncomingMailsPage("account1.test1@mail.ru", "strongpassword");
+        var mailRuIncomingMailsPage = GetMailRuIncomingMailsPage(Account1);
         var message = TestMessage;
 
         mailRuIncomingMailsPage
@@ -45,7 +48,7 @@ public sealed class MailRuIncomingMailsPageTest
     [TestMethod]
     public void ShouldFindSpecificUnreadMessage()
     {
-        var mailRuIncomingMailsPage = GetMailRuIncomingMailsPage("account2.test@mail.ru", "strongpassword");
+        var mailRuIncomingMailsPage = GetMailRuIncomingMailsPage(Account2);
 
         var incomingMessages = mailRuIncomingMailsPage.GetIncomingMessages();
         var isMessageReceived =
@@ -54,13 +57,12 @@ public sealed class MailRuIncomingMailsPageTest
         Assert.IsTrue(isMessageReceived);
     }
 
-    private MailRuIncomingMailsPage GetMailRuIncomingMailsPage(string accountName, string password)
+    private MailRuIncomingMailsPage GetMailRuIncomingMailsPage(Credentials credentials)
     {
         var mailRuMainPage = new MailRuMainPage(driver);
         var mailRuLogInPage = mailRuMainPage.LogInButtonClick();
-        mailRuLogInPage.AccountName = accountName;
-        mailRuLogInPage.Passowrd = password;
         return mailRuLogInPage
+            .SetCredentials(credentials)
             .SendAccountName()
             .SubmitAccountName()
             .SendPassword()

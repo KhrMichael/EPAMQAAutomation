@@ -4,6 +4,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using MailRu.Models;
+using OpenQA.Selenium.DevTools.V85.WebAuthn;
 
 namespace MailRuTest;
 
@@ -25,10 +27,10 @@ public class MailRuLogInPageTest
     public void ShouldLogInWithValidCredentials(string accountName, string password)
     {
         var mailRuLogInPage = new MailRuMainPage(Driver).LogInButtonClick();
-        mailRuLogInPage.Passowrd = password;
-        mailRuLogInPage.AccountName = accountName;
+        var credentials = new Credentials(accountName, password);
 
         var mailRuIncomingMailPage = mailRuLogInPage
+            .SetCredentials(credentials)
             .SendAccountName()
             .SubmitAccountName()
             .SendPassword()
@@ -46,10 +48,10 @@ public class MailRuLogInPageTest
     public void ShouldNotLogInWithInvalidCredentials(string accountName, string password)
     {
         var mailRuLogInPage = new MailRuMainPage(Driver).LogInButtonClick();
-        mailRuLogInPage.Passowrd = password;
-        mailRuLogInPage.AccountName = accountName;
+        var credentials = new Credentials(accountName, password);
 
         var mailRuIncomingMailPage = mailRuLogInPage
+            .SetCredentials(credentials)
             .SendAccountName()
             .SubmitAccountName()
             .SendPassword()
