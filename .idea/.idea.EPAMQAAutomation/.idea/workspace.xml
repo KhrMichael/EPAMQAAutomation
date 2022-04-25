@@ -12,12 +12,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MailRu/Models/Credentials.cs" afterDir="false" />
+    <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="add PersonalDataPage and write tests for it">
+      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuIncomingMailsPageClickOnAccountDataButtonException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuIncomingMailsPageClickOnProfileButtonException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuPersonalDataPageException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuPersonalDataPageSaveChangesException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuPersonalDataPageSetAccountNameException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuPersonalDataPageSetupException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MailRu/Models/Builders/CredentialsBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuPersonalDataPage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MailRuTest/MailRuPersonalDataPageTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailRu/Models/Credentials.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Models/Credentials.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuLogInPage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuMainPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuMainPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuSignInWith.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Models/MailRuSignInWith.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuIncomingMailsPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuIncomingMailsPageTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sandbox/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/Program.cs" afterDir="false" />
@@ -53,8 +61,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/86/d6540512/ChromiumDriver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/cb/89e609cb/NoSuchElementException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/bf/e68c3032/ChromeDriver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/80c993e9eb81cc52c38f5187f6d1ad55cf684b48396c38a5dd1df021c463b2a8/NotImplementedException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c1e5d85c1d435e8f9cd91494cb4b9ab33224e14f43980b6e1acae36ebaa3da4/Exception.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9e821d4c3a394f8faea3644256a35d4811590/61/5c78beea/Assert.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/projects/EPAMQAAutomation/MailRu/Models/Credentials.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/67db87b56fe9469d9e49623dc5b740265bcc00/d4/34111dd1/StaleElementReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/997d5845245d4dd8869e31cbda5377d39ff8/51/1b12dff4/Executor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f74e7be696643429992f27f0c857221f59fe4efe37e7c1c69db5cd86245d5/Exception.cs" root0="SKIP_HIGHLIGHTING" />
@@ -218,7 +228,9 @@
       <workItem from="1650642990585" duration="10576000" />
       <workItem from="1650714730340" duration="2011000" />
       <workItem from="1650748797638" duration="3095000" />
-      <workItem from="1650809553152" duration="8318000" />
+      <workItem from="1650809553152" duration="8551000" />
+      <workItem from="1650834154557" duration="4269000" />
+      <workItem from="1650900453713" duration="3388000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1647983910103</created>
@@ -409,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650751599014</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="refactoring">
+      <created>1650818734645</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1650818734645</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,7 +482,6 @@
     <MESSAGE value="optimize locator path to bbc searchInputButton" />
     <MESSAGE value="remove unnecessary using of implicitlyWait" />
     <MESSAGE value="add ShouldOpenBbcSearchPage test method" />
-    <MESSAGE value="refactoring" />
     <MESSAGE value="add MailRu base exceptions, MailRu main page, MailRu login page, and some tests" />
     <MESSAGE value="remove unnecessary semicolons" />
     <MESSAGE value="add titles verification" />
@@ -481,26 +499,11 @@
     <MESSAGE value="redesign incoming mails page" />
     <MESSAGE value="add a mechanism for sending mail" />
     <MESSAGE value="add the method that find all messages on the incoming mails page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add the method that find all messages on the incoming mails page" />
+    <MESSAGE value="refactoring" />
+    <MESSAGE value="add PersonalDataPage and write tests for it" />
+    <option name="LAST_COMMIT_MESSAGE" value="add PersonalDataPage and write tests for it" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs</url>
-          <line>127</line>
-          <properties documentPath="D:\projects\EPAMQAAutomation\MailRu\Pages\MailRuIncomingMailsPage.cs" initialLine="126" containingFunctionPresentation="method 'GetIncomingMessages'">
-            <startOffsets>
-              <option value="4966" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5112" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#OpenQA.Selenium.WebDriver" memberName="Title" />

@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System.Collections.ObjectModel;
+using System.Security.AccessControl;
 using System.Text.RegularExpressions;
 using OpenQA.Selenium.Interactions;
 
@@ -31,6 +32,8 @@ public class MailRuIncomingMailsPage
     private string IncomingMessageBodyXPath => "(//*[contains(@id, 'BODY')])";
     private string IncomingMessageGroupReadStatusXPath => "//*[contains(@class, 'll-rs')]";
     private string IncomingMessageXPath => "(//*[contains(@class, 'thread__letter')])";
+    private string ProfileButtonXPath => "//*[contains(@class, 'ph-project__account')]";
+    private string PersonalDataButtonXPath => "//*[contains(@class, 'ph-accounts')]/a[1]";
 
     public MailRuIncomingMailsPage(WebDriver driver, Credentials credentials)
     {
@@ -105,11 +108,9 @@ public class MailRuIncomingMailsPage
     public void SendMessage()
     {
         var webDriverWait = new WebDriverWait(Driver, FindeElementTime);
-        var actions = new Actions(Driver);
         try
         {
             var sendButton = webDriverWait.Until(ExpectedConditions.ElementExists(By.XPath(SendMessageButtonXPath)));
-            actions.MoveToElement(sendButton).Perform();
             sendButton.Click();
         }
         catch (WebDriverTimeoutException)
@@ -200,5 +201,38 @@ public class MailRuIncomingMailsPage
         }
 
         return new ReadOnlyCollection<string>(messageBodies);
+    }
+
+    public MailRuIncomingMailsPage ClickOnProfileButton()
+    {
+        var webDriverWait = new WebDriverWait(Driver, FindeElementTime);
+        try
+        {
+            var profileButton = webDriverWait.Until(ExpectedConditions.ElementExists(By.XPath(ProfileButtonXPath)));
+            profileButton.Click();
+        }
+        catch (Exception)
+        {
+            throw new MailRuIncomingMailsPageClickOnProfileButtonException();
+        }
+
+        return this;
+    }
+
+    public MailRuPersonalDataPage ClickOnAccountDataButton()
+    {
+        var webDriverWait = new WebDriverWait(Driver, FindeElementTime);
+        try
+        {
+            var personalDataButton =
+                webDriverWait.Until(ExpectedConditions.ElementExists(By.XPath(PersonalDataButtonXPath)));
+            personalDataButton.Click();
+        }
+        catch (Exception)
+        {
+            throw new MailRuIncomingMailsPageClickOnAccountDataButtonException();
+        }
+
+        return new MailRuPersonalDataPage(Driver, Credentials);
     }
 }

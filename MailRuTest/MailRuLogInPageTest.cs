@@ -22,12 +22,12 @@ public class MailRuLogInPageTest
     }
 
     [TestMethod]
-    [DataRow("account1.test1", "strongpassword")]
-    [DataRow("account2.test", "strongpassword")]
-    public void ShouldLogInWithValidCredentials(string accountName, string password)
+    [DataRow("account1.test1@mail.ru", "strongpassword")]
+    [DataRow("account2.test@mail.ru", "strongpassword")]
+    public void ShouldLogInWithValidCredentials(string email, string password)
     {
         var mailRuLogInPage = new MailRuMainPage(Driver).LogInButtonClick();
-        var credentials = new Credentials(accountName, password);
+        var credentials = new Credentials(string.Empty, string.Empty,  password, email);
 
         var mailRuIncomingMailPage = mailRuLogInPage
             .SetCredentials(credentials)
@@ -45,10 +45,10 @@ public class MailRuLogInPageTest
     [DataRow("&&&&&", "")]
     [DataRow("", "&&&&&&")]
     [DataRow("&&&&&", "&&&&&&")]
-    public void ShouldNotLogInWithInvalidCredentials(string accountName, string password)
+    public void ShouldNotLogInWithInvalidCredentials(string email, string password)
     {
         var mailRuLogInPage = new MailRuMainPage(Driver).LogInButtonClick();
-        var credentials = new Credentials(accountName, password);
+        var credentials = new Credentials(string.Empty, string.Empty, password, email );
 
         var mailRuIncomingMailPage = mailRuLogInPage
             .SetCredentials(credentials)

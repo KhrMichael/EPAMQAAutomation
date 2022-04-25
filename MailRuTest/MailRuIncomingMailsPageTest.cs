@@ -1,3 +1,4 @@
+using System.Security.AccessControl;
 using MailRu.Models;
 using MailRu.Models.Builders;
 using MailRu.Pages;
@@ -11,13 +12,16 @@ namespace MailRuTest;
 [TestClass]
 public sealed class MailRuIncomingMailsPageTest
 {
-    public WebDriver driver;
+    private WebDriver driver;
 
-    public Message TestMessage =>
+    private Message TestMessage =>
         new Message("account2.test@mail.ru", "TestMessage", "This message was sent from account1.");
 
-    public Credentials Account1 => new Credentials("account1.test1@mail.ru", "strongpassword");
-    public Credentials Account2 => new Credentials("account2.test@mail.ru", "strongpassword");
+    private Message MessageWithNewAccountName => new Message("account1.test1@mail.ru", "New account name", "NewName");
+
+
+    private Credentials Account1 => new Credentials("test1", "account1", "strongpassword", "account1.test1@mail.ru");
+    private Credentials Account2 => new Credentials("test", "account2", "strongpassword", "account2.test@mail.ru");
 
 
     [TestInitialize]
@@ -34,7 +38,7 @@ public sealed class MailRuIncomingMailsPageTest
     }
 
     [TestMethod]
-    public void ShouldSendMessage()
+    public void ShouldSendTestMessage()
     {
         var mailRuIncomingMailsPage = GetMailRuIncomingMailsPage(Account1);
         var message = TestMessage;
@@ -46,13 +50,38 @@ public sealed class MailRuIncomingMailsPageTest
     }
 
     [TestMethod]
-    public void ShouldFindSpecificUnreadMessage()
+    public void ShouldSendMessageWithNewAccountName()
+    {
+        var mailRuIncomingMailsPage = GetMailRuIncomingMailsPage(Account2);
+        var message = MessageWithNewAccountName;
+
+        mailRuIncomingMailsPage
+            .OpenMessageConstructor()
+            .WriteMessage(message)
+            .SendMessage();
+    }
+
+    [TestMethod]
+    public void ShouldFindUnreadTestMessage()
     {
         var mailRuIncomingMailsPage = GetMailRuIncomingMailsPage(Account2);
 
         var incomingMessages = mailRuIncomingMailsPage.GetIncomingMessages();
         var isMessageReceived =
             incomingMessages.Exists(messageInfo => messageInfo.Message.Equals(TestMessage) && messageInfo.IsUnread);
+        
+        Assert.IsTrue(isMessageReceived);
+    }
+
+    [TestMethod]
+    public void ShouldFindMessageWithNewAccountName()
+    {
+        var mailRuIncomingMailsPage = GetMailRuIncomingMailsPage(Account1);
+
+        var incomingMessages = mailRuIncomingMailsPage.GetIncomingMessages();
+        var isMessageReceived =
+            incomingMessages.Exists(messageInfo =>
+                messageInfo.Message.Equals(MessageWithNewAccountName) && messageInfo.IsUnread);
         
         Assert.IsTrue(isMessageReceived);
     }
