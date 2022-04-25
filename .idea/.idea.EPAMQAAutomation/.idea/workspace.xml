@@ -13,22 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3bb506c-d66f-4c6f-b848-a98ba1c7ba5f" name="Changes" comment="add PersonalDataPage and write tests for it">
-      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuIncomingMailsPageClickOnAccountDataButtonException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuIncomingMailsPageClickOnProfileButtonException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuPersonalDataPageException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuPersonalDataPageSaveChangesException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuPersonalDataPageSetAccountNameException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MailRu/Exceptions/MailRuPersonalDataPageSetupException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MailRu/Models/Builders/CredentialsBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuPersonalDataPage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MailRuTest/MailRuPersonalDataPageTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EPAMQAAutomation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRu/Models/Credentials.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Models/Credentials.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuIncomingMailsPage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuSignInWith.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Models/MailRuSignInWith.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuIncomingMailsPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuIncomingMailsPageTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRuTest/MailRuLogInPageTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sandbox/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sandbox/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MailRu/Pages/MailRuPersonalDataPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MailRu/Pages/MailRuPersonalDataPage.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +215,7 @@
       <workItem from="1650748797638" duration="3095000" />
       <workItem from="1650809553152" duration="8551000" />
       <workItem from="1650834154557" duration="4269000" />
-      <workItem from="1650900453713" duration="3388000" />
+      <workItem from="1650900453713" duration="3846000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1647983910103</created>
@@ -428,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650818734645</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="add PersonalDataPage and write tests for it">
+      <created>1650903871542</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1650903871542</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

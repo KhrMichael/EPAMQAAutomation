@@ -55,7 +55,8 @@ public class MailRuPersonalDataPage
                 webDriverWait.Until(ExpectedConditions.ElementExists(By.XPath(AccountNameInputXPath)));
             Driver.ExecuteScript($"return document.evaluate(\"{AccountNameInputXPath}\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.value = \"\";");
             accountNameInput.SendKeys(accountName);
-            EditedCredentialsBuilder.SetName(accountName);
+            var newAccountName = accountNameInput.GetAttribute("value");
+            EditedCredentialsBuilder.SetName(newAccountName);
         }
         catch (WebDriverTimeoutException)
         {
@@ -77,6 +78,7 @@ public class MailRuPersonalDataPage
         {
             throw new MailRuPersonalDataPageSaveChangesException();
         }
+
         Credentials = EditedCredentialsBuilder.Build();
 
         return this;
